@@ -1,0 +1,20 @@
+diff --git a/chia/models/openai_compat.py b/chia/models/openai_compat.py
+index 7c1cb80..6cd40f1 100644
+--- a/chia/models/openai_compat.py
++++ b/chia/models/openai_compat.py
+@@ -550,14 +550,7 @@ class OpenAICompatLLM(LLMCallBase):
+                 assistant_msg: dict = {"role": "assistant", "content": msg.content}
+                 if tool_calls:
+                     assistant_msg["tool_calls"] = [
+-                        {
+-                            "id": tc.id,
+-                            "type": "function",
+-                            "function": {
+-                                "name": tc.function.name,
+-                                "arguments": tc.function.arguments,
+-                            },
+-                        }
++                        tc.model_dump(mode="json", exclude_none=True)
+                         for tc in tool_calls
+                     ]
+                 messages.append(assistant_msg)
