@@ -1,0 +1,4 @@
+job_id,partitions,executors,replication,batch_size,placement,status,cases_completed,cases_total,experiment_elapsed_s,latency_mean_ms,throughput_cases_per_s,memory_peak_mb
+58611234,1,1,1,1,single-node,success,1,1,1.525,1501.381,0.655712,
+58611317,3,1,1,1,single-node,success,3,3,3.968,1306.71,0.756051,
+58611406,3,2,1,2,single-node,success,3,3,2.619,1331.768,1.145487,

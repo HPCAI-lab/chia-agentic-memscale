@@ -1,0 +1,19 @@
+{
+  "selection_metric": "throughput_cases_per_s",
+  "interpretation": "provisional best among measured successful configurations",
+  "best": {
+    "job_id": "58611406",
+    "partitions": 3,
+    "executors": 2,
+    "replication": 1,
+    "batch_size": 2,
+    "placement": "single-node",
+    "status": "success",
+    "cases_completed": 3,
+    "cases_total": 3,
+    "experiment_elapsed_s": 2.619,
+    "latency_mean_ms": 1331.768,
+    "throughput_cases_per_s": 1.145487,
+    "memory_peak_mb": null
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "workload": "nwchem_water_6-31g_scf",
+  "configuration": {
+    "partitions": 1,
+    "executors": 1,
+    "replication": 1,
+    "batch_size": 1,
+    "placement": "single-node"
+  },
+  "aggregate": {
+    "status": "success",
+    "cases_completed": 1,
+    "cases_total": 1,
+    "experiment_elapsed_s": 1.525,
+    "latency_mean_ms": 1501.381,
+    "throughput_cases_per_s": 0.655712,
+    "memory_peak_mb": null
+  },
+  "scientific_validation": {
+    "reference_energy_hartree": -75.983998,
+    "tolerance_hartree": 1e-05
+  },
+  "cases": [
+    {
+      "case_id": "p0-r0",
+      "partition": 0,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 1501.381,
+      "energy_hartree": -75.9839975704,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/pscratch/sd/m/makhatri/nwchem-p0-r0-8j9ds37z"
+    }
+  ]
+}
