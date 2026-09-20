@@ -1,0 +1,18 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "image": "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+  "python": "3.10.19",
+  "job_id": "58656462",
+  "hostname": "nid004520",
+  "experiment_budget": 4,
+  "sha256": {
+    "workload/nwchem_benchmark.py": "ca34a1a7b2f2be2057313ace94e943b9c0bca37c7c15610d860940532dcbd3f4",
+    "workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+    "tools/experiment_session.py": "16f6a7cb7f686aebc6e55f644eea1b286e3f0d37dce192c23cf7d8d5de5c148f",
+    "tools/memscale_tool.py": "682751f0e90683acdd6968cb0b916805d0aa875c0a64c7ba0ae2320ba68417e7",
+    "loop.py": "89abce0281d487eed7cc3f32d9868924d10d0eb0c4812277ba2b522c994615f3"
+  },
+  "project_commit": "32b0596f41326b31b4ddfe4c92b673b419cc0ea2",
+  "chia_commit": "16c35e92aaaf9511c6453bf94cd5cf589698f4e3",
+  "recorded_image_id": "60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16"
+}

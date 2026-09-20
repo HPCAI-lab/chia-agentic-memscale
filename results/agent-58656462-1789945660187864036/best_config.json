@@ -1,0 +1,58 @@
+{
+  "interpretation": "Best observed in this session; one measurement per configuration",
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "15aba998ca374eb69d75f4ba42ff4e94",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 3.795,
+      "latency_mean_ms": 1252.944,
+      "throughput_cases_per_s": 0.790497,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/agent-58656462-1789945660187864036/baseline/measurement.json",
+    "launcher_elapsed_s": 4.242
+  },
+  "best": {
+    "step": 4,
+    "selection_source": "gemini",
+    "configuration": {
+      "partitions": 3,
+      "executors": 2,
+      "replication": 1,
+      "batch_size": 3,
+      "placement": "single-node"
+    },
+    "reason": "Testing executors=2 with batch_size=3 to see how dual executors handle a single large batch of three cases.",
+    "observed_receipt": "0510cd3b556e47b5b961b580e91707b1",
+    "receipt": "a4b976cbc12444c2bacd5ec661012186",
+    "worker_pid": 136505,
+    "hostname": "nid004520",
+    "status": "success",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 2.619,
+      "latency_mean_ms": 1340.13,
+      "throughput_cases_per_s": 1.145505,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/agent-58656462-1789945660187864036/step-4/measurement.json",
+    "launcher_elapsed_s": 3.252
+  },
+  "best_gain_vs_fresh_baseline_pct": 44.90946834712845,
+  "agent_attempts": 4,
+  "agent_successes": 4
+}

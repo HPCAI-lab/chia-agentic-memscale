@@ -1,0 +1,58 @@
+{
+  "workload": "nwchem_water_6-31g_scf",
+  "configuration": {
+    "partitions": 3,
+    "executors": 2,
+    "replication": 1,
+    "batch_size": 3,
+    "placement": "single-node"
+  },
+  "aggregate": {
+    "status": "success",
+    "cases_completed": 3,
+    "cases_total": 3,
+    "experiment_elapsed_s": 2.619,
+    "latency_mean_ms": 1340.13,
+    "throughput_cases_per_s": 1.145505,
+    "memory_peak_mb": null
+  },
+  "scientific_validation": {
+    "reference_energy_hartree": -75.983998,
+    "tolerance_hartree": 1e-05
+  },
+  "cases": [
+    {
+      "case_id": "p0-r0",
+      "partition": 0,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 1302.095,
+      "energy_hartree": -75.9839975704,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/pscratch/sd/m/makhatri/nwchem-p0-r0-5ek70kcy"
+    },
+    {
+      "case_id": "p1-r0",
+      "partition": 1,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 1429.598,
+      "energy_hartree": -75.9839975704,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/pscratch/sd/m/makhatri/nwchem-p1-r0-lci4f_xg"
+    },
+    {
+      "case_id": "p2-r0",
+      "partition": 2,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 1288.697,
+      "energy_hartree": -75.9839975704,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/pscratch/sd/m/makhatri/nwchem-p2-r0-clwlzv_5"
+    }
+  ]
+}

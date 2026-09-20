@@ -25,12 +25,12 @@ def run_case(case_id, partition, replica, args, scratch):
     shutil.copy2(args.input, directory / args.input.name)
 
     command = [
-        "srun", "--exclusive",
+        "srun", "--exclusive", "--exact", "--nodes=1",
         "--ntasks", str(args.mpi_tasks),
         "--cpus-per-task", str(args.cpus_per_task),
         "--cpu-bind=cores",
         "--kill-on-bad-exit=1",
-        "shifter", "--module=mpich",
+        "shifter", "--image", args.image, "--module=mpich",
         "nwchem", args.input.name,
     ]
 

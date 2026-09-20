@@ -1,0 +1,18 @@
+### Summary of Trajectory
+
+Over the four executed steps, we explored varying executor counts and batch sizes for three NWChem water SCF calculations:
+
+1. **Step 1 (Executors=1, Batch Size=2):** Achieved a throughput of `0.782891` cases/s (receipt `092c9abdb0674617b8c4f1b85439e008`), slightly lower than the baseline throughput of `0.790497` cases/s (executors=1, batch size=1). Increasing batch size under a single executor did not yield a performance gain.
+2. **Step 2 (Executors=1, Batch Size=3):** Achieved a throughput of `0.773051` cases/s (receipt `bf7749048fa049d2a4ea37c8293680c2`). Further increasing batch size to 3 for a single executor continued a slight downward trend in throughput.
+3. **Step 3 (Executors=2, Batch Size=1):** Achieved a throughput of `0.762315` cases/s (receipt `0510cd3b556e47b5b961b580e91707b1`). Running with 2 executors but unit batch size resulted in low throughput due to under-utilizing concurrent capabilities or task scheduling overheads.
+4. **Step 4 (Executors=2, Batch Size=3):** Achieved a throughput of `1.145505` cases/s (receipt `a4b976cbc12444c2bacd5ec661012186`). Combining 2 executors with a batch size of 3 successfully matched the high performance seen in manual historical runs, significantly outperforming single-executor configurations.
+
+### Best Observed Configuration vs. Baseline
+
+* **Fresh Baseline Configuration:** Executors = 1, Batch Size = 1, Partitions = 3, Replication = 1  
+  * **Baseline Throughput:** `0.790497` cases/s  
+  * **Baseline Receipt:** `15aba998ca374eb69d75f4ba42ff4e94`  
+
+* **Best Observed Configuration:** Executors = 2, Batch Size = 3, Partitions = 3, Replication = 1  
+  * **Best Throughput:** `1.145505` cases/s  
+  * **Final Receipt:** `a4b976cbc12444c2bacd5ec661012186`
