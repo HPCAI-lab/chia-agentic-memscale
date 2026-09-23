@@ -1,0 +1,29 @@
+### Summary of Trajectory and Results
+
+Over the course of 4 experimental steps, we explored variations in `executors` and `batch_size` while keeping `partitions=3`, `replication=1`, MPI ranks per case=2, and numerical threads per rank=1 fixed:
+
+1. **Baseline**: `executors=1`, `batch_size=1`
+   - **Throughput**: 2.040685 cases/s (Elapsed: 1.47 s)
+   - **Receipt**: `44033c74fd894060b81f3778d89bc75a`
+2. **Step 1**: `executors=1`, `batch_size=2`
+   - **Hypothesis**: Grouping tasks within a single executor might improve execution efficiency.
+   - **Throughput**: 2.029848 cases/s (Elapsed: 1.478 s)
+   - **Receipt**: `d834d59f147c48c6a16807e5eaae6a9a`
+3. **Step 2**: `executors=1`, `batch_size=3`
+   - **Hypothesis**: Packing all 3 calculations into a single batch with one executor.
+   - **Throughput**: 2.030747 cases/s (Elapsed: 1.477 s)
+   - **Receipt**: `ff2f0403a4af48f19e6b44c255d4f1c4`
+4. **Step 3**: `executors=2`, `batch_size=1`
+   - **Hypothesis**: Using 2 concurrent executors to enhance task concurrency.
+   - **Throughput**: 2.013808 cases/s (Elapsed: 1.49 s)
+   - **Receipt**: `5190b865404f41a89d215fcd703dafec`
+5. **Step 4**: `executors=2`, `batch_size=2`
+   - **Hypothesis**: Combining multiple executors (`executors=2`) with batched task execution (`batch_size=2`).
+   - **Throughput**: 2.982902 cases/s (Elapsed: 1.006 s)
+   - **Receipt**: `d8bbe11408204fe385973c8fbc22b027`
+
+### Comparison
+- **Freshly Measured Baseline**: `executors=1`, `batch_size=1` → **2.040685 cases/s** (`44033c74fd894060b81f3778d89bc75a`)
+- **Best Observed Configuration**: `executors=2`, `batch_size=2` → **2.982902 cases/s** (`d8bbe11408204fe385973c8fbc22b027`)
+
+**Exact Final Receipt String**: `d8bbe11408204fe385973c8fbc22b027`

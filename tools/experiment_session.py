@@ -35,7 +35,7 @@ def config_key(config):
                  ("partitions", "executors", "replication", "batch_size"))
 
 
-def run_benchmark(project, directory, image, config, timeout_s=120):
+def run_benchmark(project, directory, image, config, timeout_s=120, backend="perlmutter"):
     """Run the real harness, keeping raw output and terminating timed-out steps."""
     directory = Path(directory)
     directory.mkdir()
@@ -47,7 +47,9 @@ def run_benchmark(project, directory, image, config, timeout_s=120):
                "--replication", str(config["replication"]),
                "--batch-size", str(config["batch_size"]),
                "--placement", "single-node", "--mpi-tasks", "2",
-               "--cpus-per-task", "2", "--output", str(output)]
+               "--cpus-per-task", "1" if backend == "native" else "2",
+               "--backend", backend, "--scratch-root", str(directory / "cases"),
+               "--output", str(output)]
     started = time.monotonic()
     with (directory / "launcher.log").open("w") as stream:
         child = subprocess.Popen(command, cwd=project, stdout=stream,
@@ -93,9 +95,9 @@ class ExperimentSession:
         self.state_path = self.directory / "state.json"
 
     @classmethod
-    def create(cls, directory, project, image, budget, baseline, prior):
+    def create(cls, directory, project, image, budget, baseline, prior, backend="perlmutter"):
         session = cls(directory)
-        state = {"project": str(Path(project).resolve()), "image": image,
+        state = {"backend": backend, "project": str(Path(project).resolve()), "image": image,
                  "budget": budget, "baseline": baseline, "prior_history": prior,
                  "attempts": [], "history_inspected": False}
         write_json(session.state_path, state)
@@ -188,7 +190,7 @@ class ExperimentSession:
             self.event("experiment_selected", **record)
             try:
                 measurement = run_benchmark(state["project"], self.directory / f"step-{step}",
-                                            state["image"], config)
+                                            state["image"], config, backend=state.get("backend", "perlmutter"))
                 record.update(measurement, status="success")
             except Exception as exc:
                 # Avoid copying environment/credential values into an agent-visible error.

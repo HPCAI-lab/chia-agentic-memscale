@@ -8,6 +8,8 @@ CHIA-Agentic MemScale connects an agent to a controlled experiment runner. Gemin
 
 **The autonomous loop has been validated on NERSC Perlmutter with NWChem 7.2.0.** Job `58656462` completed on September 20, 2026, with exit code `0:0`. Gemini selected four previously untested configurations, and all four experiments passed scientific validation. This is a small water-SCF orchestration demonstration; memory optimization and larger-workload scaling remain research goals.
 
+**GCP validation is also complete:** four independent sessions on September 23, 2026 executed 16 Gemini-selected experiments, all scientifically validated. The best selections improved throughput by 46.2–187.6% over their respective fresh GCP baselines. See [all GCP results and limitations](docs/gcp-results.md), [CSV/JSON evidence](results/gcp-summary/), and [clean VM setup instructions](docs/gcp.md). These are small-workload orchestration measurements, not memory-optimization or cross-platform speedup claims.
+
 ## Methodology
 
 The implementation follows a state–action–feedback loop:
@@ -15,14 +17,14 @@ The implementation follows a state–action–feedback loop:
 1. Gemini inspects structured history, available choices, and the latest execution receipt.
 2. Gemini chooses executor count and batch size and supplies an experimental hypothesis.
 3. A CHIA MCP tool validates the choice, experiment budget, and receipt before launching the benchmark from a Ray worker.
-4. Slurm and Shifter execute NWChem calculations on the allocated Perlmutter node.
+4. The platform launcher executes NWChem: Slurm/Shifter on Perlmutter, or native OpenMPI on GCP.
 5. The tool returns measurements and scientific-validation results for the next decision.
 
-Each experiment performs exactly three independent water 6-31g SCF calculations. Partitions are fixed at 3 and replication at 1. Gemini selects executors and batch size from 1, 2, or 3. Executors bound concurrent launches; batch size controls cases per wave. These are harness scheduling controls, not molecular partitions or NWChem memory-policy controls. Each calculation requests two MPI ranks and two CPUs per rank; numerical-library thread counts are set to one.
+Each experiment performs exactly three independent water 6-31g SCF calculations. Partitions are fixed at 3 and replication at 1. Gemini selects executors and batch size from 1, 2, or 3. Executors bound concurrent launches; batch size controls cases per wave. These are harness scheduling controls, not molecular partitions or NWChem memory-policy controls. Each calculation uses two MPI ranks; Perlmutter requests two CPUs per rank, while the native GCP launcher requests a two-core set per calculation. Numerical-library thread counts are set to one.
 
 The runner requires history inspection, rejects repeated or invalid configurations, enforces a finite experiment budget, and chains unique receipts between decisions. Accepted selections and outcomes are saved. The scientific check compares each final SCF energy with `-75.983998` Hartree within `1e-5` Hartree.
 
-## Validated autonomous trajectory
+## Validated Perlmutter autonomous trajectory
 
 Step 0 is a fresh scripted baseline after a warm-up. Steps 1–4 are Gemini selections; earlier manual measurements were provided only as historical context.
 
@@ -110,7 +112,7 @@ See [docs/agent_loop.md](docs/agent_loop.md) for resource requirements, timeouts
 - `loop.py`: agent orchestration, warm-up, baseline, and session validation.
 - `tools/`: bounded CHIA tool and experiment-session state management.
 - `workload/`: NWChem input and measurement harness.
-- `scripts/`: Perlmutter batch launchers.
+- `scripts/`: Perlmutter and GCP launchers, plus the GCP evidence auditor.
 - `tests/`: session tests and live integration check.
 - `provenance/`: upstream CHIA revision, compatibility patch, and image identity.
 - `results/`: selected published measurements and agent evidence.
@@ -118,11 +120,11 @@ See [docs/agent_loop.md](docs/agent_loop.md) for resource requirements, timeouts
 
 ## Planned evaluation and expected results
 
-The next phase will test repeated agent trajectories, broader configuration spaces, and larger scientific workloads. Planned comparisons include random search, grid search, and offline tuning under comparable experiment budgets. Additional action controls, including partition count and memory/data-placement policies, require further implementation and validation.
+Four GCP agent trajectories have now been recorded. Further evaluation will test more repetitions, broader configuration spaces, and larger scientific workloads. Planned comparisons include random search, grid search, and offline tuning under comparable experiment budgets. Additional action controls, including partition count and memory/data-placement policies, require further implementation and validation.
 
 Evaluation will measure throughput, experiments required to reach a strong configuration, cumulative execution cost, adaptation overhead, rejected actions, and scientific correctness. The expected outcome is a reproducible, auditable framework and evidence about when agent-based selection helps. Improved performance across workloads is a research question, not an established result.
 
-GCP execution is a planned extension. The current launcher depends on Perlmutter's Slurm and Shifter environment and must be adapted before the complete workflow can run on a standalone cloud VM.
+The native GCP backend has been validated on a standalone VM. It uses NWChem 7.0.2 rather than the Perlmutter container's 7.2.0; compare configurations within each environment, not absolute throughput across platforms. The exact constrained-install recipe added after the runs has not yet been revalidated on a second clean VM.
 
 ## Proposed compute budget
 

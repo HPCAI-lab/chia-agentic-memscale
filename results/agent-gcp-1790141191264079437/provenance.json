@@ -1,0 +1,24 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "image": null,
+  "python": "3.10.12",
+  "backend": "native",
+  "job_id": null,
+  "hostname": "chia-memscale-gcp",
+  "experiment_budget": 4,
+  "sha256": {
+    "workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c",
+    "workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+    "tools/experiment_session.py": "aab754e51123e747e12ca9ff196be7e2f5f96d8020a71882cf07f924e0d44d7b",
+    "tools/memscale_tool.py": "682751f0e90683acdd6968cb0b916805d0aa875c0a64c7ba0ae2320ba68417e7",
+    "loop.py": "a7148aa0fd924b4336d87465abdcfa599818f9715c62983c10321a89ad511c3e"
+  },
+  "project_commit": "a5ae28d4de24c53b48ad928689b2f9c136e9fb90",
+  "chia_commit": "16c35e92aaaf9511c6453bf94cd5cf589698f4e3",
+  "recorded_image_id": null,
+  "nwchem_executable": "/usr/bin/nwchem.openmpi",
+  "mpi_ranks_per_case": 2,
+  "threads_per_rank": 1,
+  "history_scope": "fresh native session only; no Perlmutter timings",
+  "packages": "nwchem-data\t7.0.2-3\nnwchem-openmpi\t7.0.2-3\nopenmpi-bin\t4.1.2-2ubuntu1\n"
+}

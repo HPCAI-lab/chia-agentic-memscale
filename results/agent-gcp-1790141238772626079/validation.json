@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "requested_experiments": 4,
+  "measured_agent_experiments": 4,
+  "final_receipt_reported": true,
+  "session_elapsed_s": 21.141,
+  "note": "Tool enforces history inspection, unique selections, budget and receipt chaining."
+}

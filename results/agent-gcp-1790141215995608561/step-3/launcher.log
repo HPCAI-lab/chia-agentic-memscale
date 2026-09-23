@@ -1,0 +1,107 @@
+{
+  "backend": "native",
+  "workload": "nwchem_water_6-31g_scf",
+  "configuration": {
+    "partitions": 3,
+    "executors": 2,
+    "replication": 1,
+    "batch_size": 2,
+    "placement": "single-node"
+  },
+  "aggregate": {
+    "status": "success",
+    "cases_completed": 3,
+    "cases_total": 3,
+    "experiment_elapsed_s": 0.996,
+    "latency_mean_ms": 498.449,
+    "throughput_cases_per_s": 3.010693,
+    "memory_peak_mb": null
+  },
+  "scientific_validation": {
+    "reference_energy_hartree": -75.983998,
+    "tolerance_hartree": 1e-05
+  },
+  "cases": [
+    {
+      "command": [
+        "taskset",
+        "--cpu-list",
+        "0,1",
+        "mpirun",
+        "--bind-to",
+        "none",
+        "-np",
+        "2",
+        "/usr/bin/nwchem.openmpi",
+        "water_check.nw"
+      ],
+      "cpu_ids": [
+        0,
+        1
+      ],
+      "case_id": "p0-r0",
+      "partition": 0,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 503.909,
+      "energy_hartree": -75.983997570421,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/home/devstar7746/chia-agentic-memscale/results/agent-gcp-1790141215995608561/step-3/cases/nwchem-p0-r0-sq21rt3x"
+    },
+    {
+      "command": [
+        "taskset",
+        "--cpu-list",
+        "2,3",
+        "mpirun",
+        "--bind-to",
+        "none",
+        "-np",
+        "2",
+        "/usr/bin/nwchem.openmpi",
+        "water_check.nw"
+      ],
+      "cpu_ids": [
+        2,
+        3
+      ],
+      "case_id": "p1-r0",
+      "partition": 1,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 501.549,
+      "energy_hartree": -75.983997570421,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/home/devstar7746/chia-agentic-memscale/results/agent-gcp-1790141215995608561/step-3/cases/nwchem-p1-r0-gp6h51wm"
+    },
+    {
+      "command": [
+        "taskset",
+        "--cpu-list",
+        "2,3",
+        "mpirun",
+        "--bind-to",
+        "none",
+        "-np",
+        "2",
+        "/usr/bin/nwchem.openmpi",
+        "water_check.nw"
+      ],
+      "cpu_ids": [
+        2,
+        3
+      ],
+      "case_id": "p2-r0",
+      "partition": 2,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 489.888,
+      "energy_hartree": -75.983997570421,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/home/devstar7746/chia-agentic-memscale/results/agent-gcp-1790141215995608561/step-3/cases/nwchem-p2-r0-6__wq141"
+    }
+  ]
+}

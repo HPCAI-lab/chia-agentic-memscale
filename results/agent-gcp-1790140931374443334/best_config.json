@@ -1,0 +1,58 @@
+{
+  "interpretation": "Best observed in this session; one measurement per configuration",
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "defe2a88d85549bda42eb09e00b29a47",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 1.484,
+      "latency_mean_ms": 493.534,
+      "throughput_cases_per_s": 2.021636,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/home/devstar7746/chia-agentic-memscale/results/agent-gcp-1790140931374443334/baseline/measurement.json",
+    "launcher_elapsed_s": 1.568
+  },
+  "best": {
+    "step": 4,
+    "selection_source": "gemini",
+    "configuration": {
+      "partitions": 3,
+      "executors": 2,
+      "replication": 1,
+      "batch_size": 2,
+      "placement": "single-node"
+    },
+    "reason": "Executors=2 with batch_size=1 achieved 2.01 cases/s, very close to baseline. Finally, we test executors=2 with batch_size=2 to combine parallel execution with batched tasks.",
+    "observed_receipt": "f35af13b3c6248e2bc8b88c7c255595c",
+    "receipt": "8300df5564964b2782f28f389d001b49",
+    "worker_pid": 8484,
+    "hostname": "chia-memscale-gcp",
+    "status": "success",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 1.003,
+      "latency_mean_ms": 500.933,
+      "throughput_cases_per_s": 2.990864,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/home/devstar7746/chia-agentic-memscale/results/agent-gcp-1790140931374443334/step-4/measurement.json",
+    "launcher_elapsed_s": 1.071
+  },
+  "best_gain_vs_fresh_baseline_pct": 47.942755273451795,
+  "agent_attempts": 4,
+  "agent_successes": 4
+}

@@ -1,0 +1,146 @@
+{
+  "backend": "native",
+  "project": "/home/devstar7746/chia-agentic-memscale",
+  "image": "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+  "budget": 4,
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "0f9e0ef322784df49dde9761189946e7",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 1.488,
+      "latency_mean_ms": 494.94,
+      "throughput_cases_per_s": 2.016003,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/home/devstar7746/chia-agentic-memscale/results/agent-gcp-1790141215995608561/baseline/measurement.json",
+    "launcher_elapsed_s": 1.568
+  },
+  "prior_history": [],
+  "attempts": [
+    {
+      "step": 1,
+      "selection_source": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "reason": "Baseline uses 1 executor and batch_size 1 with throughput 2.02 cases/s. Increasing executors to 2 while keeping batch_size 1 allows parallel processing of the three water calculations, potentially improving throughput.",
+      "observed_receipt": "0f9e0ef322784df49dde9761189946e7",
+      "receipt": "f86672549bca4e68b3fe33cf3f6a12a7",
+      "worker_pid": 10834,
+      "hostname": "chia-memscale-gcp",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 1.477,
+        "latency_mean_ms": 491.155,
+        "throughput_cases_per_s": 2.03149,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/home/devstar7746/chia-agentic-memscale/results/agent-gcp-1790141215995608561/step-1/measurement.json",
+      "launcher_elapsed_s": 1.574
+    },
+    {
+      "step": 2,
+      "selection_source": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "reason": "Step 1 with executors=2 showed a slight throughput improvement to 2.03 cases/s. Now testing batch_size=2 with executors=1 to see if grouping cases into a batch improves efficiency.",
+      "observed_receipt": "f86672549bca4e68b3fe33cf3f6a12a7",
+      "receipt": "baf7f9c08f6149f4bf2374eafeb4a22b",
+      "worker_pid": 10834,
+      "hostname": "chia-memscale-gcp",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 1.496,
+        "latency_mean_ms": 497.713,
+        "throughput_cases_per_s": 2.00517,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/home/devstar7746/chia-agentic-memscale/results/agent-gcp-1790141215995608561/step-2/measurement.json",
+      "launcher_elapsed_s": 1.573
+    },
+    {
+      "step": 3,
+      "selection_source": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "reason": "Step 2 (batch_size=2, executors=1) yielded 2.01 cases/s, slightly lower than baseline. Combining executors=2 and batch_size=2 might provide better concurrency and batch efficiency.",
+      "observed_receipt": "baf7f9c08f6149f4bf2374eafeb4a22b",
+      "receipt": "ab3a9f1d3ac342eabb2ff02b6b19e411",
+      "worker_pid": 10834,
+      "hostname": "chia-memscale-gcp",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 0.996,
+        "latency_mean_ms": 498.449,
+        "throughput_cases_per_s": 3.010693,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/home/devstar7746/chia-agentic-memscale/results/agent-gcp-1790141215995608561/step-3/measurement.json",
+      "launcher_elapsed_s": 1.07
+    },
+    {
+      "step": 4,
+      "selection_source": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "reason": "Step 3 with executors=2 and batch_size=2 achieved a significant throughput increase to 3.01 cases/s. Now testing maximum executors=3 and batch_size=3 to fully exploit parallelism for the 3 water calculations.",
+      "observed_receipt": "ab3a9f1d3ac342eabb2ff02b6b19e411",
+      "receipt": "9ac6967e9a2f4de983860768a1614f03",
+      "worker_pid": 10834,
+      "hostname": "chia-memscale-gcp",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 0.517,
+        "latency_mean_ms": 513.385,
+        "throughput_cases_per_s": 5.798345,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/home/devstar7746/chia-agentic-memscale/results/agent-gcp-1790141215995608561/step-4/measurement.json",
+      "launcher_elapsed_s": 0.618
+    }
+  ],
+  "history_inspected": true
+}

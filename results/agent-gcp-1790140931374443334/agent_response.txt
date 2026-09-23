@@ -1,0 +1,16 @@
+### Summary of Measured Trajectory
+
+We explored four configurations of executors and batch sizes around the initial baseline (which achieved **2.021636 cases/s** with `executors=1`, `batch_size=1`, receipt `defe2a88d85549bda42eb09e00b29a47`):
+
+1. **Step 1 (`executors=1`, `batch_size=2`)**: Achieved **2.012081 cases/s** (receipt `1f8d49e38fee4c068b2f71e004213a8c`). Throughput remained essentially unchanged compared to baseline.
+2. **Step 2 (`executors=1`, `batch_size=3`)**: Achieved **2.021549 cases/s** (receipt `673ac121c06d45e79d634c5edeae0dd7`). Grouping all 3 calculations into a single batch with 1 executor yielded performance nearly identical to baseline.
+3. **Step 3 (`executors=2`, `batch_size=1`)**: Achieved **2.005932 cases/s** (receipt `f35af13b3c6248e2bc8b88c7c255595c`). Distributing across 2 executors with unit batch size resulted in a minor drop in throughput due to scheduling/overhead.
+4. **Step 4 (`executors=2`, `batch_size=2`)**: Achieved **2.990864 cases/s** (receipt `8300df5564964b2782f28f389d001b49`). Combining 2 executors with a batch size of 2 successfully accelerated throughput significantly.
+
+### Best Observed Configuration vs. Baseline
+
+* **Freshly Measured Baseline**: `executors=1`, `batch_size=1` $\rightarrow$ **2.021636 cases/s**
+* **Best Observed Configuration**: `executors=2`, `batch_size=2` $\rightarrow$ **2.990864 cases/s**
+
+**Exact Final Receipt String:**
+`8300df5564964b2782f28f389d001b49`

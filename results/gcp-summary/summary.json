@@ -1,0 +1,50 @@
+{
+  "runs": [
+    {
+      "run": 1,
+      "session": "agent-gcp-1790140931374443334",
+      "baseline_cases_per_s": 2.021636,
+      "best_executors": 2,
+      "best_batch_size": 2,
+      "best_cases_per_s": 2.990864,
+      "gain_pct": 47.942755273451795,
+      "session_elapsed_s": 21.332,
+      "passed": true
+    },
+    {
+      "run": 2,
+      "session": "agent-gcp-1790141191264079437",
+      "baseline_cases_per_s": 2.040685,
+      "best_executors": 2,
+      "best_batch_size": 2,
+      "best_cases_per_s": 2.982902,
+      "gain_pct": 46.17160414272661,
+      "session_elapsed_s": 22.05,
+      "passed": true
+    },
+    {
+      "run": 3,
+      "session": "agent-gcp-1790141215995608561",
+      "baseline_cases_per_s": 2.016003,
+      "best_executors": 3,
+      "best_batch_size": 3,
+      "best_cases_per_s": 5.798345,
+      "gain_pct": 187.615891444606,
+      "session_elapsed_s": 20.13,
+      "passed": true
+    },
+    {
+      "run": 4,
+      "session": "agent-gcp-1790141238772626079",
+      "baseline_cases_per_s": 2.023182,
+      "best_executors": 3,
+      "best_batch_size": 3,
+      "best_cases_per_s": 5.796827,
+      "gain_pct": 186.52029328058478,
+      "session_elapsed_s": 21.141,
+      "passed": true
+    }
+  ],
+  "successful_agent_experiments": 16,
+  "checked_raw_cases_including_warmups": 72
+}

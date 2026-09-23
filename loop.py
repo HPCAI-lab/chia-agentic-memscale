@@ -9,6 +9,7 @@ import logging
 import os
 import platform
 import socket
+import sys
 import subprocess
 import time
 import uuid
@@ -24,15 +25,20 @@ def main():
     parser.add_argument("--experiments", type=int, choices=(3, 4, 5), default=4)
     parser.add_argument("--model", default="gemini-3.5-flash-lite")
     parser.add_argument("--image", default="ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest")
+    parser.add_argument("--backend", choices=("perlmutter", "native"), default="perlmutter")
     args = parser.parse_args()
     project = Path(__file__).resolve().parent
     key = os.environ.get("GEMINI_API_KEY", "")
     if not key:
         raise SystemExit("Missing GEMINI_API_KEY; export it before sbatch submission.")
-    if not os.environ.get("SLURM_JOB_ID") or not socket.gethostname().startswith("nid"):
-        raise SystemExit("Run using scripts/run_agent_loop.sbatch on a Perlmutter compute node.")
-    if int(os.environ.get("SLURM_NTASKS", "0")) < 8:
-        raise SystemExit("Use the agent batch script: it reserves eight task slots.")
+    if args.backend == "perlmutter":
+        if not os.environ.get("SLURM_JOB_ID") or not socket.gethostname().startswith("nid"):
+            raise SystemExit("Run using scripts/run_agent_loop.sbatch on a Perlmutter compute node.")
+        if int(os.environ.get("SLURM_NTASKS", "0")) < 8:
+            raise SystemExit("Use the agent batch script: it reserves eight task slots.")
+    else:
+        from workload.nwchem_benchmark import native_cpu_slots
+        native_cpu_slots(3, 2)  # Validate capacity before starting an experiment.
 
     import ray
     from chia.base.ChiaFunction import get
@@ -43,14 +49,14 @@ def main():
         raise SystemExit("CHIA Gemini signature fix is missing; apply the recorded provenance patch.")
 
     directory = project / "results" / (
-        f"agent-{os.environ['SLURM_JOB_ID']}-{time.time_ns()}"
+        f"agent-{os.environ.get('SLURM_JOB_ID', 'gcp')}-{time.time_ns()}"
     )
     directory.mkdir(parents=True)
     print("Session directory:", directory, flush=True)
     source_files = ("workload/nwchem_benchmark.py", "workload/inputs/water_check.nw",
                     "tools/experiment_session.py", "tools/memscale_tool.py", "loop.py")
     metadata = {"model": args.model, "image": args.image, "python": platform.python_version(),
-                "job_id": os.environ["SLURM_JOB_ID"], "hostname": socket.gethostname(),
+                "backend": args.backend, "job_id": os.environ.get("SLURM_JOB_ID"), "hostname": socket.gethostname(),
                 "experiment_budget": args.experiments,
                 "sha256": {name: hashlib.sha256((project / name).read_bytes()).hexdigest()
                            for name in source_files}}
@@ -58,6 +64,20 @@ def main():
         ["git", "rev-parse", "HEAD"], cwd=project, text=True).strip()
     metadata["chia_commit"] = (project / "provenance/chia-commit.txt").read_text().strip()
     metadata["recorded_image_id"] = (project / "provenance/nwchem-image-id.txt").read_text().strip()
+    if args.backend == "native":
+        metadata["image"] = None
+        metadata["recorded_image_id"] = None
+        metadata["nwchem_executable"] = "/usr/bin/nwchem.openmpi"
+        metadata["mpi_ranks_per_case"] = 2
+        metadata["threads_per_rank"] = 1
+        metadata["history_scope"] = "fresh native session only; no Perlmutter timings"
+        metadata["packages"] = subprocess.check_output(
+            ["dpkg-query", "-W", "nwchem-openmpi", "nwchem-data", "openmpi-bin"], text=True)
+        (directory / "lscpu.txt").write_text(subprocess.check_output(["lscpu"], text=True))
+        (directory / "python-packages.txt").write_text(subprocess.check_output(
+            [sys.executable, "-m", "pip", "freeze"], text=True))
+        (directory / "source.patch").write_text(subprocess.check_output(
+            ["git", "diff", "HEAD", "--", *source_files], cwd=project, text=True))
     write_json(directory / "provenance.json", metadata)
 
     tool = ref = session = None
@@ -65,12 +85,12 @@ def main():
     try:
         print("Running one warm-up, then a fresh 3P / 1E / B1 baseline...", flush=True)
         baseline_config = configuration(1, 1)
-        run_benchmark(project, directory / "warmup", args.image, baseline_config)
+        run_benchmark(project, directory / "warmup", args.image, baseline_config, backend=args.backend)
         baseline = {"step": 0, "selection_source": "scripted_baseline", "status": "success",
                     "configuration": baseline_config, "receipt": uuid.uuid4().hex,
-                    **run_benchmark(project, directory / "baseline", args.image, baseline_config)}
+                    **run_benchmark(project, directory / "baseline", args.image, baseline_config, backend=args.backend)}
         prior = []
-        for job in ("58611234", "58611317", "58611406"):
+        for job in (("58611234", "58611317", "58611406") if args.backend == "perlmutter" else ()):
             historical = json.loads((project / f"results/benchmark-{job}.json").read_text())
             # Different workload sizes must not enter this fixed-work comparison.
             if historical["configuration"]["partitions"] == 3:
@@ -78,7 +98,7 @@ def main():
                               "configuration": historical["configuration"],
                               "aggregate": historical["aggregate"]})
         session = ExperimentSession.create(directory, project, args.image, args.experiments,
-                                           baseline, prior)
+                                           baseline, prior, backend=args.backend)
         export_trajectory(directory, session.load())
         print("Baseline throughput:", baseline["aggregate"]["throughput_cases_per_s"], flush=True)
 
@@ -97,7 +117,7 @@ def main():
 First call get_experiment_history. Historical manual results are context, not your selections.
 Choose and run exactly {args.experiments} UNTESTED configurations using run_memscale_experiment.
 Select executors and batch_size yourself from the allowed choices in the history tool.
-Partitions=3, replication=1, MPI ranks per case=2, and CPU threads per rank=2 remain fixed.
+Partitions=3, replication=1, MPI ranks per case=2, and numerical threads per rank=1 remain fixed.
 Give a brief experimental hypothesis for each choice, citing the observed results.
 Supply observed_receipt from the latest result/history. Make ONE experiment call at a time.
 Wait for its measurements, compare them, and THEN choose the next configuration.

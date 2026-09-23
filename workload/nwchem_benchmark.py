@@ -3,6 +3,7 @@ import argparse
 import concurrent.futures
 import json
 import math
+import queue
 import os
 import re
 import shutil
@@ -15,6 +16,23 @@ ENERGY = re.compile(r"Total SCF energy\s*=\s*([-+0-9.EeDd]+)")
 RSS = re.compile(r"MAXRSS_KB=(\d+)")
 REFERENCE = -75.983998
 TOLERANCE = 1e-5
+
+
+def native_cpu_slots(workers, ranks):
+    """Allocate disjoint physical cores, leaving two cores for CHIA/Ray."""
+    cores = {}
+    for cpu in sorted(os.sched_getaffinity(0)):
+        topology = Path(f"/sys/devices/system/cpu/cpu{cpu}/topology")
+        identity = ((topology / "physical_package_id").read_text().strip(),
+                    (topology / "core_id").read_text().strip())
+        cores.setdefault(identity, cpu)
+    selected = list(cores.values())
+    if len(selected) < workers * ranks + 2:
+        raise ValueError("Native backend needs two spare physical cores plus two per active case")
+    slots = queue.Queue()
+    for offset in range(0, workers * ranks, ranks):
+        slots.put(selected[offset:offset + ranks])
+    return slots
 
 
 def run_case(case_id, partition, replica, args, scratch):
@@ -34,13 +52,22 @@ def run_case(case_id, partition, replica, args, scratch):
         "nwchem", args.input.name,
     ]
 
+    cpu_ids = None
+    if getattr(args, "backend", "perlmutter") == "native":
+        cpu_ids = args.cpu_slots.get()
+        command = ["taskset", "--cpu-list", ",".join(map(str, cpu_ids)),
+                   "mpirun", "--bind-to", "none", "-np", str(args.mpi_tasks),
+                   args.nwchem, args.input.name]
+    environment = os.environ.copy()
+    if cpu_ids is not None:
+        environment.update(OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", MKL_NUM_THREADS="1")
     start = time.perf_counter()
-    result = subprocess.run(
-        command,
-        cwd=directory,
-        capture_output=True,
-        text=True,
-    )
+    try:
+        result = subprocess.run(command, cwd=directory, capture_output=True,
+                                text=True, env=environment)
+    finally:
+        if cpu_ids is not None:
+            args.cpu_slots.put(cpu_ids)
     latency_ms = (time.perf_counter() - start) * 1000
 
     output = (result.stdout or "") + "\n" + (result.stderr or "")
@@ -62,6 +89,8 @@ def run_case(case_id, partition, replica, args, scratch):
     )
 
     return {
+        "command": command,
+        "cpu_ids": cpu_ids,
         "case_id": case_id,
         "partition": partition,
         "replica": replica,
@@ -77,7 +106,10 @@ def run_case(case_id, partition, replica, args, scratch):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=Path, required=True)
-    parser.add_argument("--image", required=True)
+    parser.add_argument("--image", default="unused-native")
+    parser.add_argument("--backend", choices=("perlmutter", "native"), default="perlmutter")
+    parser.add_argument("--nwchem", default="/usr/bin/nwchem.openmpi")
+    parser.add_argument("--scratch-root", type=Path)
     parser.add_argument("--partitions", type=int, required=True)
     parser.add_argument("--executors", type=int, required=True)
     parser.add_argument("--replication", type=int, required=True)
@@ -92,7 +124,18 @@ def main():
     if not args.input.exists():
         parser.error(f"Missing input: {args.input}")
 
-    scratch = Path(os.environ.get("SCRATCH", tempfile.gettempdir()))
+    if min(args.partitions, args.replication, args.executors, args.batch_size,
+           args.mpi_tasks, args.cpus_per_task) < 1:
+        parser.error("Counts must be positive")
+    if args.backend == "native":
+        if args.mpi_tasks != 2 or args.cpus_per_task != 1:
+            parser.error("Native experiments use two MPI ranks and one CPU per rank")
+        for executable in ("taskset", "mpirun", args.nwchem):
+            if shutil.which(executable) is None:
+                parser.error(f"Executable missing: {executable}")
+        workers = min(args.executors, args.batch_size, args.partitions * args.replication)
+        args.cpu_slots = native_cpu_slots(workers, args.mpi_tasks)
+    scratch = args.scratch_root or Path(os.environ.get("SCRATCH", tempfile.gettempdir()))
     scratch.mkdir(parents=True, exist_ok=True)
 
     cases = [
@@ -124,6 +167,7 @@ def main():
     ]
 
     record = {
+        "backend": args.backend,
         "workload": "nwchem_water_6-31g_scf",
         "configuration": {
             "partitions": args.partitions,
