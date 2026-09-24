@@ -126,6 +126,3 @@ Evaluation will measure throughput, experiments required to reach a strong confi
 
 The native GCP backend has been validated on a standalone VM. It uses NWChem 7.0.2 rather than the Perlmutter container's 7.2.0; compare configurations within each environment, not absolute throughput across platforms. The exact constrained-install recipe added after the runs has not yet been revalidated on a second clean VM.
 
-## Proposed compute budget
-
-The project proposal requests **$1,500 in short-term compute funding** for cloud VMs and Gemini API usage supporting repeated NWChem experiments, CHIA/MCP services, and Ray workers. This is a requested budget, not measured expenditure or a provider price quote. CHIA, Ray, NWChem, and the existing implementation will be reused. Actual usage and costs remain to be recorded during the expanded evaluation.
