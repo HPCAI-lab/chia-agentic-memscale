@@ -1,0 +1,51 @@
+2026-09-24 13:13:56,748	INFO worker.py:2013 -- Started a local Ray instance.
+/global/homes/m/makhatri/.conda/envs/chia-memscale/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+/global/homes/m/makhatri/.conda/envs/chia-memscale/lib/python3.10/site-packages/pydantic_settings/sources/utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+  warnings.warn(
+[36m(_ToolServerActor pid=867100)[0m INFO:     Started server process [867100]
+[36m(_ToolServerActor pid=867100)[0m INFO:     Waiting for application startup.
+[36m(_ToolServerActor pid=867100)[0m INFO:     Application startup complete.
+[36m(_ToolServerActor pid=867100)[0m INFO:     Uvicorn running on http://128.55.75.103:8000 (Press CTRL+C to quit)
+OpenAICompatLLM is experimental: only exercised by unit tests so far, not validated in production.
+[36m(_ToolServerActor pid=867100)[0m INFO:     Shutting down
+[36m(_ToolServerActor pid=867100)[0m INFO:     Waiting for application shutdown.
+[36m(_ToolServerActor pid=867100)[0m INFO:     Application shutdown complete.
+[36m(_ToolServerActor pid=867100)[0m INFO:     Finished server process [867100]
+2026-09-24 13:16:14,845	INFO worker.py:2013 -- Started a local Ray instance.
+/global/homes/m/makhatri/.conda/envs/chia-memscale/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+2026-09-24 13:17:46,169	INFO worker.py:2013 -- Started a local Ray instance.
+/global/homes/m/makhatri/.conda/envs/chia-memscale/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+2026-09-24 13:19:22,930	INFO worker.py:2013 -- Started a local Ray instance.
+/global/homes/m/makhatri/.conda/envs/chia-memscale/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+/global/homes/m/makhatri/.conda/envs/chia-memscale/lib/python3.10/site-packages/pydantic_settings/sources/utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+  warnings.warn(
+[36m(_ToolServerActor pid=892902)[0m INFO:     Started server process [892902]
+[36m(_ToolServerActor pid=892902)[0m INFO:     Waiting for application startup.
+[36m(_ToolServerActor pid=892902)[0m INFO:     Application startup complete.
+[36m(_ToolServerActor pid=892902)[0m INFO:     Uvicorn running on http://128.55.75.103:8000 (Press CTRL+C to quit)
+OpenAICompatLLM is experimental: only exercised by unit tests so far, not validated in production.
+[36m(_ToolServerActor pid=892902)[0m INFO:     Shutting down
+[36m(_ToolServerActor pid=892902)[0m INFO:     Waiting for application shutdown.
+[36m(_ToolServerActor pid=892902)[0m INFO:     Application shutdown complete.
+[36m(_ToolServerActor pid=892902)[0m INFO:     Finished server process [892902]
+2026-09-24 13:21:30,032	INFO worker.py:2013 -- Started a local Ray instance.
+/global/homes/m/makhatri/.conda/envs/chia-memscale/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+/global/homes/m/makhatri/.conda/envs/chia-memscale/lib/python3.10/site-packages/pydantic_settings/sources/utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+  warnings.warn(
+[36m(_ToolServerActor pid=901343)[0m INFO:     Started server process [901343]
+[36m(_ToolServerActor pid=901343)[0m INFO:     Waiting for application startup.
+[36m(_ToolServerActor pid=901343)[0m INFO:     Application startup complete.
+[36m(_ToolServerActor pid=901343)[0m INFO:     Uvicorn running on http://128.55.75.103:8000 (Press CTRL+C to quit)
+OpenAICompatLLM is experimental: only exercised by unit tests so far, not validated in production.
+[36m(_ToolServerActor pid=901343)[0m INFO:     Shutting down
+[36m(_ToolServerActor pid=901343)[0m INFO:     Waiting for application shutdown.
+[36m(_ToolServerActor pid=901343)[0m INFO:     Application shutdown complete.
+[36m(_ToolServerActor pid=901343)[0m INFO:     Finished server process [901343]
+2026-09-24 13:23:28,208	INFO worker.py:2013 -- Started a local Ray instance.
+/global/homes/m/makhatri/.conda/envs/chia-memscale/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(

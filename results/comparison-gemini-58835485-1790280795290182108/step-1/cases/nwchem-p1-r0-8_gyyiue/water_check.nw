@@ -1,0 +1,16 @@
+start water_check
+title "Water reference calculation for CHIA integration"
+memory total 256 mb
+
+geometry units au
+  O  0.00000000   0.00000000   0.00000000
+  H  0.00000000   1.43042809  -1.10715266
+  H  0.00000000  -1.43042809  -1.10715266
+end
+
+basis
+  H library 6-31g
+  O library 6-31g
+end
+
+task scf

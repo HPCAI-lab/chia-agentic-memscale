@@ -1,0 +1,116 @@
+{
+  "backend": "perlmutter",
+  "workload": "nwchem_water_6-31g_scf",
+  "configuration": {
+    "partitions": 3,
+    "executors": 1,
+    "replication": 1,
+    "batch_size": 3,
+    "placement": "single-node"
+  },
+  "aggregate": {
+    "status": "success",
+    "cases_completed": 3,
+    "cases_total": 3,
+    "experiment_elapsed_s": 6.467,
+    "latency_mean_ms": 2114.756,
+    "throughput_cases_per_s": 0.463895,
+    "memory_peak_mb": null
+  },
+  "scientific_validation": {
+    "reference_energy_hartree": -75.983998,
+    "tolerance_hartree": 1e-05
+  },
+  "cases": [
+    {
+      "command": [
+        "srun",
+        "--exclusive",
+        "--exact",
+        "--nodes=1",
+        "--ntasks",
+        "2",
+        "--cpus-per-task",
+        "2",
+        "--cpu-bind=cores",
+        "--kill-on-bad-exit=1",
+        "shifter",
+        "--image",
+        "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+        "--module=mpich",
+        "nwchem",
+        "water_check.nw"
+      ],
+      "cpu_ids": null,
+      "case_id": "p0-r0",
+      "partition": 0,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 1940.908,
+      "energy_hartree": -75.9839975704,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281253275883089/step-3/cases/nwchem-p0-r0-edvks4qg"
+    },
+    {
+      "command": [
+        "srun",
+        "--exclusive",
+        "--exact",
+        "--nodes=1",
+        "--ntasks",
+        "2",
+        "--cpus-per-task",
+        "2",
+        "--cpu-bind=cores",
+        "--kill-on-bad-exit=1",
+        "shifter",
+        "--image",
+        "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+        "--module=mpich",
+        "nwchem",
+        "water_check.nw"
+      ],
+      "cpu_ids": null,
+      "case_id": "p1-r0",
+      "partition": 1,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 2091.662,
+      "energy_hartree": -75.9839975704,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281253275883089/step-3/cases/nwchem-p1-r0-5i_uj8qr"
+    },
+    {
+      "command": [
+        "srun",
+        "--exclusive",
+        "--exact",
+        "--nodes=1",
+        "--ntasks",
+        "2",
+        "--cpus-per-task",
+        "2",
+        "--cpu-bind=cores",
+        "--kill-on-bad-exit=1",
+        "shifter",
+        "--image",
+        "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+        "--module=mpich",
+        "nwchem",
+        "water_check.nw"
+      ],
+      "cpu_ids": null,
+      "case_id": "p2-r0",
+      "partition": 2,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 2311.698,
+      "energy_hartree": -75.9839975704,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281253275883089/step-3/cases/nwchem-p2-r0-fspnccl5"
+    }
+  ]
+}

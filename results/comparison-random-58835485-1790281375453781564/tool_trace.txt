@@ -1,0 +1,1 @@
+Uniform random selection without replacement; measurements in state.json

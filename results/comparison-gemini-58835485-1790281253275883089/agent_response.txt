@@ -1,0 +1,30 @@
+### Measured Trajectory Summary
+
+1. **Baseline (Step 0):** `executors=1`, `batch_size=1`
+   - **Throughput:** `0.428203` cases/s
+   - **Latency Mean:** `2287.868` ms
+   - **Receipt:** `489caf7fec554619ad0b052c26e244b0`
+
+2. **Step 1:** `executors=2`, `batch_size=1`
+   - **Hypothesis:** Citing the baseline, adding a second executor might improve concurrent execution.
+   - **Result:** Throughput slightly decreased to `0.418724` cases/s (latency `2344.67` ms).
+
+3. **Step 2:** `executors=1`, `batch_size=2`
+   - **Hypothesis:** Building on Step 1, we test batching with a single executor to see if processing two cases together improves efficiency.
+   - **Result:** Throughput recovered to `0.428640` cases/s (latency `2260.977` ms).
+
+4. **Step 3:** `executors=1`, `batch_size=3`
+   - **Hypothesis:** Building on Step 2, we increase batch size to 3 to process all calculations in a single batch on one executor.
+   - **Result:** Throughput improved notably to `0.463895` cases/s (latency `2114.756` ms).
+
+5. **Step 4:** `executors=2`, `batch_size=3`
+   - **Hypothesis:** Building on Step 3, we test combining executors=2 with batch_size=3 to evaluate further parallelism gains.
+   - **Result:** Throughput increased significantly to `0.708184` cases/s (latency `2192.061` ms).
+
+---
+
+### Best Observed vs. Baseline Configuration
+
+- **Baseline Configuration (`executors=1`, `batch_size=1`):** `0.428203` cases/s
+- **Best Observed Configuration (`executors=2`, `batch_size=3`):** `0.708184` cases/s
+- **Exact Final Receipt String:** `bc0db68d7f5e4e1ab4369de3d0ebb33b`

@@ -1,0 +1,58 @@
+{
+  "interpretation": "Best observed in this session; one measurement per configuration",
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "489caf7fec554619ad0b052c26e244b0",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 7.006,
+      "latency_mean_ms": 2287.868,
+      "throughput_cases_per_s": 0.428203,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281253275883089/baseline/measurement.json",
+    "launcher_elapsed_s": 8.007
+  },
+  "best": {
+    "step": 4,
+    "selection_source": "gemini",
+    "configuration": {
+      "partitions": 3,
+      "executors": 2,
+      "replication": 1,
+      "batch_size": 3,
+      "placement": "single-node"
+    },
+    "reason": "Experiment 4: testing executors=2 and batch_size=3. Step 3 (executors=1, batch_size=3) gave the highest throughput so far at 0.464 cases/s. We now test whether combining executors=2 with batch_size=3 provides further gains or introduces overhead.",
+    "observed_receipt": "f163b2265e2a44aaa385ee4c5ce2bd07",
+    "receipt": "bc0db68d7f5e4e1ab4369de3d0ebb33b",
+    "worker_pid": 901343,
+    "hostname": "nid005376",
+    "status": "success",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 4.236,
+      "latency_mean_ms": 2192.061,
+      "throughput_cases_per_s": 0.708184,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281253275883089/step-4/measurement.json",
+    "launcher_elapsed_s": 4.863
+  },
+  "best_gain_vs_fresh_baseline_pct": 65.38510939904671,
+  "agent_attempts": 4,
+  "agent_successes": 4
+}

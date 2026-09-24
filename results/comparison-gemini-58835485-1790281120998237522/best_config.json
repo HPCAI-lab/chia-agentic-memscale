@@ -1,0 +1,58 @@
+{
+  "interpretation": "Best observed in this session; one measurement per configuration",
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "cec2215ab10944eda55aa94a702d7d0f",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 7.828,
+      "latency_mean_ms": 2549.035,
+      "throughput_cases_per_s": 0.383254,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281120998237522/baseline/measurement.json",
+    "launcher_elapsed_s": 8.755
+  },
+  "best": {
+    "step": 3,
+    "selection_source": "gemini",
+    "configuration": {
+      "partitions": 3,
+      "executors": 2,
+      "replication": 1,
+      "batch_size": 2,
+      "placement": "single-node"
+    },
+    "reason": "Executors=2 yielded the highest throughput so far (0.498 cases/s), while executors=3 dropped slightly. Now testing executors=2 with batch_size=2 to evaluate batching effects with optimal executor count.",
+    "observed_receipt": "87be21c840a24357bd69e2fc20ac15ff",
+    "receipt": "8da0a84f127042218868fbc30e1cac62",
+    "worker_pid": 892902,
+    "hostname": "nid005376",
+    "status": "success",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 4.239,
+      "latency_mean_ms": 2062.429,
+      "throughput_cases_per_s": 0.70765,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281120998237522/step-3/measurement.json",
+    "launcher_elapsed_s": 4.914
+  },
+  "best_gain_vs_fresh_baseline_pct": 84.64256080823685,
+  "agent_attempts": 4,
+  "agent_successes": 4
+}

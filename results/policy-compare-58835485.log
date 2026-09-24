@@ -1,0 +1,186 @@
+PAIR=1 POLICY=gemini SEED=101
+Session directory: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790280795290182108
+Running one warm-up, then a fresh 3P / 1E / B1 baseline...
+Baseline throughput: 0.446808
+Gemini is choosing up to 4 experiments through CHIA...
+[36m(_ToolServerActor pid=867100)[0m INFO:     128.55.75.103:35568 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=867100)[0m INFO:     128.55.75.103:35582 - "POST /nwchem_optimizer/mcp HTTP/1.1" 202 Accepted
+[36m(_ToolServerActor pid=867100)[0m INFO:     128.55.75.103:35594 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=867100)[0m INFO:     128.55.75.103:35596 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=867100)[0m ENTER get_experiment_history
+[36m(_ToolServerActor pid=867100)[0m INFO:     128.55.75.103:35604 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=867100)[0m ENTER run_memscale_experiment
+[36m(_ToolServerActor pid=867100)[0m INFO:     128.55.75.103:42992 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=867100)[0m ENTER run_memscale_experiment
+[36m(_ToolServerActor pid=867100)[0m INFO:     128.55.75.103:41810 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=867100)[0m ENTER run_memscale_experiment
+[36m(_ToolServerActor pid=867100)[0m INFO:     128.55.75.103:49030 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=867100)[0m ENTER run_memscale_experiment
+# Measured agent trajectory
+
+Step 0 is a freshly measured scripted baseline.
+Steps 1+ are gemini selections. Historical manual runs are context only.
+
+| Step | Selected by | Configuration | Status | Throughput (cases/s) |
+| --- | --- | --- | --- | --- |
+| 0 | scripted_baseline | 3P / 1E / B1 | success | 0.446808 |
+| 1 | gemini | 3P / 2E / B1 | success | 0.349526 |
+| 2 | gemini | 3P / 1E / B2 | success | 0.463809 |
+| 3 | gemini | 3P / 1E / B3 | success | 0.496829 |
+| 4 | gemini | 3P / 2E / B2 | success | 0.613505 |
+
+This small water-SCF demonstration measures orchestration throughput.
+Memory use, data-placement policies, 1H9T scaling, and global optimality are unmeasured.
+Differences include launch overhead and run-to-run variation; repeated trials are needed
+before making a robust performance claim.
+
+PASS: gemini completed four sequential validated experiments.
+Results preserved in: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790280795290182108
+PAIR=1 POLICY=random SEED=101
+Session directory: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790280935231771295
+Running one warm-up, then a fresh 3P / 1E / B1 baseline...
+Baseline throughput: 0.428476
+# Measured agent trajectory
+
+Step 0 is a freshly measured scripted baseline.
+Steps 1+ are random selections. Historical manual runs are context only.
+
+| Step | Selected by | Configuration | Status | Throughput (cases/s) |
+| --- | --- | --- | --- | --- |
+| 0 | scripted_baseline | 3P / 1E / B1 | success | 0.428476 |
+| 1 | random | 3P / 2E / B2 | success | 0.539415 |
+| 2 | random | 3P / 3E / B1 | success | 0.464079 |
+| 3 | random | 3P / 2E / B1 | success | 0.498538 |
+| 4 | random | 3P / 3E / B2 | success | 0.702539 |
+
+This small water-SCF demonstration measures orchestration throughput.
+Memory use, data-placement policies, 1H9T scaling, and global optimality are unmeasured.
+Differences include launch overhead and run-to-run variation; repeated trials are needed
+before making a robust performance claim.
+
+PASS: random completed four sequential validated experiments.
+Results preserved in: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790280935231771295
+PAIR=2 POLICY=random SEED=102
+Session directory: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790281029548140574
+Running one warm-up, then a fresh 3P / 1E / B1 baseline...
+Baseline throughput: 0.474335
+# Measured agent trajectory
+
+Step 0 is a freshly measured scripted baseline.
+Steps 1+ are random selections. Historical manual runs are context only.
+
+| Step | Selected by | Configuration | Status | Throughput (cases/s) |
+| --- | --- | --- | --- | --- |
+| 0 | scripted_baseline | 3P / 1E / B1 | success | 0.474335 |
+| 1 | random | 3P / 2E / B1 | success | 0.395477 |
+| 2 | random | 3P / 3E / B2 | success | 0.508807 |
+| 3 | random | 3P / 3E / B1 | success | 0.422303 |
+| 4 | random | 3P / 2E / B2 | success | 0.631550 |
+
+This small water-SCF demonstration measures orchestration throughput.
+Memory use, data-placement policies, 1H9T scaling, and global optimality are unmeasured.
+Differences include launch overhead and run-to-run variation; repeated trials are needed
+before making a robust performance claim.
+
+PASS: random completed four sequential validated experiments.
+Results preserved in: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790281029548140574
+PAIR=2 POLICY=gemini SEED=102
+Session directory: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281120998237522
+Running one warm-up, then a fresh 3P / 1E / B1 baseline...
+Baseline throughput: 0.383254
+Gemini is choosing up to 4 experiments through CHIA...
+[36m(_ToolServerActor pid=892902)[0m INFO:     128.55.75.103:39460 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=892902)[0m INFO:     128.55.75.103:39474 - "POST /nwchem_optimizer/mcp HTTP/1.1" 202 Accepted
+[36m(_ToolServerActor pid=892902)[0m INFO:     128.55.75.103:39488 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=892902)[0m INFO:     128.55.75.103:59768 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=892902)[0m ENTER get_experiment_history
+[36m(_ToolServerActor pid=892902)[0m INFO:     128.55.75.103:59770 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=892902)[0m ENTER run_memscale_experiment
+[36m(_ToolServerActor pid=892902)[0m INFO:     128.55.75.103:36972 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=892902)[0m ENTER run_memscale_experiment
+[36m(_ToolServerActor pid=892902)[0m INFO:     128.55.75.103:36982 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=892902)[0m ENTER run_memscale_experiment
+[36m(_ToolServerActor pid=892902)[0m INFO:     128.55.75.103:33096 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=892902)[0m ENTER run_memscale_experiment
+# Measured agent trajectory
+
+Step 0 is a freshly measured scripted baseline.
+Steps 1+ are gemini selections. Historical manual runs are context only.
+
+| Step | Selected by | Configuration | Status | Throughput (cases/s) |
+| --- | --- | --- | --- | --- |
+| 0 | scripted_baseline | 3P / 1E / B1 | success | 0.383254 |
+| 1 | gemini | 3P / 2E / B1 | success | 0.498313 |
+| 2 | gemini | 3P / 3E / B1 | success | 0.461269 |
+| 3 | gemini | 3P / 2E / B2 | success | 0.707650 |
+| 4 | gemini | 3P / 2E / B3 | success | 0.661208 |
+
+This small water-SCF demonstration measures orchestration throughput.
+Memory use, data-placement policies, 1H9T scaling, and global optimality are unmeasured.
+Differences include launch overhead and run-to-run variation; repeated trials are needed
+before making a robust performance claim.
+
+PASS: gemini completed four sequential validated experiments.
+Results preserved in: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281120998237522
+PAIR=3 POLICY=gemini SEED=103
+Session directory: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281253275883089
+Running one warm-up, then a fresh 3P / 1E / B1 baseline...
+Baseline throughput: 0.428203
+Gemini is choosing up to 4 experiments through CHIA...
+[36m(_ToolServerActor pid=901343)[0m INFO:     128.55.75.103:44318 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=901343)[0m INFO:     128.55.75.103:44328 - "POST /nwchem_optimizer/mcp HTTP/1.1" 202 Accepted
+[36m(_ToolServerActor pid=901343)[0m INFO:     128.55.75.103:44340 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=901343)[0m INFO:     128.55.75.103:44354 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=901343)[0m ENTER get_experiment_history
+[36m(_ToolServerActor pid=901343)[0m INFO:     128.55.75.103:44370 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=901343)[0m ENTER run_memscale_experiment
+[36m(_ToolServerActor pid=901343)[0m INFO:     128.55.75.103:36024 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=901343)[0m ENTER run_memscale_experiment
+[36m(_ToolServerActor pid=901343)[0m INFO:     128.55.75.103:43440 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=901343)[0m ENTER run_memscale_experiment
+[36m(_ToolServerActor pid=901343)[0m INFO:     128.55.75.103:43444 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=901343)[0m ENTER run_memscale_experiment
+# Measured agent trajectory
+
+Step 0 is a freshly measured scripted baseline.
+Steps 1+ are gemini selections. Historical manual runs are context only.
+
+| Step | Selected by | Configuration | Status | Throughput (cases/s) |
+| --- | --- | --- | --- | --- |
+| 0 | scripted_baseline | 3P / 1E / B1 | success | 0.428203 |
+| 1 | gemini | 3P / 2E / B1 | success | 0.418724 |
+| 2 | gemini | 3P / 1E / B2 | success | 0.428640 |
+| 3 | gemini | 3P / 1E / B3 | success | 0.463895 |
+| 4 | gemini | 3P / 2E / B3 | success | 0.708184 |
+
+This small water-SCF demonstration measures orchestration throughput.
+Memory use, data-placement policies, 1H9T scaling, and global optimality are unmeasured.
+Differences include launch overhead and run-to-run variation; repeated trials are needed
+before making a robust performance claim.
+
+PASS: gemini completed four sequential validated experiments.
+Results preserved in: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-58835485-1790281253275883089
+PAIR=3 POLICY=random SEED=103
+Session directory: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790281375453781564
+Running one warm-up, then a fresh 3P / 1E / B1 baseline...
+Baseline throughput: 0.480227
+# Measured agent trajectory
+
+Step 0 is a freshly measured scripted baseline.
+Steps 1+ are random selections. Historical manual runs are context only.
+
+| Step | Selected by | Configuration | Status | Throughput (cases/s) |
+| --- | --- | --- | --- | --- |
+| 0 | scripted_baseline | 3P / 1E / B1 | success | 0.480227 |
+| 1 | random | 3P / 3E / B3 | success | 0.830959 |
+| 2 | random | 3P / 3E / B1 | success | 0.345977 |
+| 3 | random | 3P / 3E / B2 | success | 0.610512 |
+| 4 | random | 3P / 1E / B3 | success | 0.444661 |
+
+This small water-SCF demonstration measures orchestration throughput.
+Memory use, data-placement policies, 1H9T scaling, and global optimality are unmeasured.
+Differences include launch overhead and run-to-run variation; repeated trials are needed
+before making a robust performance claim.
+
+PASS: random completed four sequential validated experiments.
+Results preserved in: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790281375453781564

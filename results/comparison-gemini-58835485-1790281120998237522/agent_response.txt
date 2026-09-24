@@ -1,0 +1,18 @@
+### Trajectory Summary
+
+Over four sequential experiments, we explored variations in `executors` and `batch_size` (with `partitions=3`, `replication=1`, 2 MPI ranks per case, and 1 numerical thread per rank) to maximize throughput for three NWChem water SCF calculations:
+
+1. **Baseline (`executors=1`, `batch_size=1`)**: Achieved a baseline throughput of **0.383 cases/s** (elapsed: 7.828 s).
+2. **Step 1 (`executors=2`, `batch_size=1`)**: Increasing concurrency to 2 executors raised throughput to **0.498 cases/s** (elapsed: 6.020 s).
+3. **Step 2 (`executors=3`, `batch_size=1`)**: Further increasing executors to 3 slightly reduced throughput to **0.461 cases/s** (elapsed: 6.504 s), indicating resource contention beyond 2 executors.
+4. **Step 3 (`executors=2`, `batch_size=2`)**: Combining 2 executors with a batch size of 2 substantially improved throughput to **0.708 cases/s** (elapsed: 4.239 s).
+5. **Step 4 (`executors=2`, `batch_size=3`)**: Increasing batch size to 3 resulted in a slight regression to **0.661 cases/s** (elapsed: 4.537 s).
+
+### Comparison: Best Configuration vs. Baseline
+
+- **Baseline Configuration**: `executors=1`, `batch_size=1` (Receipt: `cec2215ab10944eda55aa94a702d7d0f`)
+  - Throughput: **0.383254 cases/s**
+- **Best Observed Configuration**: `executors=2`, `batch_size=2` (Receipt: `8da0a84f127042218868fbc30e1cac62`)
+  - Throughput: **0.707650 cases/s**
+
+**Exact Final Receipt**: `361756773a674e938a538fec6d84ad5d`

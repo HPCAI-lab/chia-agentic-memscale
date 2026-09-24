@@ -1,0 +1,147 @@
+{
+  "policy": "random",
+  "backend": "perlmutter",
+  "project": "/global/u1/m/makhatri/chia-agentic-memscale",
+  "image": "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+  "budget": 4,
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "23af6ba466d04e4b8f3ab1849c53a72c",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 7.002,
+      "latency_mean_ms": 2275.072,
+      "throughput_cases_per_s": 0.428476,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790280935231771295/baseline/measurement.json",
+    "launcher_elapsed_s": 8.055
+  },
+  "prior_history": [],
+  "attempts": [
+    {
+      "step": 1,
+      "selection_source": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "reason": "Uniform random choice without replacement; seed=101",
+      "observed_receipt": "23af6ba466d04e4b8f3ab1849c53a72c",
+      "receipt": "ac589d3d103347beab6b2ea5f740f927",
+      "worker_pid": 876165,
+      "hostname": "nid005376",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.562,
+        "latency_mean_ms": 2452.369,
+        "throughput_cases_per_s": 0.539415,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790280935231771295/step-1/measurement.json",
+      "launcher_elapsed_s": 6.617
+    },
+    {
+      "step": 2,
+      "selection_source": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "reason": "Uniform random choice without replacement; seed=101",
+      "observed_receipt": "ac589d3d103347beab6b2ea5f740f927",
+      "receipt": "d9e287d8ee1f4545b853269777aea7c2",
+      "worker_pid": 876165,
+      "hostname": "nid005376",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 6.464,
+        "latency_mean_ms": 2083.673,
+        "throughput_cases_per_s": 0.464079,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790280935231771295/step-2/measurement.json",
+      "launcher_elapsed_s": 7.329
+    },
+    {
+      "step": 3,
+      "selection_source": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "reason": "Uniform random choice without replacement; seed=101",
+      "observed_receipt": "d9e287d8ee1f4545b853269777aea7c2",
+      "receipt": "565be820344b4d10902b167b3b9821fb",
+      "worker_pid": 876165,
+      "hostname": "nid005376",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 6.018,
+        "latency_mean_ms": 1934.441,
+        "throughput_cases_per_s": 0.498538,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790280935231771295/step-3/measurement.json",
+      "launcher_elapsed_s": 7.021
+    },
+    {
+      "step": 4,
+      "selection_source": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "reason": "Uniform random choice without replacement; seed=101",
+      "observed_receipt": "565be820344b4d10902b167b3b9821fb",
+      "receipt": "d9e2ee34ad44435a82f89543a5bb1ccf",
+      "worker_pid": 876165,
+      "hostname": "nid005376",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 4.27,
+        "latency_mean_ms": 2015.065,
+        "throughput_cases_per_s": 0.702539,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-random-58835485-1790280935231771295/step-4/measurement.json",
+      "launcher_elapsed_s": 5.078
+    }
+  ],
+  "history_inspected": true
+}

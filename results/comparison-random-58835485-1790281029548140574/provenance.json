@@ -1,0 +1,25 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "image": "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+  "python": "3.10.19",
+  "backend": "perlmutter",
+  "job_id": "58835485",
+  "hostname": "nid005376",
+  "experiment_budget": 4,
+  "sha256": {
+    "workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c",
+    "workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+    "tools/experiment_session.py": "ebe7b00e6d5003f8942477f611c9e594b6b0acdf75d3b561f1b1d079dd96037e",
+    "tools/memscale_tool.py": "682751f0e90683acdd6968cb0b916805d0aa875c0a64c7ba0ae2320ba68417e7",
+    "compare_loop.py": "69e4e0aba1f4c47632d3dc5edd24f9bcfdd77c5b8fbcede01a71a45c3aa7dd00"
+  },
+  "comparison_pair_seed": 102,
+  "policy": "random",
+  "random_seed": 102,
+  "history_scope": "fresh session only; identical eight non-baseline choices",
+  "transport": "Ray actor, same ExperimentSession",
+  "budget_note": "four search attempts plus one warmup and one fresh baseline per policy",
+  "project_commit": "881707e0dc56dacbc7c4fdb5fe8ff1a1fa437a44",
+  "chia_commit": "16c35e92aaaf9511c6453bf94cd5cf589698f4e3",
+  "recorded_image_id": "60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16"
+}
