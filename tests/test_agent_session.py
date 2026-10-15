@@ -98,6 +98,25 @@ class SessionTests(unittest.TestCase):
         self.assertEqual(best["best"]["selection_source"], "scripted_baseline")
         self.assertEqual(best["best_gain_vs_fresh_baseline_pct"], 0)
 
+    def test_failed_attempt_duration_is_persisted_without_inventing_launcher_time(self):
+        self.session.history()
+        with patch("tools.experiment_session.time.monotonic", side_effect=[0., 10., 15.]), \
+                patch("tools.experiment_session.run_benchmark", side_effect=RuntimeError("failure")):
+            result = self.session.experiment(3, 3, "test", "baseline-receipt")
+        self.assertEqual(result["attempt_elapsed_s"], 5.)
+        self.assertNotIn("launcher_elapsed_s", result)
+        self.assertEqual(self.session.load()["attempts"][0]["attempt_elapsed_s"], 5.)
+
+    def test_interrupt_persists_attempt_time_and_consumed_budget(self):
+        self.session.history()
+        with patch("tools.experiment_session.time.monotonic", side_effect=[0., 10., 13.]), \
+                patch("tools.experiment_session.run_benchmark", side_effect=KeyboardInterrupt()):
+            with self.assertRaises(KeyboardInterrupt):
+                self.session.experiment(3, 3, "test", "baseline-receipt")
+        record = self.session.load()["attempts"][0]
+        self.assertEqual((record["status"], record["attempt_elapsed_s"]), ("interrupted", 3.))
+        self.assertEqual(self.session.history()["remaining_budget"], 3)
+
     def test_real_runner_rejects_incorrect_scientific_energy(self):
         def fake_child(command, **kwargs):
             data = {"configuration": configuration(3, 3), **measurement(),

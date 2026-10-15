@@ -39,6 +39,8 @@ Confirmation session time was 307.725 seconds, including 297.175 seconds of meas
 
 These repeats do not add independent policy-search sessions. Evidence remains limited to three original search pairs in one allocation and one new confirmation allocation. The confirmation used a pinned image on a different node; historical/new throughput differences cannot be attributed to policy improvements. Memory optimization and adaptation of a running application remain research goals. See the [confirmation protocol and limitations](docs/policy-confirmation.md).
 
+New comparison sessions also record [detailed cost observations](docs/policy-cost-accounting.md): runtime phases, model-request durations, provider-reported token usage, and failed-attempt time. These additions require live validation and a new frozen study protocol. They do not recover missing costs from the published pilot or establish a new performance result.
+
 ## Methodology
 
 The implementation follows a state–action–feedback loop:

@@ -190,6 +190,7 @@ class ExperimentSession:
             # Reserve the attempt before execution; failures also consume the budget.
             write_json(self.state_path, state)
             self.event("experiment_selected", **record)
+            started = time.monotonic()
             try:
                 measurement = run_benchmark(state["project"], self.directory / f"step-{step}",
                                             state["image"], config, backend=state.get("backend", "perlmutter"))
@@ -198,9 +199,17 @@ class ExperimentSession:
                 # Avoid copying environment/credential values into an agent-visible error.
                 record.update(status="failed", error_type=type(exc).__name__,
                               diagnostic_directory=str(self.directory / f"step-{step}"))
-            write_json(self.state_path, state)
-            self.event("experiment_finished", **record)
-            export_trajectory(self.directory, state)
+            except BaseException as exc:
+                record.update(status="interrupted", error_type=type(exc).__name__,
+                              diagnostic_directory=str(self.directory / f"step-{step}"))
+                raise
+            finally:
+                # This outer interval includes failure handling and measurement validation.
+                # Keep launcher_elapsed_s's older successful-process timing meaning intact.
+                record["attempt_elapsed_s"] = time.monotonic() - started
+                write_json(self.state_path, state)
+                self.event("experiment_finished", **record)
+                export_trajectory(self.directory, state)
             return record
 
 
@@ -218,6 +227,7 @@ def export_trajectory(directory, state):
                      **record["configuration"], "status": record["status"],
                      "throughput_cases_per_s": throughput,
                      "experiment_elapsed_s": metrics.get("experiment_elapsed_s"),
+                     "attempt_elapsed_s": record.get("attempt_elapsed_s"),
                      "latency_mean_ms": metrics.get("latency_mean_ms"),
                      "memory_peak_mb": metrics.get("memory_peak_mb"),
                      "best_so_far_cases_per_s": best,

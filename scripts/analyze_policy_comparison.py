@@ -11,14 +11,23 @@ import hashlib
 import json
 import math
 import statistics
+import sys
 from collections import defaultdict
 from pathlib import Path
+
+PROJECT = Path(__file__).resolve().parents[1]
+if str(PROJECT) not in sys.path:
+    sys.path.insert(0, str(PROJECT))
+from tools.policy_costs import summarize_costs
 
 
 SOURCE_FILES = (
     "workload/nwchem_benchmark.py", "workload/inputs/water_check.nw",
     "tools/experiment_session.py", "tools/memscale_tool.py", "compare_loop.py",
 )
+COST_SOURCE_FILES = ("tools/policy_costs.py", "tools/costed_llm.py")
+COST_PROVENANCE_FIELDS = ("cost_schema_version", "chia_backend_sha256", "openai_sdk_version",
+                          "model_request_timeout_s", "sdk_max_retries", "chia_retries")
 CONFIG_FIELDS = ("partitions", "executors", "replication", "batch_size", "placement")
 SESSION_FIELDS = (
     "session", "policy", "backend", "job_id", "hostname", "pair_seed", "cohort_id",
@@ -28,7 +37,13 @@ SESSION_FIELDS = (
     "best_executors", "best_batch_size", "first_improvement_step",
     "mean_best_so_far_cases_per_s", "session_elapsed_s", "search_launcher_known_s",
     "search_launcher_elapsed_s", "search_launcher_missing_attempts",
-    "api_tokens", "api_cost_usd", "errors", "warnings",
+    "cost_accounting_valid", "cost_timing_complete", "session_including_cleanup_s",
+    "warmup_elapsed_s", "baseline_elapsed_s", "ray_startup_elapsed_s", "policy_setup_elapsed_s",
+    "policy_loop_elapsed_s", "reporting_elapsed_s", "cleanup_elapsed_s", "policy_loop_other_s",
+    "search_attempt_elapsed_s", "search_attempt_known_s", "search_attempt_missing_attempts",
+    "api_requests", "api_request_elapsed_s", "api_request_known_s", "api_unfinished_requests",
+    "api_failed_requests", "api_input_tokens", "api_output_tokens", "api_tokens",
+    "api_tokens_known", "api_tokens_missing_requests", "api_cost_usd", "errors", "warnings",
 )
 PAIR_FIELDS = (
     "block", "backend", "hostname", "pair_seed", "cohort_id", "eligible", "reason",
@@ -36,10 +51,13 @@ PAIR_FIELDS = (
     "random_best_cases_per_s", "best_difference_cases_per_s",
     "best_relative_difference_pct", "gain_difference_percentage_points",
     "gemini_session_elapsed_s", "random_session_elapsed_s", "session_difference_s",
-    "search_launcher_difference_s", "best_throughput_winner",
+    "search_launcher_difference_s", "search_attempt_difference_s", "api_request_difference_s",
+    "session_including_cleanup_difference_s", "best_throughput_winner",
 )
 METRICS = ("best_cases_per_s", "best_gain_pct", "session_elapsed_s",
-           "search_launcher_elapsed_s", "mean_best_so_far_cases_per_s")
+           "search_launcher_elapsed_s", "mean_best_so_far_cases_per_s",
+           "session_including_cleanup_s", "search_attempt_elapsed_s", "api_request_elapsed_s",
+           "api_input_tokens", "api_output_tokens", "api_tokens")
 
 
 def number(value, positive=False):
@@ -134,7 +152,19 @@ def analyze_session(directory):
         if policy == "random" and provenance.get("random_seed") != row["pair_seed"]:
             errors.append("random_seed differs from comparison_pair_seed")
         hashes = provenance.get("sha256", {})
-        for name in SOURCE_FILES:
+        cost_version = provenance.get("cost_schema_version")
+        source_files = SOURCE_FILES
+        if cost_version is not None:
+            if type(cost_version) is not int or cost_version != 1:
+                errors.append("unsupported cost accounting schema")
+            source_files += COST_SOURCE_FILES
+            for key in COST_PROVENANCE_FIELDS:
+                if key not in provenance or provenance[key] is None:
+                    errors.append(f"missing cost provenance: {key}")
+            if (provenance.get("sdk_max_retries") != 0 or provenance.get("chia_retries") != 1
+                    or not number(provenance.get("model_request_timeout_s"), positive=True)):
+                errors.append("invalid model request retry/timeout settings")
+        for name in source_files:
             snapshot = directory / "source-snapshot" / name
             if not snapshot.is_file():
                 errors.append(f"missing source snapshot: {name}")
@@ -151,7 +181,9 @@ def analyze_session(directory):
             "backend", "hostname", "python", "model", "chia_commit", "image",
             "recorded_image_id", "experiment_budget", "packages", "nwchem_executable",
             "mpi_ranks_per_case", "threads_per_rank", "history_scope")}
-        signature["sha256"] = {name: hashes.get(name) for name in SOURCE_FILES}
+        signature["sha256"] = {name: hashes.get(name) for name in source_files}
+        if cost_version is not None:
+            signature.update({key: provenance.get(key) for key in COST_PROVENANCE_FIELDS})
         row["cohort_id"] = hashlib.sha256(json.dumps(signature, sort_keys=True).encode()).hexdigest()[:16]
 
         attempts, baseline = state.get("attempts", []), state.get("baseline", {})
@@ -249,6 +281,39 @@ def analyze_session(directory):
             row["rejected_actions"] = sum(e.get("event") == "rejected" for e in events)
         else:
             warnings.append("event log absent; rejected-action count unavailable")
+        if cost_version == 1:
+            costs = summarize_costs(directory, policy)
+            saved = read_object(directory / "costs.json", errors)
+            if costs != saved:
+                errors.append("costs.json differs from raw journals and attempt records")
+            row.update(cost_accounting_valid=costs["accounting_valid"],
+                       cost_timing_complete=costs["timing_complete"])
+            if not costs["accounting_valid"]:
+                errors.extend("cost accounting: " + e for e in costs["errors"])
+            else:
+                api, search = costs["model_requests"], costs["search_attempts"]
+                row.update(session_including_cleanup_s=costs["session_including_cleanup_s"],
+                           policy_loop_other_s=costs["policy_loop_other_s"],
+                           search_attempt_elapsed_s=search["elapsed_s"],
+                           search_attempt_known_s=search["known_elapsed_s"],
+                           search_attempt_missing_attempts=search["missing_attempts"],
+                           api_requests=api["started"], api_request_elapsed_s=api["elapsed_s"],
+                           api_request_known_s=api["known_elapsed_s"], api_unfinished_requests=api["unfinished"],
+                           api_failed_requests=api["failed"], api_input_tokens=api["input_tokens"],
+                           api_output_tokens=api["output_tokens"], api_tokens=api["total_tokens"],
+                           api_tokens_known=api["total_tokens_known"],
+                           api_tokens_missing_requests=api["total_tokens_missing_requests"],
+                           api_cost_usd=api["api_cost_usd"])
+                for name, values in costs["phases"].items():
+                    row[name + "_elapsed_s"] = values["elapsed_s"]
+                if not costs["timing_complete"]:
+                    warnings.append("instrumented timing is incomplete; missing durations remain unknown")
+                if not api["core_usage_complete"]:
+                    warnings.append("provider token usage is incomplete; known counts are partial")
+                if policy == "gemini" and api["started"]:
+                    worker = read_object(directory / "model_backend.json", errors)
+                    if any(worker.get(k) != provenance.get(k) for k in ("chia_backend_sha256", "openai_sdk_version")):
+                        errors.append("model worker backend identity differs from driver provenance")
     except (KeyError, TypeError, ValueError, AttributeError, OSError) as exc:
         errors.append(f"malformed session: {type(exc).__name__}: {exc}")
     row["analysis_eligible"] = not errors
@@ -295,7 +360,10 @@ def pair_sessions(sessions):
                         gemini_session_elapsed_s=g["session_elapsed_s"],
                         random_session_elapsed_s=r["session_elapsed_s"])
             for target, source in (("session_difference_s", "session_elapsed_s"),
-                                   ("search_launcher_difference_s", "search_launcher_elapsed_s")):
+                                   ("search_launcher_difference_s", "search_launcher_elapsed_s"),
+                                   ("search_attempt_difference_s", "search_attempt_elapsed_s"),
+                                   ("api_request_difference_s", "api_request_elapsed_s"),
+                                   ("session_including_cleanup_difference_s", "session_including_cleanup_s")):
                 if g[source] is not None and r[source] is not None:
                     pair[target] = g[source] - r[source]
             delta = pair["best_difference_cases_per_s"]
@@ -327,7 +395,8 @@ def summarize(sessions, pairs):
                      for p in ("gemini", "random", "tie")},
             "paired_differences": {metric: describe(p[metric] for p in paired) for metric in (
                 "best_difference_cases_per_s", "best_relative_difference_pct",
-                "gain_difference_percentage_points", "session_difference_s", "search_launcher_difference_s")},
+                "gain_difference_percentage_points", "session_difference_s", "search_launcher_difference_s",
+                "search_attempt_difference_s", "api_request_difference_s", "session_including_cleanup_difference_s")},
         }
     return {
         "schema_version": 1,
@@ -346,7 +415,9 @@ def summarize(sessions, pairs):
             "Gains use each session's own baseline; gain differences are percentage points, not direct policy speedups.",
             "Session time includes warmup, baseline, startup, decisions and tools; the recorded timer excludes final cleanup. It is not pure API latency.",
             "Failed-attempt launcher times may be absent. Known sums are lower bounds; incomplete totals remain null.",
-            "API tokens/dollars are unrecorded. Memory optimization and within-application adaptation are not measured.",
+            "Legacy API usage remains unknown. Instrumented usage is provider-reported, with partial counts explicit; Gemini dollar cost remains unpriced.",
+            "Instrumented session_including_cleanup_s has a different boundary from legacy session_elapsed_s. Nested request/experiment/phase durations must not be added twice.",
+            "Memory optimization and within-application adaptation are not measured.",
             "Pairing checks recorded provenance. recorded_image_id is historical; the mutable tag is not independently resolved here.",
             "Measurement JSON and source snapshots are checked; original console output and installed runtime identity are not re-audited.",
         ],
