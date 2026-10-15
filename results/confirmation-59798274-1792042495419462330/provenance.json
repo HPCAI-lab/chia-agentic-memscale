@@ -1,0 +1,30 @@
+{
+  "hostname": "nid006468",
+  "job_id": "59798274",
+  "python": "3.10.19",
+  "image_requested": "id:60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16",
+  "resolved_image_id": "60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16",
+  "source_sha256": {
+    "workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c",
+    "workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+    "tools/experiment_session.py": "ebe7b00e6d5003f8942477f611c9e594b6b0acdf75d3b561f1b1d079dd96037e",
+    "scripts/run_policy_confirmation.py": "ec8693877f2519c354f29c3bdcdf9bf97e047e61d119a3223b19f2665a383956",
+    "scripts/analyze_policy_comparison.py": "1ad751103b883c429d741640b1c18410158521eac5963ac05f938a2781e8a7bb",
+    "scripts/run_policy_confirmation.sbatch": "f423c09fbb98887d495c4f4be58857e402990e3942999ea0ecc3b0660ba413eb"
+  },
+  "environment": {
+    "SLURM_NTASKS": "8",
+    "SLURM_CPUS_PER_TASK": "2",
+    "SLURM_JOB_NODELIST": "nid006468",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "COMEX_MAX_NB_OUTSTANDING": "6",
+    "FI_CXI_RX_MATCH_MODE": "hybrid",
+    "COMEX_EAGER_THRESHOLD": "16384",
+    "FI_CXI_RDZV_THRESHOLD": "16384",
+    "FI_CXI_OFLOW_BUF_COUNT": "6",
+    "MPICH_SMP_SINGLE_COPY_MODE": "CMA"
+  },
+  "project_commit": "d44f1d2b35afa05c4fc9c9a7987103473510edba"
+}
