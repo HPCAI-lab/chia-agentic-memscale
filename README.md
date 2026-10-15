@@ -10,6 +10,35 @@ CHIA-Agentic MemScale connects an agent to a controlled experiment runner. Gemin
 
 **GCP validation is also complete:** four independent sessions on September 23, 2026 executed 16 Gemini-selected experiments, all scientifically validated. The best selections improved throughput by 46.2–187.6% over their respective fresh GCP baselines. See [all GCP results and limitations](docs/gcp-results.md), [CSV/JSON evidence](results/gcp-summary/), and [clean VM setup instructions](docs/gcp.md). These are small-workload orchestration measurements, not memory-optimization or cross-platform speedup claims.
 
+## Policy comparison and repeated measurements
+
+**This pilot does not establish a Gemini advantage over random search or the fixed E3/B3 control.**
+
+Job `58835485` contains three matched Gemini/random pairs, with four search attempts per session. Descriptive means across three sessions per policy were:
+
+| Policy | Best observed throughput (cases/s) | Recorded session time (s) |
+| --- | ---: | ---: |
+| Gemini | 0.676446 | 122.418 |
+| Random | 0.721683 | 78.767 |
+
+Session time includes startup, warmup, baseline, decisions, execution, and tool traffic. It is not an isolated model-latency or monetary-cost measurement. See the [comparison protocol](docs/policy-comparison.md) and [analysis outputs](results/policy-analysis/).
+
+Confirmation job `59798274` completed on `nid006468` with exit code `0:0` in 5 minutes 31 seconds. The configurations and randomized trial order were committed before submission. All 60 measured trials passed scientific validation, with five repetitions of four arms for each original pair.
+
+| Original pair | Baseline E1/B1 | Gemini selection | Random selection | Fixed E3/B3 |
+| --- | ---: | ---: | ---: | ---: |
+| 101 | 0.484946 | 0.704738 | 0.659941 | 1.321297 |
+| 102 | 0.455699 | 0.708005 | 0.638202 | 1.391168 |
+| 103 | 0.485023 | 0.768294 | 1.283440 | 1.306936 |
+
+Entries are mean throughput in cases/s over five technical repeats. Each trial contained three SCF calculations; an additional three-calculation warmup was excluded. Standard deviations and individual measurements are in the [confirmation evidence](results/confirmation-59798274-1792042495419462330/).
+
+Gemini's selections exceeded their corresponding baseline means, while fixed E3/B3 had the highest mean in every group. Pair 102 used E2/B2 for both policies, so its timing difference is not evidence of better selection. Pair 103 used E3/B3 for both random and the fixed control.
+
+Confirmation session time was 307.725 seconds, including 297.175 seconds of measured-trial attempts and 7.356 seconds of warmup. No new Gemini decisions were made; this measures confirmation costs.
+
+These repeats do not add independent policy-search sessions. Evidence remains limited to three original search pairs in one allocation and one new confirmation allocation. The confirmation used a pinned image on a different node; historical/new throughput differences cannot be attributed to policy improvements. Memory optimization and adaptation of a running application remain research goals. See the [confirmation protocol and limitations](docs/policy-confirmation.md).
+
 ## Methodology
 
 The implementation follows a state–action–feedback loop:
@@ -120,7 +149,7 @@ See [docs/agent_loop.md](docs/agent_loop.md) for resource requirements, timeouts
 
 ## Planned evaluation and expected results
 
-Four GCP agent trajectories have now been recorded. Further evaluation will test more repetitions, broader configuration spaces, and larger scientific workloads. Planned comparisons include random search, grid search, and offline tuning under comparable experiment budgets. Additional action controls, including partition count and memory/data-placement policies, require further implementation and validation.
+Four GCP agent trajectories have now been recorded. Further evaluation will test more repetitions, broader configuration spaces, and larger scientific workloads. The initial random-search comparison and repeated confirmation are reported above. Further evaluation will add independent search sessions across allocations, grid search, and offline tuning under comparable experiment budgets. Additional action controls, including partition count and memory/data-placement policies, require further implementation and validation.
 
 Evaluation will measure throughput, experiments required to reach a strong configuration, cumulative execution cost, adaptation overhead, rejected actions, and scientific correctness. The expected outcome is a reproducible, auditable framework and evidence about when agent-based selection helps. Improved performance across workloads is a research question, not an established result.
 
