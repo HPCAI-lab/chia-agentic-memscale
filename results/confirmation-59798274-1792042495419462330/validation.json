@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "planned_trials": 60,
+  "attempted_trials": 60,
+  "successful_trials": 60,
+  "failed_trials": 0,
+  "interrupted_trials": 0,
+  "session_elapsed_s": 307.72506933099976,
+  "trial_attempt_elapsed_s": 297.1745582329877,
+  "warmup_elapsed_s": 7.356244946999141,
+  "timing_note": "Session starts before image identity check and warmup; ends before final report export. Attempt timing includes failed-launch handling."
+}

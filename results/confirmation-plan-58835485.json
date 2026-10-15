@@ -1,0 +1,1054 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-15T05:32:02.053531+00:00",
+  "source_job": "58835485",
+  "source_cohort": "c016cedc8c339106",
+  "backend": "perlmutter",
+  "repeats": 5,
+  "randomization_seed": 20261015,
+  "image_id": "60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16",
+  "historical_image_tag": "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+  "runtime_sha256": {
+    "workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c",
+    "workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+    "tools/experiment_session.py": "ebe7b00e6d5003f8942477f611c9e594b6b0acdf75d3b561f1b1d079dd96037e"
+  },
+  "source_evidence": [
+    {
+      "session": "comparison-gemini-58835485-1790280795290182108",
+      "sha256": {
+        "state.json": "ac0dcd54c60f993815098d95a27ee7fce8af0bb00a2475244b624d0c71436c00",
+        "provenance.json": "c6859164896b5821c798bb23a1e36aa9c7ba8c94c05d69759128199e9ad78d66",
+        "validation.json": "c73eba3eb3c048bb626d5c69e33bd714a6d1cc15d457cb1cc3f6e16bd14512cf",
+        "baseline/measurement.json": "6cdf2cb73002556851e0ea734093ce0268fda041f9dcd170197d30cd251eb222",
+        "warmup/measurement.json": "a982c8fd5d61b6d93ec42a7a6425a0f7345395767ddbb1c0291f6dbed895e263",
+        "step-1/measurement.json": "00c36a6592e04bd79476e200d460944f5af8ae161656149e89083abaaf52e378",
+        "step-2/measurement.json": "47238efacccfc5ef8da556498c25ed8ea70f3f1f352cdf6ab8467f66e1ff6712",
+        "step-3/measurement.json": "c7e53a21f7fb4084aba16e045a677c737272d03f1d39c314cbf303354fa06c2b",
+        "step-4/measurement.json": "1fb24aa4a714b4baf1390f01579fce916b163e5e2940439de7a573e9952521fb",
+        "source-snapshot/compare_loop.py": "69e4e0aba1f4c47632d3dc5edd24f9bcfdd77c5b8fbcede01a71a45c3aa7dd00",
+        "source-snapshot/tools/experiment_session.py": "ebe7b00e6d5003f8942477f611c9e594b6b0acdf75d3b561f1b1d079dd96037e",
+        "source-snapshot/tools/memscale_tool.py": "682751f0e90683acdd6968cb0b916805d0aa875c0a64c7ba0ae2320ba68417e7",
+        "source-snapshot/workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+        "source-snapshot/workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c"
+      }
+    },
+    {
+      "session": "comparison-gemini-58835485-1790281120998237522",
+      "sha256": {
+        "state.json": "4559ebe38f1d35873ec1ef726d3fc7c9641bf697aed57b7cb36840da0fda072b",
+        "provenance.json": "54b9ba3b9759b02684a89a142ee75ef2f21bd6b11fada6050904fe08c29fc4a0",
+        "validation.json": "cdea72f9404cd27c986e54c9146b733edf44f370d8898475731068861bb9869b",
+        "baseline/measurement.json": "b05716129daa47901883f20bfa33c8a5980fa3549a227cb47179f8652015368f",
+        "warmup/measurement.json": "2e02809ea56b32a5703a15484950b16581c627aaa5dc5120e6fac6168c3b2afd",
+        "step-1/measurement.json": "b23ce366b447b8a3b1d8fb78e05a303065fcde3a6e3bb6cae310be64f7bf27ff",
+        "step-2/measurement.json": "3dd752fa44eb703a808c0fc51f97af5a4b5384f9d5bf9a17eb5abf078f21271f",
+        "step-3/measurement.json": "0362f8ddc32eff7b3d80e65910e4640981f2c937ef5024c9a908389c1349b6c6",
+        "step-4/measurement.json": "bc3ab5fe7ceb1a2fb58feb597541bd45113229cb307d6fbdbf9feca6779585cb",
+        "source-snapshot/compare_loop.py": "69e4e0aba1f4c47632d3dc5edd24f9bcfdd77c5b8fbcede01a71a45c3aa7dd00",
+        "source-snapshot/tools/experiment_session.py": "ebe7b00e6d5003f8942477f611c9e594b6b0acdf75d3b561f1b1d079dd96037e",
+        "source-snapshot/tools/memscale_tool.py": "682751f0e90683acdd6968cb0b916805d0aa875c0a64c7ba0ae2320ba68417e7",
+        "source-snapshot/workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+        "source-snapshot/workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c"
+      }
+    },
+    {
+      "session": "comparison-gemini-58835485-1790281253275883089",
+      "sha256": {
+        "state.json": "7dd08ad3b0b3c0649caaf0814ca6bf8216c00f660f85d223a2eab21b8ad34340",
+        "provenance.json": "4cebffafaf13234e0f326fdbdd0b0d2dfd496ce3020bfb2bd24d6383e75e19f3",
+        "validation.json": "224b817e840454bb8042327fd47e2d4a969d150d1f3937cf2f0607cfe13bd9c9",
+        "baseline/measurement.json": "e35fcf4b1607df84f817a5eba61576418dc1af8b0493a95fb7d027b51d1d67e1",
+        "warmup/measurement.json": "cc946dfdfeb5331bb74b5d70c357f46d3384ce6f86e8644b306dc69dd01fd02e",
+        "step-1/measurement.json": "d913b547bf9133210474c7e8f196338743208cb45868ac5d6d56b658294fd1eb",
+        "step-2/measurement.json": "efb7369a644f67fd6b631487689f68592b957af76beca51fd7df180e940c822d",
+        "step-3/measurement.json": "e3754491461a57967ea0701d644ef8df9958a23f845f756a3343a79b9e9bb1bd",
+        "step-4/measurement.json": "8ed49cb40446595a0a4664bcfae16ea4612813cba3ad6cf1f452a5c9951fc060",
+        "source-snapshot/compare_loop.py": "69e4e0aba1f4c47632d3dc5edd24f9bcfdd77c5b8fbcede01a71a45c3aa7dd00",
+        "source-snapshot/tools/experiment_session.py": "ebe7b00e6d5003f8942477f611c9e594b6b0acdf75d3b561f1b1d079dd96037e",
+        "source-snapshot/tools/memscale_tool.py": "682751f0e90683acdd6968cb0b916805d0aa875c0a64c7ba0ae2320ba68417e7",
+        "source-snapshot/workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+        "source-snapshot/workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c"
+      }
+    },
+    {
+      "session": "comparison-random-58835485-1790280935231771295",
+      "sha256": {
+        "state.json": "f44bc2adbaad7848134a9e06618d3c57c2e89e8d99240e8d4dedf47e386e8d5e",
+        "provenance.json": "3e3bbb75d366a87d9f0bc1c0602d02d488e5826490e96599752fbde3a8e81300",
+        "validation.json": "8206c71a1ec6a7dd4a8ed9f2bae4bfaa45cb072e032242a1eb7424523f3d6b0a",
+        "baseline/measurement.json": "c6997562bbf0c25f3dc698329ba17c820b0ccc97d418c0eaafc300854511a531",
+        "warmup/measurement.json": "7d4f07e71bdb72d50ae600f88aae0c864b0252a43d8bce66d35abc5b5b31a593",
+        "step-1/measurement.json": "f325d293e2492d852ada54391a6fe3ac60671903dc5e4a5cec4af5907bc3bd4a",
+        "step-2/measurement.json": "958fb1167ed7ee24161d2a3582fd3bcdeea301bfefeaca640feaf46f5d38eb43",
+        "step-3/measurement.json": "e4cb22c2fd52d9b97859543063ad81e381552279d72b163940c3fd0a3ed25bf0",
+        "step-4/measurement.json": "6192a764449c3e4a7a3865cc97114660ba01b18e931f7613b69c83ca3a710f4e",
+        "source-snapshot/compare_loop.py": "69e4e0aba1f4c47632d3dc5edd24f9bcfdd77c5b8fbcede01a71a45c3aa7dd00",
+        "source-snapshot/tools/experiment_session.py": "ebe7b00e6d5003f8942477f611c9e594b6b0acdf75d3b561f1b1d079dd96037e",
+        "source-snapshot/tools/memscale_tool.py": "682751f0e90683acdd6968cb0b916805d0aa875c0a64c7ba0ae2320ba68417e7",
+        "source-snapshot/workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+        "source-snapshot/workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c"
+      }
+    },
+    {
+      "session": "comparison-random-58835485-1790281029548140574",
+      "sha256": {
+        "state.json": "d3972daca5d16c3566ff12332de713a721195fc0acc69dea6ca57a5dcd600145",
+        "provenance.json": "12fdf63facacac94b94077884641c4e53e18b389d84175fe03da1c923051fc87",
+        "validation.json": "6f6045fe492a398aa625761377ff9aaddaff635afaf71011238f50a9ba60d195",
+        "baseline/measurement.json": "f073705afe7d4a31855a02f644994a3027fc24f1ff3c22d7166dc80c5f0f866b",
+        "warmup/measurement.json": "d8b237ca6edc1421f99b0f890a27537af61abf08f42951467265370556274078",
+        "step-1/measurement.json": "2afca5bc9dca0982e773106b30d7582b3404bf43a1d2746876254c914c42874a",
+        "step-2/measurement.json": "c0035ce0b097fa3d2eff178e9913f31f233c77dad8714e45d4f320f6ff0848f4",
+        "step-3/measurement.json": "c9f6d627c284aecde1a4b7cad77e73b3ef2e2ca4d9d6329b6533541e7b719172",
+        "step-4/measurement.json": "94e9a0547ad7a975abd620d3268702e1794bf6239d5b733ff3e88fa632249f14",
+        "source-snapshot/compare_loop.py": "69e4e0aba1f4c47632d3dc5edd24f9bcfdd77c5b8fbcede01a71a45c3aa7dd00",
+        "source-snapshot/tools/experiment_session.py": "ebe7b00e6d5003f8942477f611c9e594b6b0acdf75d3b561f1b1d079dd96037e",
+        "source-snapshot/tools/memscale_tool.py": "682751f0e90683acdd6968cb0b916805d0aa875c0a64c7ba0ae2320ba68417e7",
+        "source-snapshot/workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+        "source-snapshot/workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c"
+      }
+    },
+    {
+      "session": "comparison-random-58835485-1790281375453781564",
+      "sha256": {
+        "state.json": "35cafcc36252579c6128266fa1d2e728a55b26b9a4458e3f3209fa5ad3394b17",
+        "provenance.json": "5c92051203fd0c553557ce996c77c7f519ff2324469bec744d6ceb5cf71832a3",
+        "validation.json": "e8f9fcc845105adbaea192a80a8c17ab42d2d232573dfda77a737488ad50dafe",
+        "baseline/measurement.json": "f2550ff0f40e4af4b6d4b198a111c7e74dfde5b7536a9f0852474ce5d8e0191a",
+        "warmup/measurement.json": "de601a828491f4afef05be64c9708a045e47284f7dc175886b97606587e7cbfb",
+        "step-1/measurement.json": "cde1235bba9aa94b484025b88680efba72b19024d06ec98e0c8a2a06389f43b0",
+        "step-2/measurement.json": "a2661199813f22d16ad3c0e89567133b83ca452eed3e2a6e15cab238f65b7164",
+        "step-3/measurement.json": "0de53a87833aba04812aa1148772f7fbaa7d92994733e86dd99822047174439c",
+        "step-4/measurement.json": "848db0a89bcdb3f96e35940e5a687ce73e32b8193e4e5f2bc3b97943eb060ded",
+        "source-snapshot/compare_loop.py": "69e4e0aba1f4c47632d3dc5edd24f9bcfdd77c5b8fbcede01a71a45c3aa7dd00",
+        "source-snapshot/tools/experiment_session.py": "ebe7b00e6d5003f8942477f611c9e594b6b0acdf75d3b561f1b1d079dd96037e",
+        "source-snapshot/tools/memscale_tool.py": "682751f0e90683acdd6968cb0b916805d0aa875c0a64c7ba0ae2320ba68417e7",
+        "source-snapshot/workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+        "source-snapshot/workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c"
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "pair_seed": 101,
+      "arms": {
+        "baseline": {
+          "partitions": 3,
+          "executors": 1,
+          "replication": 1,
+          "batch_size": 1,
+          "placement": "single-node"
+        },
+        "fixed_e3b3": {
+          "partitions": 3,
+          "executors": 3,
+          "replication": 1,
+          "batch_size": 3,
+          "placement": "single-node"
+        },
+        "gemini": {
+          "partitions": 3,
+          "executors": 2,
+          "replication": 1,
+          "batch_size": 2,
+          "placement": "single-node"
+        },
+        "random": {
+          "partitions": 3,
+          "executors": 3,
+          "replication": 1,
+          "batch_size": 2,
+          "placement": "single-node"
+        }
+      },
+      "source_selections": {
+        "gemini": {
+          "session": "comparison-gemini-58835485-1790280795290182108",
+          "selected_step": 4
+        },
+        "random": {
+          "session": "comparison-random-58835485-1790280935231771295",
+          "selected_step": 4
+        }
+      }
+    },
+    {
+      "pair_seed": 102,
+      "arms": {
+        "baseline": {
+          "partitions": 3,
+          "executors": 1,
+          "replication": 1,
+          "batch_size": 1,
+          "placement": "single-node"
+        },
+        "fixed_e3b3": {
+          "partitions": 3,
+          "executors": 3,
+          "replication": 1,
+          "batch_size": 3,
+          "placement": "single-node"
+        },
+        "gemini": {
+          "partitions": 3,
+          "executors": 2,
+          "replication": 1,
+          "batch_size": 2,
+          "placement": "single-node"
+        },
+        "random": {
+          "partitions": 3,
+          "executors": 2,
+          "replication": 1,
+          "batch_size": 2,
+          "placement": "single-node"
+        }
+      },
+      "source_selections": {
+        "gemini": {
+          "session": "comparison-gemini-58835485-1790281120998237522",
+          "selected_step": 3
+        },
+        "random": {
+          "session": "comparison-random-58835485-1790281029548140574",
+          "selected_step": 4
+        }
+      }
+    },
+    {
+      "pair_seed": 103,
+      "arms": {
+        "baseline": {
+          "partitions": 3,
+          "executors": 1,
+          "replication": 1,
+          "batch_size": 1,
+          "placement": "single-node"
+        },
+        "fixed_e3b3": {
+          "partitions": 3,
+          "executors": 3,
+          "replication": 1,
+          "batch_size": 3,
+          "placement": "single-node"
+        },
+        "gemini": {
+          "partitions": 3,
+          "executors": 2,
+          "replication": 1,
+          "batch_size": 3,
+          "placement": "single-node"
+        },
+        "random": {
+          "partitions": 3,
+          "executors": 3,
+          "replication": 1,
+          "batch_size": 3,
+          "placement": "single-node"
+        }
+      },
+      "source_selections": {
+        "gemini": {
+          "session": "comparison-gemini-58835485-1790281253275883089",
+          "selected_step": 4
+        },
+        "random": {
+          "session": "comparison-random-58835485-1790281375453781564",
+          "selected_step": 1
+        }
+      }
+    }
+  ],
+  "warmup_configuration": {
+    "partitions": 3,
+    "executors": 1,
+    "replication": 1,
+    "batch_size": 1,
+    "placement": "single-node"
+  },
+  "trials": [
+    {
+      "trial_id": "trial-0001",
+      "pair_seed": 102,
+      "repeat": 1,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0002",
+      "pair_seed": 103,
+      "repeat": 1,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0003",
+      "pair_seed": 101,
+      "repeat": 1,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0004",
+      "pair_seed": 101,
+      "repeat": 1,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0005",
+      "pair_seed": 102,
+      "repeat": 1,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0006",
+      "pair_seed": 103,
+      "repeat": 1,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0007",
+      "pair_seed": 102,
+      "repeat": 1,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0008",
+      "pair_seed": 101,
+      "repeat": 1,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0009",
+      "pair_seed": 103,
+      "repeat": 1,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0010",
+      "pair_seed": 102,
+      "repeat": 1,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0011",
+      "pair_seed": 103,
+      "repeat": 1,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0012",
+      "pair_seed": 101,
+      "repeat": 1,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0013",
+      "pair_seed": 101,
+      "repeat": 2,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0014",
+      "pair_seed": 103,
+      "repeat": 2,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0015",
+      "pair_seed": 103,
+      "repeat": 2,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0016",
+      "pair_seed": 102,
+      "repeat": 2,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0017",
+      "pair_seed": 101,
+      "repeat": 2,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0018",
+      "pair_seed": 101,
+      "repeat": 2,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0019",
+      "pair_seed": 102,
+      "repeat": 2,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0020",
+      "pair_seed": 102,
+      "repeat": 2,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0021",
+      "pair_seed": 101,
+      "repeat": 2,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0022",
+      "pair_seed": 103,
+      "repeat": 2,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0023",
+      "pair_seed": 103,
+      "repeat": 2,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0024",
+      "pair_seed": 102,
+      "repeat": 2,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0025",
+      "pair_seed": 103,
+      "repeat": 3,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0026",
+      "pair_seed": 102,
+      "repeat": 3,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0027",
+      "pair_seed": 101,
+      "repeat": 3,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0028",
+      "pair_seed": 103,
+      "repeat": 3,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0029",
+      "pair_seed": 103,
+      "repeat": 3,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0030",
+      "pair_seed": 101,
+      "repeat": 3,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0031",
+      "pair_seed": 103,
+      "repeat": 3,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0032",
+      "pair_seed": 102,
+      "repeat": 3,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0033",
+      "pair_seed": 102,
+      "repeat": 3,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0034",
+      "pair_seed": 101,
+      "repeat": 3,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0035",
+      "pair_seed": 102,
+      "repeat": 3,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0036",
+      "pair_seed": 101,
+      "repeat": 3,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0037",
+      "pair_seed": 101,
+      "repeat": 4,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0038",
+      "pair_seed": 102,
+      "repeat": 4,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0039",
+      "pair_seed": 103,
+      "repeat": 4,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0040",
+      "pair_seed": 101,
+      "repeat": 4,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0041",
+      "pair_seed": 102,
+      "repeat": 4,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0042",
+      "pair_seed": 103,
+      "repeat": 4,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0043",
+      "pair_seed": 103,
+      "repeat": 4,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0044",
+      "pair_seed": 103,
+      "repeat": 4,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0045",
+      "pair_seed": 102,
+      "repeat": 4,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0046",
+      "pair_seed": 101,
+      "repeat": 4,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0047",
+      "pair_seed": 101,
+      "repeat": 4,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0048",
+      "pair_seed": 102,
+      "repeat": 4,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0049",
+      "pair_seed": 102,
+      "repeat": 5,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0050",
+      "pair_seed": 103,
+      "repeat": 5,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0051",
+      "pair_seed": 102,
+      "repeat": 5,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0052",
+      "pair_seed": 101,
+      "repeat": 5,
+      "arm": "random",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0053",
+      "pair_seed": 101,
+      "repeat": 5,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0054",
+      "pair_seed": 102,
+      "repeat": 5,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0055",
+      "pair_seed": 103,
+      "repeat": 5,
+      "arm": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0056",
+      "pair_seed": 101,
+      "repeat": 5,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0057",
+      "pair_seed": 103,
+      "repeat": 5,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0058",
+      "pair_seed": 101,
+      "repeat": 5,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0059",
+      "pair_seed": 103,
+      "repeat": 5,
+      "arm": "baseline",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      }
+    },
+    {
+      "trial_id": "trial-0060",
+      "pair_seed": 102,
+      "repeat": 5,
+      "arm": "fixed_e3b3",
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      }
+    }
+  ],
+  "interpretation": "Repeated measurements of frozen historical selections, not additional independent policy sessions. All arms use the same pinned image and harness. Identical arm settings are executed separately.",
+  "plan_sha256": "96687ebe8cd0e69a88f2ad6137e495e2f7471e210209f17f80470442eb3470ac"
+}

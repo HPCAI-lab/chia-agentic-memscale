@@ -1,0 +1,448 @@
+{
+  "plan_sha256": "96687ebe8cd0e69a88f2ad6137e495e2f7471e210209f17f80470442eb3470ac",
+  "source_job": "58835485",
+  "pairs": [
+    {
+      "pair_seed": 101,
+      "arms": {
+        "baseline": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 1,
+            "replication": 1,
+            "batch_size": 1,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 0.4849458,
+            "sample_sd": 0.01618772739454183,
+            "median": 0.490152,
+            "min": 0.465737,
+            "max": 0.49993
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 6.966288333799821,
+            "sample_sd": 0.2553929229679177,
+            "median": 6.855369093000263,
+            "min": 6.751322006999544,
+            "max": 7.311246597999343
+          }
+        },
+        "gemini": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 2,
+            "replication": 1,
+            "batch_size": 2,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 0.7047376,
+            "sample_sd": 0.06767966473616727,
+            "median": 0.729193,
+            "min": 0.590822,
+            "max": 0.754163
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 5.0567915945997814,
+            "sample_sd": 0.46565152973161233,
+            "median": 4.915397165001195,
+            "min": 4.704856276999635,
+            "max": 5.852804360998562
+          }
+        },
+        "random": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 3,
+            "replication": 1,
+            "batch_size": 2,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 0.6599408,
+            "sample_sd": 0.09429148464840287,
+            "median": 0.673828,
+            "min": 0.517812,
+            "max": 0.762894
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 5.3427285431997005,
+            "sample_sd": 0.6984200090436724,
+            "median": 5.200225597000099,
+            "min": 4.649582931999248,
+            "max": 6.451238068999373
+          }
+        },
+        "fixed_e3b3": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 3,
+            "replication": 1,
+            "batch_size": 3,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 1.321297,
+            "sample_sd": 0.09938130832052876,
+            "median": 1.296607,
+            "min": 1.210132,
+            "max": 1.482119
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 3.0627310683998075,
+            "sample_sd": 0.15145826931701875,
+            "median": 3.1499731580006483,
+            "min": 2.8529385849997198,
+            "max": 3.1959278829999676
+          }
+        }
+      },
+      "paired_repeat_differences_cases_per_s": {
+        "n": 5,
+        "mean": 0.04479679999999999,
+        "sample_sd": 0.11702780359470134,
+        "median": 0.035475000000000034,
+        "min": -0.06555299999999997,
+        "max": 0.23435699999999993
+      }
+    },
+    {
+      "pair_seed": 102,
+      "arms": {
+        "baseline": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 1,
+            "replication": 1,
+            "batch_size": 1,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 0.4556992,
+            "sample_sd": 0.07927824271639729,
+            "median": 0.491296,
+            "min": 0.313929,
+            "max": 0.493111
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 7.602329674999782,
+            "sample_sd": 1.5708696124200232,
+            "median": 6.9097393569991254,
+            "min": 6.864555635000215,
+            "max": 10.411559984000633
+          }
+        },
+        "gemini": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 2,
+            "replication": 1,
+            "batch_size": 2,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 0.7080048,
+            "sample_sd": 0.04845729979270409,
+            "median": 0.722742,
+            "min": 0.62776,
+            "max": 0.75723
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 5.035322302199711,
+            "sample_sd": 0.26865260407827196,
+            "median": 4.963867122000011,
+            "min": 4.815538823000679,
+            "max": 5.499048788999062
+          }
+        },
+        "random": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 2,
+            "replication": 1,
+            "batch_size": 2,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 0.6382022,
+            "sample_sd": 0.078988565816199,
+            "median": 0.638804,
+            "min": 0.558381,
+            "max": 0.739163
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 5.539241097199556,
+            "sample_sd": 0.5798045328845829,
+            "median": 5.459530373998859,
+            "min": 4.796692533000169,
+            "max": 6.135082958999192
+          }
+        },
+        "fixed_e3b3": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 3,
+            "replication": 1,
+            "batch_size": 3,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 1.3911678,
+            "sample_sd": 0.07792691852434562,
+            "median": 1.405182,
+            "min": 1.297887,
+            "max": 1.495547
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 2.968359681799484,
+            "sample_sd": 0.16275033164137165,
+            "median": 2.9504470209994906,
+            "min": 2.7910230759989645,
+            "max": 3.1918150000001333
+          }
+        }
+      },
+      "paired_repeat_differences_cases_per_s": {
+        "n": 5,
+        "mean": 0.06980259999999996,
+        "sample_sd": 0.05775852813481313,
+        "median": 0.0660409999999999,
+        "min": -0.013521000000000005,
+        "max": 0.14826899999999998
+      }
+    },
+    {
+      "pair_seed": 103,
+      "arms": {
+        "baseline": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 1,
+            "replication": 1,
+            "batch_size": 1,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 0.4850228,
+            "sample_sd": 0.014748472351399651,
+            "median": 0.487786,
+            "min": 0.461121,
+            "max": 0.499865
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 6.944220831599523,
+            "sample_sd": 0.2007102258255058,
+            "median": 6.904220872998849,
+            "min": 6.749578045000817,
+            "max": 7.258565840998926
+          }
+        },
+        "gemini": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 2,
+            "replication": 1,
+            "batch_size": 3,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 0.7682936,
+            "sample_sd": 0.03085244011905704,
+            "median": 0.754528,
+            "min": 0.736455,
+            "max": 0.814357
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 4.648070644600011,
+            "sample_sd": 0.16651234798625775,
+            "median": 4.697243048998644,
+            "min": 4.397018886000296,
+            "max": 4.849392646001434
+          }
+        },
+        "random": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 3,
+            "replication": 1,
+            "batch_size": 3,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 1.2834396,
+            "sample_sd": 0.13802904965730947,
+            "median": 1.314039,
+            "min": 1.068566,
+            "max": 1.404226
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 3.1687007826003537,
+            "sample_sd": 0.2774752909168055,
+            "median": 3.195878561999052,
+            "min": 2.8991981170001964,
+            "max": 3.599179460999949
+          }
+        },
+        "fixed_e3b3": {
+          "configuration": {
+            "partitions": 3,
+            "executors": 3,
+            "replication": 1,
+            "batch_size": 3,
+            "placement": "single-node"
+          },
+          "counts": {
+            "success": 5,
+            "failed": 0,
+            "running": 0,
+            "interrupted": 0,
+            "not_started": 0
+          },
+          "throughput_cases_per_s": {
+            "n": 5,
+            "mean": 1.3069358,
+            "sample_sd": 0.10777158424046664,
+            "median": 1.260086,
+            "min": 1.227723,
+            "max": 1.494635
+          },
+          "attempt_elapsed_s": {
+            "n": 5,
+            "mean": 3.1001270916000068,
+            "sample_sd": 0.20793150682945982,
+            "median": 3.162787818999277,
+            "min": 2.7444542840003123,
+            "max": 3.248648823999247
+          }
+        }
+      },
+      "paired_repeat_differences_cases_per_s": {
+        "n": 5,
+        "mean": -0.515146,
+        "sample_sd": 0.11411877877238259,
+        "median": -0.5615049999999999,
+        "min": -0.620632,
+        "max": -0.33211099999999993
+      }
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "planned_trials": 60,
+    "attempted_trials": 60,
+    "successful_trials": 60,
+    "failed_trials": 0,
+    "interrupted_trials": 0,
+    "session_elapsed_s": 307.72506933099976,
+    "trial_attempt_elapsed_s": 297.1745582329877,
+    "warmup_elapsed_s": 7.356244946999141,
+    "timing_note": "Session starts before image identity check and warmup; ends before final report export. Attempt timing includes failed-launch handling."
+  },
+  "notes": [
+    "These are technical repeats of fixed selections; independent policy-session count has not increased.",
+    "One new allocation/node and a pinned image; do not compare raw times directly to historical runs using a mutable tag.",
+    "Throughput summaries describe successful repeats; failure and missing counts are retained.",
+    "Identical configurations under different arms are separate measurements, not independent selection evidence.",
+    "No new Gemini decisions; this phase measures configuration performance and confirmation cost, not policy decision cost."
+  ]
+}
