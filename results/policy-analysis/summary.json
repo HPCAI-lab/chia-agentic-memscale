@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "counts": {
+    "sessions": 6,
+    "analysis_eligible_sessions": 6,
+    "sessions_with_failure_file": 0,
+    "failed_attempts": 0,
+    "ineligible_sessions": 0,
+    "eligible_pairs": 3,
+    "ineligible_pair_groups": 0
+  },
+  "notes": [
+    "Descriptive pilot results, not significance tests or evidence of general policy superiority.",
+    "Best includes the fresh baseline; mean_best_so_far averages incumbents after each search attempt.",
+    "Performance summaries use evidence-checked, full-budget sessions, including terminal failed attempts; incomplete sessions remain listed.",
+    "Policy summaries include eligible unpaired sessions; paired differences use only unambiguous comparable pairs.",
+    "Positive paired throughput differences favor Gemini; positive time differences mean Gemini took longer.",
+    "Gains use each session's own baseline; gain differences are percentage points, not direct policy speedups.",
+    "Session time includes warmup, baseline, startup, decisions and tools; the recorded timer excludes final cleanup. It is not pure API latency.",
+    "Failed-attempt launcher times may be absent. Known sums are lower bounds; incomplete totals remain null.",
+    "API tokens/dollars are unrecorded. Memory optimization and within-application adaptation are not measured.",
+    "Pairing checks recorded provenance. recorded_image_id is historical; the mutable tag is not independently resolved here.",
+    "Measurement JSON and source snapshots are checked; original console output and installed runtime identity are not re-audited."
+  ],
+  "cohorts": {
+    "c016cedc8c339106": {
+      "backend": "perlmutter",
+      "hostname": "nid005376",
+      "budget": 4,
+      "policies": {
+        "gemini": {
+          "best_cases_per_s": {
+            "n": 3,
+            "mean": 0.6764463333333334,
+            "sample_sd": 0.054509447532820735,
+            "median": 0.70765,
+            "min": 0.613505,
+            "max": 0.708184
+          },
+          "best_gain_pct": {
+            "n": 3,
+            "mean": 62.445363011984234,
+            "sample_sd": 23.80360961809477,
+            "median": 65.38510939904671,
+            "min": 37.30841882866913,
+            "max": 84.64256080823685
+          },
+          "session_elapsed_s": {
+            "n": 3,
+            "mean": 122.418,
+            "sample_sd": 8.21940727790028,
+            "median": 123.298,
+            "min": 113.794,
+            "max": 130.162
+          },
+          "search_launcher_elapsed_s": {
+            "n": 3,
+            "mean": 27.383333333333333,
+            "sample_sd": 2.6577005725501386,
+            "median": 27.895,
+            "min": 24.506999999999998,
+            "max": 29.747999999999998
+          },
+          "mean_best_so_far_cases_per_s": {
+            "n": 3,
+            "mean": 0.5384832500000001,
+            "sample_sd": 0.05586600892257743,
+            "median": 0.5072305,
+            "min": 0.50523775,
+            "max": 0.6029815000000001
+          }
+        },
+        "random": {
+          "best_cases_per_s": {
+            "n": 3,
+            "mean": 0.7216826666666667,
+            "sample_sd": 0.10107347476135041,
+            "median": 0.702539,
+            "min": 0.63155,
+            "max": 0.830959
+          },
+          "best_gain_pct": {
+            "n": 3,
+            "mean": 56.71373324215552,
+            "sample_sd": 20.909702150328147,
+            "median": 63.9622756000336,
+            "min": 33.14429675229531,
+            "max": 73.03462737413764
+          },
+          "session_elapsed_s": {
+            "n": 3,
+            "mean": 78.76733333333333,
+            "sample_sd": 6.58500913692102,
+            "median": 81.116,
+            "min": 71.33,
+            "max": 83.856
+          },
+          "search_launcher_elapsed_s": {
+            "n": 3,
+            "mean": 27.266,
+            "sample_sd": 1.7175834768650995,
+            "median": 26.523,
+            "min": 26.044999999999998,
+            "max": 29.23
+          },
+          "mean_best_so_far_cases_per_s": {
+            "n": 3,
+            "mean": 0.6473432499999999,
+            "sample_sd": 0.1609167615925622,
+            "median": 0.5801959999999999,
+            "min": 0.53087475,
+            "max": 0.830959
+          }
+        }
+      },
+      "eligible_pairs": 3,
+      "wins": {
+        "gemini": 1,
+        "random": 2,
+        "tie": 0
+      },
+      "paired_differences": {
+        "best_difference_cases_per_s": {
+          "n": 3,
+          "mean": -0.04523633333333332,
+          "sample_sd": 0.10642599828206142,
+          "median": -0.08903400000000006,
+          "min": -0.12277499999999997,
+          "max": 0.07610000000000006
+        },
+        "best_relative_difference_pct": {
+          "n": 3,
+          "mean": -5.132851233627007,
+          "sample_sd": 14.917608965531034,
+          "median": -12.673175439370631,
+          "min": -14.775097206962073,
+          "max": 12.049718945451682
+        },
+        "gain_difference_percentage_points": {
+          "n": 3,
+          "mean": 5.731629769828714,
+          "sample_sd": 40.758187320831446,
+          "median": -7.64951797509093,
+          "min": -26.653856771364467,
+          "max": 51.49826405594154
+        },
+        "session_difference_s": {
+          "n": 3,
+          "mean": 43.65066666666667,
+          "sample_sd": 2.3039048012739944,
+          "median": 42.464,
+          "min": 42.182,
+          "max": 46.30600000000001
+        },
+        "search_launcher_difference_s": {
+          "n": 3,
+          "mean": 0.11733333333333225,
+          "sample_sd": 4.350863171065408,
+          "median": 1.3719999999999999,
+          "min": -4.7230000000000025,
+          "max": 3.7029999999999994
+        }
+      }
+    }
+  }
+}
