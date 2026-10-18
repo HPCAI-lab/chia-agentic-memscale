@@ -1,0 +1,2 @@
+{"event": "start", "span_id": "8944401398af4a1686fad8cb3f114dec", "name": "model_request", "time_ns": 1792047813630940370}
+{"status": "failed", "error_type": "APIConnectionError", "event": "end", "span_id": "8944401398af4a1686fad8cb3f114dec", "name": "model_request", "time_ns": 1792047813796243705, "elapsed_s": 0.1575989410011971}

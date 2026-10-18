@@ -1,0 +1,151 @@
+{
+  "policy": "gemini",
+  "backend": "perlmutter",
+  "project": "/global/u1/m/makhatri/chia-agentic-memscale",
+  "image": "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+  "budget": 4,
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "7dd7432d73f444aea262e8a1c91fe4b2",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 5.717,
+      "latency_mean_ms": 1855.44,
+      "throughput_cases_per_s": 0.52474,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59936561-1792305193984850391/baseline/measurement.json",
+    "launcher_elapsed_s": 6.245
+  },
+  "prior_history": [],
+  "attempts": [
+    {
+      "step": 1,
+      "selection_source": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "reason": "Testing executors=2 and batch_size=1 to see if increasing executors from the baseline improves concurrency and overall throughput for the 3 calculations.",
+      "observed_receipt": "7dd7432d73f444aea262e8a1c91fe4b2",
+      "receipt": "d96f2de96b6d4e88a16ab4497f9e6857",
+      "worker_pid": 770843,
+      "hostname": "nid006242",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 6.174,
+        "latency_mean_ms": 2014.473,
+        "throughput_cases_per_s": 0.485944,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59936561-1792305193984850391/step-1/measurement.json",
+      "launcher_elapsed_s": 6.923,
+      "attempt_elapsed_s": 6.938869089004584
+    },
+    {
+      "step": 2,
+      "selection_source": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "reason": "Testing executors=1 and batch_size=2 to evaluate whether batching two calculations together improves efficiency compared to the baseline single execution model.",
+      "observed_receipt": "d96f2de96b6d4e88a16ab4497f9e6857",
+      "receipt": "55fbe38847db4954b3fe9be82a4245e9",
+      "worker_pid": 770843,
+      "hostname": "nid006242",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.899,
+        "latency_mean_ms": 1922.71,
+        "throughput_cases_per_s": 0.508539,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59936561-1792305193984850391/step-2/measurement.json",
+      "launcher_elapsed_s": 6.63,
+      "attempt_elapsed_s": 6.632781441032421
+    },
+    {
+      "step": 3,
+      "selection_source": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "reason": "Testing executors=2 and batch_size=2 to combine multi-executor parallelism with batched execution for the 3 NWChem calculations.",
+      "observed_receipt": "55fbe38847db4954b3fe9be82a4245e9",
+      "receipt": "94c1108e8a96491381189616d11613f8",
+      "worker_pid": 770843,
+      "hostname": "nid006242",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.928,
+        "latency_mean_ms": 1899.526,
+        "throughput_cases_per_s": 0.763837,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59936561-1792305193984850391/step-3/measurement.json",
+      "launcher_elapsed_s": 4.509,
+      "attempt_elapsed_s": 4.51174315600656
+    },
+    {
+      "step": 4,
+      "selection_source": "gemini",
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "reason": "Testing executors=1 and batch_size=3 to run all three calculations in a single batch on a single executor.",
+      "observed_receipt": "94c1108e8a96491381189616d11613f8",
+      "receipt": "39cc7bf5b5e24115a34c988fdd3cf449",
+      "worker_pid": 770843,
+      "hostname": "nid006242",
+      "status": "success",
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.962,
+        "latency_mean_ms": 1938.14,
+        "throughput_cases_per_s": 0.503205,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59936561-1792305193984850391/step-4/measurement.json",
+      "launcher_elapsed_s": 6.57,
+      "attempt_elapsed_s": 6.571931696962565
+    }
+  ],
+  "history_inspected": true
+}

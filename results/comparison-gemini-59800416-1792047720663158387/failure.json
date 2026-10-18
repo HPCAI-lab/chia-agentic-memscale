@@ -1,0 +1,4 @@
+{
+  "error_type": "RuntimeError",
+  "message": "Agent trajectory incomplete; inspect validation.json and saved results"
+}

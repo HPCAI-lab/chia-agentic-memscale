@@ -1,0 +1,3 @@
+JobID                         JobName      State ExitCode    Elapsed 
+------------ ------------------------ ---------- -------- ---------- 
+59800416          chia-policy-compare     FAILED      1:0   00:02:11 

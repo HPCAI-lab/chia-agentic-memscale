@@ -1,0 +1,16 @@
+{"event": "start", "span_id": "f89d56fc45cf4e5cacd06fefb0d4ee14", "name": "session", "time_ns": 1792304961989003236}
+{"event": "start", "span_id": "745920c7116a4962be3139a10f15b273", "name": "warmup", "time_ns": 1792304961995529894}
+{"status": "success", "event": "end", "span_id": "745920c7116a4962be3139a10f15b273", "name": "warmup", "time_ns": 1792304968601932322, "elapsed_s": 6.602643224003259}
+{"event": "start", "span_id": "268c59242b8c4c55bae21270505d9bc6", "name": "baseline", "time_ns": 1792304968608790000}
+{"status": "success", "event": "end", "span_id": "268c59242b8c4c55bae21270505d9bc6", "name": "baseline", "time_ns": 1792304975263868553, "elapsed_s": 6.650102369952947}
+{"event": "start", "span_id": "071c38dd5c454db5b05b09b54871f36f", "name": "ray_startup", "time_ns": 1792304975328813479}
+{"status": "success", "event": "end", "span_id": "071c38dd5c454db5b05b09b54871f36f", "name": "ray_startup", "time_ns": 1792304995063992417, "elapsed_s": 19.731653617986012}
+{"event": "start", "span_id": "63f49db202bb466b98514d075c1e1335", "name": "policy_setup", "time_ns": 1792304995071139115}
+{"status": "success", "event": "end", "span_id": "63f49db202bb466b98514d075c1e1335", "name": "policy_setup", "time_ns": 1792305003780366394, "elapsed_s": 8.705799026007298}
+{"event": "start", "span_id": "7c6b8aff331f4689ae8cf8779fdd2d76", "name": "policy_loop", "time_ns": 1792305003783058515}
+{"status": "success", "event": "end", "span_id": "7c6b8aff331f4689ae8cf8779fdd2d76", "name": "policy_loop", "time_ns": 1792305049696456721, "elapsed_s": 45.91100041399477}
+{"event": "start", "span_id": "78caaea13fc244ccbe082c7b77259859", "name": "reporting", "time_ns": 1792305049721592169}
+{"status": "success", "event": "end", "span_id": "78caaea13fc244ccbe082c7b77259859", "name": "reporting", "time_ns": 1792305049744294406, "elapsed_s": 0.01957840204704553}
+{"event": "start", "span_id": "5d04e5fa034043fe9191235e889a13fe", "name": "cleanup", "time_ns": 1792305049747587378}
+{"status": "success", "event": "end", "span_id": "5d04e5fa034043fe9191235e889a13fe", "name": "cleanup", "time_ns": 1792305051699927101, "elapsed_s": 1.9487280969624408}
+{"status": "success", "event": "end", "span_id": "f89d56fc45cf4e5cacd06fefb0d4ee14", "name": "session", "time_ns": 1792305051708029955, "elapsed_s": 89.71346657798858}

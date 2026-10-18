@@ -1,0 +1,12 @@
+PAIR=1 POLICY=gemini SEED=101
+Session directory: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59800416-1792047720663158387
+Running one warm-up, then a fresh 3P / 1E / B1 baseline...
+Baseline throughput: 0.367424
+Gemini is choosing up to 4 experiments through CHIA...
+[36m(_ToolServerActor pid=308370)[0m INFO:     128.55.71.65:34636 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+[36m(_ToolServerActor pid=308370)[0m INFO:     128.55.71.65:34650 - "POST /nwchem_optimizer/mcp HTTP/1.1" 202 Accepted
+[36m(_ToolServerActor pid=308370)[0m INFO:     128.55.71.65:34652 - "POST /nwchem_optimizer/mcp HTTP/1.1" 200 OK
+RAW CHIA TOOL TRACE:
+
+FAIL: RuntimeError Agent trajectory incomplete; inspect validation.json and saved results
+Results preserved in: /global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59800416-1792047720663158387

@@ -1,0 +1,34 @@
+{
+  "policy": "gemini",
+  "backend": "perlmutter",
+  "project": "/global/u1/m/makhatri/chia-agentic-memscale",
+  "image": "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+  "budget": 4,
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "cf31bdae429445f29f3559577a194c48",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 8.165,
+      "latency_mean_ms": 2670.129,
+      "throughput_cases_per_s": 0.367424,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59800416-1792047720663158387/baseline/measurement.json",
+    "launcher_elapsed_s": 9.057
+  },
+  "prior_history": [],
+  "attempts": [],
+  "history_inspected": false
+}

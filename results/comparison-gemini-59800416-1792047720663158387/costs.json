@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "policy": "gemini",
+  "accounting_valid": true,
+  "timing_complete": true,
+  "session_including_cleanup_s": 99.89540532200044,
+  "session": {
+    "started": 1,
+    "finished": 1,
+    "unfinished": 0,
+    "known_elapsed_s": 99.89540532200044,
+    "elapsed_s": 99.89540532200044,
+    "failed": 1,
+    "interrupted": 0
+  },
+  "phases": {
+    "warmup": {
+      "started": 1,
+      "finished": 1,
+      "unfinished": 0,
+      "known_elapsed_s": 7.96237495800051,
+      "elapsed_s": 7.96237495800051,
+      "failed": 0,
+      "interrupted": 0
+    },
+    "baseline": {
+      "started": 1,
+      "finished": 1,
+      "unfinished": 0,
+      "known_elapsed_s": 9.059262497999953,
+      "elapsed_s": 9.059262497999953,
+      "failed": 0,
+      "interrupted": 0
+    },
+    "ray_startup": {
+      "started": 1,
+      "finished": 1,
+      "unfinished": 0,
+      "known_elapsed_s": 32.65561426599925,
+      "elapsed_s": 32.65561426599925,
+      "failed": 0,
+      "interrupted": 0
+    },
+    "policy_setup": {
+      "started": 1,
+      "finished": 1,
+      "unfinished": 0,
+      "known_elapsed_s": 12.525965423001253,
+      "elapsed_s": 12.525965423001253,
+      "failed": 0,
+      "interrupted": 0
+    },
+    "policy_loop": {
+      "started": 1,
+      "finished": 1,
+      "unfinished": 0,
+      "known_elapsed_s": 35.33938079799918,
+      "elapsed_s": 35.33938079799918,
+      "failed": 0,
+      "interrupted": 0
+    },
+    "reporting": {
+      "started": 1,
+      "finished": 1,
+      "unfinished": 0,
+      "known_elapsed_s": 0.014698828999826219,
+      "elapsed_s": 0.014698828999826219,
+      "failed": 1,
+      "interrupted": 0
+    },
+    "cleanup": {
+      "started": 1,
+      "finished": 1,
+      "unfinished": 0,
+      "known_elapsed_s": 2.1046872360002453,
+      "elapsed_s": 2.1046872360002453,
+      "failed": 0,
+      "interrupted": 0
+    }
+  },
+  "random_selection": {
+    "started": 0,
+    "finished": 0,
+    "unfinished": 0,
+    "known_elapsed_s": 0,
+    "elapsed_s": 0,
+    "failed": 0,
+    "interrupted": 0
+  },
+  "model_requests": {
+    "started": 1,
+    "finished": 1,
+    "unfinished": 0,
+    "known_elapsed_s": 0.1575989410011971,
+    "elapsed_s": 0.1575989410011971,
+    "failed": 1,
+    "interrupted": 0,
+    "input_tokens": null,
+    "input_tokens_known": 0,
+    "input_tokens_missing_requests": 1,
+    "output_tokens": null,
+    "output_tokens_known": 0,
+    "output_tokens_missing_requests": 1,
+    "total_tokens": null,
+    "total_tokens_known": 0,
+    "total_tokens_missing_requests": 1,
+    "cached_input_tokens": null,
+    "cached_input_tokens_known": 0,
+    "cached_input_tokens_missing_requests": 1,
+    "reasoning_tokens": null,
+    "reasoning_tokens_known": 0,
+    "reasoning_tokens_missing_requests": 1,
+    "core_usage_complete": false,
+    "api_cost_usd": null
+  },
+  "search_attempts": {
+    "attempts": 0,
+    "missing_attempts": 0,
+    "known_elapsed_s": 0,
+    "elapsed_s": 0
+  },
+  "driver_other_s": 0.2334213140002248,
+  "policy_loop_other_s": 35.181781856997986,
+  "errors": [],
+  "notes": [
+    "Top-level phases are inside session. Model requests and search attempts are inside policy_loop; do not add nested intervals twice.",
+    "Session starts after imports/preflight/provenance preparation, includes cleanup, and ends before costs.json export; use Slurm accounting for allocation wall time.",
+    "validation.json retains its earlier pre-cleanup timing boundary.",
+    "Request durations cover SDK/network/provider response handling and usage extraction, not isolated server inference. SDK retries are disabled.",
+    "policy_loop_other_s includes Ray/MCP transport, history calls, choice processing and other loop work; it is not pure decision time.",
+    "A failed/interrupted policy wait has no residual decomposition: remote work can continue until cleanup cancels it.",
+    "Journal writes and checkpoints add observation overhead. Start/end journal writes lie outside the individual measured span.",
+    "Missing durations and provider usage are unknown. Known sums are partial observations, not imputed totals.",
+    "Token fields are provider-reported counts. Cached/reasoning counts are breakdowns, not additional tokens to add to totals.",
+    "Gemini monetary cost is unpriced; token counts are not invoices. Random API cost excludes compute/allocation costs."
+  ]
+}
