@@ -1,0 +1,11 @@
+### Trajectory Summary
+Over the course of 4 experimental steps, we explored combinations of executor counts and batch sizes to optimize the throughput of three NWChem water SCF calculations:
+
+1. **Step 1 (`executors=2`, `batch_size=1`)**: Citing the baseline (`throughput = 0.497` cases/s), introducing a second executor yielded a throughput of `0.503` cases/s, showing a modest improvement.
+2. **Step 2 (`executors=1`, `batch_size=2`)**: Building on single-executor configurations, increasing the batch size to 2 increased throughput to `0.515` cases/s.
+3. **Step 3 (`executors=1`, `batch_size=3`)**: Pushing the batch size to 3 with a single executor caused throughput to drop to `0.465` cases/s, likely due to resource contention within a single execution stream.
+4. **Step 4 (`executors=2`, `batch_size=2`)**: Combining multiple executors and a batch size of 2 successfully increased throughput significantly to `0.747` cases/s.
+
+### Baseline vs. Best Configuration
+- **Baseline (`executors=1`, `batch_size=1`, `partitions=3`, `replication=1`)**: `0.497369` cases/s (Receipt: `54038a74876741ff9812158febea3edf`)
+- **Best Configuration (`executors=2`, `batch_size=2`, `partitions=3`, `replication=1`)**: `0.746707` cases/s (Receipt: `cc3875dcc8f541168ff63430e623ff83`)

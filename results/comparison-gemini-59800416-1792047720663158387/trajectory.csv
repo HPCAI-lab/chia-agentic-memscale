@@ -1,0 +1,2 @@
+step,selection_source,partitions,executors,replication,batch_size,placement,status,throughput_cases_per_s,experiment_elapsed_s,attempt_elapsed_s,latency_mean_ms,memory_peak_mb,best_so_far_cases_per_s,best_gain_vs_fresh_baseline_pct,reason,receipt,observed_receipt,measurement_file
+0,scripted_baseline,3,1,1,1,single-node,success,0.367424,8.165,,2670.129,,0.367424,0.0,,cf31bdae429445f29f3559577a194c48,,/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59800416-1792047720663158387/baseline/measurement.json

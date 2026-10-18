@@ -37,7 +37,11 @@ Gemini's selections exceeded their corresponding baseline means, while fixed E3/
 
 Confirmation session time was 307.725 seconds, including 297.175 seconds of measured-trial attempts and 7.356 seconds of warmup. No new Gemini decisions were made; this measures confirmation costs.
 
-These repeats do not add independent policy-search sessions. Evidence remains limited to three original search pairs in one allocation and one new confirmation allocation. The confirmation used a pinned image on a different node; historical/new throughput differences cannot be attributed to policy improvements. Memory optimization and adaptation of a running application remain research goals. See the [confirmation protocol and limitations](docs/policy-confirmation.md).
+These repeats do not add independent policy-search sessions. That confirmation covers three original search pairs from one allocation and repeats in one new allocation. The confirmation used a pinned image on a different node; historical/new throughput differences cannot be attributed to policy improvements. Memory optimization and adaptation of a running application remain research goals. See the [confirmation protocol and limitations](docs/policy-confirmation.md).
+
+**Live cost accounting was validated in job `59936561`:** six sessions, three matched pairs, and 24 successful search attempts passed the analysis audit with complete cost timing. Gemini made 18 successful API requests totaling 42,821 provider-reported tokens. Mean best throughput was 0.754008 cases/s for Gemini and 0.944467 for random; mean session time before cleanup was 86.823 seconds and 62.367 seconds, respectively. These descriptive results do not establish a Gemini advantage.
+
+See the [cost-accounting results and limitations](docs/policy-cost-accounting.md#live-validation-job-59936561) and [analysis outputs](results/policy-cost-analysis-59936561/). The earlier failed validation attempt, job `59800416`, is retained and disclosed. API request duration and token usage are recorded separately; monetary cost remains unpriced. A broader comparison still requires a separately frozen study protocol.
 
 ## Methodology
 

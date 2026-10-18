@@ -1,0 +1,59 @@
+{
+  "interpretation": "Best observed in this session; one measurement per configuration",
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "7dd7432d73f444aea262e8a1c91fe4b2",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 5.717,
+      "latency_mean_ms": 1855.44,
+      "throughput_cases_per_s": 0.52474,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59936561-1792305193984850391/baseline/measurement.json",
+    "launcher_elapsed_s": 6.245
+  },
+  "best": {
+    "step": 3,
+    "selection_source": "gemini",
+    "configuration": {
+      "partitions": 3,
+      "executors": 2,
+      "replication": 1,
+      "batch_size": 2,
+      "placement": "single-node"
+    },
+    "reason": "Testing executors=2 and batch_size=2 to combine multi-executor parallelism with batched execution for the 3 NWChem calculations.",
+    "observed_receipt": "55fbe38847db4954b3fe9be82a4245e9",
+    "receipt": "94c1108e8a96491381189616d11613f8",
+    "worker_pid": 770843,
+    "hostname": "nid006242",
+    "status": "success",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 3.928,
+      "latency_mean_ms": 1899.526,
+      "throughput_cases_per_s": 0.763837,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59936561-1792305193984850391/step-3/measurement.json",
+    "launcher_elapsed_s": 4.509,
+    "attempt_elapsed_s": 4.51174315600656
+  },
+  "best_gain_vs_fresh_baseline_pct": 45.56485116438618,
+  "agent_attempts": 4,
+  "agent_successes": 4
+}

@@ -1,0 +1,16 @@
+{"event": "start", "span_id": "80ca1027824045a6a5bb8426dd5c779c", "name": "session", "time_ns": 1792047721111036240}
+{"event": "start", "span_id": "bc179830fd274f8ca7feaca8ab2f2c40", "name": "warmup", "time_ns": 1792047721116382619}
+{"status": "success", "event": "end", "span_id": "bc179830fd274f8ca7feaca8ab2f2c40", "name": "warmup", "time_ns": 1792047729083637029, "elapsed_s": 7.96237495800051}
+{"event": "start", "span_id": "d7dc1a4128b64b08a5d2bd589f1aa5f1", "name": "baseline", "time_ns": 1792047729088015526}
+{"status": "success", "event": "end", "span_id": "d7dc1a4128b64b08a5d2bd589f1aa5f1", "name": "baseline", "time_ns": 1792047738150933329, "elapsed_s": 9.059262497999953}
+{"event": "start", "span_id": "e87d42c84fa648c2a1b39e3bfb4f8592", "name": "ray_startup", "time_ns": 1792047738238279007}
+{"status": "success", "event": "end", "span_id": "e87d42c84fa648c2a1b39e3bfb4f8592", "name": "ray_startup", "time_ns": 1792047770899487912, "elapsed_s": 32.65561426599925}
+{"event": "start", "span_id": "ecac5f31ab3247c0944acbe08ba0df90", "name": "policy_setup", "time_ns": 1792047770905401649}
+{"status": "success", "event": "end", "span_id": "ecac5f31ab3247c0944acbe08ba0df90", "name": "policy_setup", "time_ns": 1792047783435105618, "elapsed_s": 12.525965423001253}
+{"event": "start", "span_id": "5236d3571eef4eb6a45a68f01b8541d6", "name": "policy_loop", "time_ns": 1792047783463787835}
+{"status": "success", "event": "end", "span_id": "5236d3571eef4eb6a45a68f01b8541d6", "name": "policy_loop", "time_ns": 1792047818815109639, "elapsed_s": 35.33938079799918}
+{"event": "start", "span_id": "820f9ed323f549529a04624350f80ab7", "name": "reporting", "time_ns": 1792047818854084074}
+{"status": "failed", "error_type": "RuntimeError", "event": "end", "span_id": "820f9ed323f549529a04624350f80ab7", "name": "reporting", "time_ns": 1792047818871508803, "elapsed_s": 0.014698828999826219}
+{"event": "start", "span_id": "01f3c2c8d88949bea137fe11cabf4450", "name": "cleanup", "time_ns": 1792047818895653646}
+{"status": "success", "event": "end", "span_id": "01f3c2c8d88949bea137fe11cabf4450", "name": "cleanup", "time_ns": 1792047821004046895, "elapsed_s": 2.1046872360002453}
+{"status": "failed", "error_type": "SystemExit", "event": "end", "span_id": "80ca1027824045a6a5bb8426dd5c779c", "name": "session", "time_ns": 1792047821011203876, "elapsed_s": 99.89540532200044}

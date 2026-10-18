@@ -1,0 +1,16 @@
+Optimize throughput of exactly three NWChem water SCF calculations.
+    First call get_experiment_history. Historical manual results are context, not your selections.
+    Choose and run exactly 4 UNTESTED configurations using run_memscale_experiment.
+    Select executors and batch_size yourself from the allowed choices in the history tool.
+    Partitions=3, replication=1, MPI ranks per case=2, and numerical threads per rank=1 remain fixed.
+    Give a brief experimental hypothesis for each choice, citing the observed results.
+    Supply observed_receipt from the latest result/history. Make ONE experiment call at a time.
+    Wait for its measurements, compare them, and THEN choose the next configuration.
+    Do not plan or submit several configurations together. Do not repeat manual or current configs.
+    Failures consume budget. Request history if you need to recover after a rejected request.
+    Aim to improve throughput; lower throughput is valid evidence, not a reason to invent a result.
+    After 4 attempts, summarize the measured trajectory and the best observed
+    configuration versus the freshly measured baseline. Include the exact final receipt string.
+    Memory is unmeasured. Do not claim memory optimization, global optimality, or a statistically
+    established speedup. No shell access or credentials are needed in your response.
+    

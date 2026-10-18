@@ -1,0 +1,20 @@
+### Optimization Trajectory Summary
+
+Across the 4 attempted configurations, we explored variations in `executors` (1 to 3) and `batch_size` (1 to 3) for 3 water SCF calculations:
+
+1. **Step 1 (Executors=2, Batch=1):** Increasing executors from 1 to 2 improved throughput slightly from the baseline (0.491 cases/s) to **0.523 cases/s**, demonstrating modest benefits from concurrent task execution.
+2. **Step 2 (Executors=2, Batch=2):** Increasing batch size to 2 with 2 executors substantially improved throughput to **0.751 cases/s**, significantly reducing overall elapsed time.
+3. **Step 3 (Executors=2, Batch=3):** Pushing batch size to 3 with 2 executors decreased throughput to **0.645 cases/s**, indicating that over-batching increases per-task latency.
+4. **Step 4 (Executors=3, Batch=2):** Testing 3 executors with batch size 2 yielded **0.747 cases/s**, closely matching Step 2's performance but not surpassing it.
+
+### Best Observed Configuration vs. Baseline
+
+* **Fresh Baseline:**
+  * Configuration: `executors=1`, `batch_size=1`, `partitions=3`, `replication=1`
+  * Throughput: **0.491327 cases/s**
+  * Receipt: `156c9077d5ea40b4a84325410ddd8747`
+
+* **Best Observed Configuration:**
+  * Configuration: `executors=2`, `batch_size=2`, `partitions=3`, `replication=1`
+  * Throughput: **0.751479 cases/s**
+  * Exact Final Receipt: `8754968dad714feba9742a2ea2554fb5`

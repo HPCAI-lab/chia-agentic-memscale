@@ -1,0 +1,12 @@
+{
+  "policy": "gemini",
+  "passed": false,
+  "requested_experiments": 4,
+  "measured_agent_experiments": 0,
+  "final_receipt_reported": false,
+  "session_elapsed_s": 97.743,
+  "search_launcher_elapsed_s": 0,
+  "search_attempt_elapsed_s": 0,
+  "timing_note": "Session includes warmup, baseline, startup, decisions and tools; not pure API latency.",
+  "note": "Tool enforces history inspection, unique selections, budget and receipt chaining."
+}

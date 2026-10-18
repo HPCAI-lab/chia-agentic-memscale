@@ -1,0 +1,33 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "image": "ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest",
+  "python": "3.10.19",
+  "backend": "perlmutter",
+  "job_id": "59936561",
+  "hostname": "nid006242",
+  "experiment_budget": 4,
+  "sha256": {
+    "workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c",
+    "workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+    "tools/experiment_session.py": "5c6ff51a8dac225a32b5bbbd475a747e60a083f3d3c4eab6c949cd3e77ad3dca",
+    "tools/memscale_tool.py": "682751f0e90683acdd6968cb0b916805d0aa875c0a64c7ba0ae2320ba68417e7",
+    "compare_loop.py": "ee93eb4127405cbc56ade051806ea192037e3fab1801564a86b0d35d69f45474",
+    "tools/policy_costs.py": "4e914229773f1767145e05e272c6350662b3f3b80cae2d5910876eb39dd79031",
+    "tools/costed_llm.py": "f7b8b913670a8c512957112896abd3fb3dcb2a85107ad3b0fd1102acc160cf16"
+  },
+  "comparison_pair_seed": 103,
+  "policy": "random",
+  "random_seed": 103,
+  "history_scope": "fresh session only; identical eight non-baseline choices",
+  "transport": "Ray actor, same ExperimentSession",
+  "budget_note": "4 search attempts plus one warmup and one fresh baseline per policy",
+  "cost_schema_version": 1,
+  "model_request_timeout_s": 60.0,
+  "sdk_max_retries": 0,
+  "chia_retries": 1,
+  "chia_backend_sha256": "4398d31966e471354752373be072dff905f5cc534766bdf29ec51221a25a8671",
+  "openai_sdk_version": "3.15.0",
+  "project_commit": "0b12afff81346e798c07942fe4d378b0075571ad",
+  "chia_commit": "16c35e92aaaf9511c6453bf94cd5cf589698f4e3",
+  "recorded_image_id": "60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16"
+}

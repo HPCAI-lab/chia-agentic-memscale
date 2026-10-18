@@ -1,0 +1,59 @@
+{
+  "interpretation": "Best observed in this session; one measurement per configuration",
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "156c9077d5ea40b4a84325410ddd8747",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 6.106,
+      "latency_mean_ms": 1965.004,
+      "throughput_cases_per_s": 0.491327,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59936561-1792305287451271870/baseline/measurement.json",
+    "launcher_elapsed_s": 6.809
+  },
+  "best": {
+    "step": 2,
+    "selection_source": "gemini",
+    "configuration": {
+      "partitions": 3,
+      "executors": 2,
+      "replication": 1,
+      "batch_size": 2,
+      "placement": "single-node"
+    },
+    "reason": "Increasing executors to 2 improved throughput from 0.491 to 0.523 cases/s. Now testing batch_size 2 with 2 executors to evaluate how grouping tasks affects execution time and concurrency overhead for the 3 water calculations.",
+    "observed_receipt": "ac4205d4245b4fdea832f2003a658c10",
+    "receipt": "8486fd84b12b4bcbbec38f5a430da7b2",
+    "worker_pid": 779245,
+    "hostname": "nid006242",
+    "status": "success",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 3.992,
+      "latency_mean_ms": 1898.193,
+      "throughput_cases_per_s": 0.751479,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/comparison-gemini-59936561-1792305287451271870/step-2/measurement.json",
+    "launcher_elapsed_s": 4.57,
+    "attempt_elapsed_s": 4.5718107399879955
+  },
+  "best_gain_vs_fresh_baseline_pct": 52.94885076537621,
+  "agent_attempts": 4,
+  "agent_successes": 4
+}

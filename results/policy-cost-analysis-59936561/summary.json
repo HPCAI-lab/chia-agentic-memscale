@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "counts": {
+    "sessions": 6,
+    "analysis_eligible_sessions": 6,
+    "sessions_with_failure_file": 0,
+    "failed_attempts": 0,
+    "ineligible_sessions": 0,
+    "eligible_pairs": 3,
+    "ineligible_pair_groups": 0
+  },
+  "notes": [
+    "Descriptive pilot results, not significance tests or evidence of general policy superiority.",
+    "Best includes the fresh baseline; mean_best_so_far averages incumbents after each search attempt.",
+    "Performance summaries use evidence-checked, full-budget sessions, including terminal failed attempts; incomplete sessions remain listed.",
+    "Policy summaries include eligible unpaired sessions; paired differences use only unambiguous comparable pairs.",
+    "Positive paired throughput differences favor Gemini; positive time differences mean Gemini took longer.",
+    "Gains use each session's own baseline; gain differences are percentage points, not direct policy speedups.",
+    "Session time includes warmup, baseline, startup, decisions and tools; the recorded timer excludes final cleanup. It is not pure API latency.",
+    "Failed-attempt launcher times may be absent. Known sums are lower bounds; incomplete totals remain null.",
+    "Legacy API usage remains unknown. Instrumented usage is provider-reported, with partial counts explicit; Gemini dollar cost remains unpriced.",
+    "Instrumented session_including_cleanup_s has a different boundary from legacy session_elapsed_s. Nested request/experiment/phase durations must not be added twice.",
+    "Memory optimization and within-application adaptation are not measured.",
+    "Pairing checks recorded provenance. recorded_image_id is historical; the mutable tag is not independently resolved here.",
+    "Measurement JSON and source snapshots are checked; original console output and installed runtime identity are not re-audited."
+  ],
+  "cohorts": {
+    "5c67c6fa79f9d85b": {
+      "backend": "perlmutter",
+      "hostname": "nid006242",
+      "budget": 4,
+      "policies": {
+        "gemini": {
+          "best_cases_per_s": {
+            "n": 3,
+            "mean": 0.7540076666666666,
+            "sample_sd": 0.008840522684396728,
+            "median": 0.751479,
+            "min": 0.746707,
+            "max": 0.763837
+          },
+          "best_gain_pct": {
+            "n": 3,
+            "mean": 49.54836443707052,
+            "sample_sd": 3.7263659026266955,
+            "median": 50.13139138144918,
+            "min": 45.56485116438618,
+            "max": 52.94885076537621
+          },
+          "session_elapsed_s": {
+            "n": 3,
+            "mean": 86.82333333333334,
+            "sample_sd": 0.826293127971745,
+            "median": 86.621,
+            "min": 86.117,
+            "max": 87.732
+          },
+          "search_launcher_elapsed_s": {
+            "n": 3,
+            "mean": 23.357666666666667,
+            "sample_sd": 2.197690681905289,
+            "median": 24.621,
+            "min": 20.82,
+            "max": 24.632
+          },
+          "mean_best_so_far_cases_per_s": {
+            "n": 3,
+            "mean": 0.6361915833333334,
+            "sample_sd": 0.06253798983634538,
+            "median": 0.6442885,
+            "min": 0.5699995,
+            "max": 0.6942867500000001
+          },
+          "session_including_cleanup_s": {
+            "n": 3,
+            "mean": 88.81469546532026,
+            "sample_sd": 0.8163818911791016,
+            "median": 88.61155624402454,
+            "min": 88.11906357394764,
+            "max": 89.71346657798858
+          },
+          "search_attempt_elapsed_s": {
+            "n": 3,
+            "mean": 23.370570338641603,
+            "sample_sd": 2.201866670319953,
+            "median": 24.62826391798444,
+            "min": 20.82812171493424,
+            "max": 24.65532538300613
+          },
+          "api_request_elapsed_s": {
+            "n": 3,
+            "mean": 5.897826886425416,
+            "sample_sd": 0.30211830367841064,
+            "median": 5.817567853082437,
+            "min": 5.643942228110973,
+            "max": 6.231970578082837
+          },
+          "api_input_tokens": {
+            "n": 3,
+            "mean": 13321.666666666666,
+            "sample_sd": 271.41542574683064,
+            "median": 13242,
+            "min": 13099,
+            "max": 13624
+          },
+          "api_output_tokens": {
+            "n": 3,
+            "mean": 952,
+            "sample_sd": 104.3599540053559,
+            "median": 962,
+            "min": 843,
+            "max": 1051
+          },
+          "api_tokens": {
+            "n": 3,
+            "mean": 14273.666666666666,
+            "sample_sd": 272.434089888423,
+            "median": 14150,
+            "min": 14085,
+            "max": 14586
+          }
+        },
+        "random": {
+          "best_cases_per_s": {
+            "n": 3,
+            "mean": 0.944467,
+            "sample_sd": 0.3406360275249815,
+            "median": 0.751623,
+            "min": 0.744003,
+            "max": 1.337775
+          },
+          "best_gain_pct": {
+            "n": 3,
+            "mean": 120.65991531282967,
+            "sample_sd": 130.48343103770713,
+            "median": 46.342902313844924,
+            "min": 44.31220189661158,
+            "max": 271.3246417280325
+          },
+          "session_elapsed_s": {
+            "n": 3,
+            "mean": 62.367,
+            "sample_sd": 1.7380083429028765,
+            "median": 62.663,
+            "min": 60.5,
+            "max": 63.938
+          },
+          "search_launcher_elapsed_s": {
+            "n": 3,
+            "mean": 22.865000000000002,
+            "sample_sd": 1.8395792997313256,
+            "median": 22.467000000000002,
+            "min": 21.257,
+            "max": 24.871
+          },
+          "mean_best_so_far_cases_per_s": {
+            "n": 3,
+            "mean": 0.9205369166666666,
+            "sample_sd": 0.3627604841820851,
+            "median": 0.744003,
+            "min": 0.67983275,
+            "max": 1.337775
+          },
+          "session_including_cleanup_s": {
+            "n": 3,
+            "mean": 64.3481956923303,
+            "sample_sd": 1.7351744996422167,
+            "median": 64.69708423200063,
+            "min": 62.46508582198294,
+            "max": 65.88241702300729
+          },
+          "search_attempt_elapsed_s": {
+            "n": 3,
+            "mean": 22.876614185690414,
+            "sample_sd": 1.840553515406334,
+            "median": 22.48288670106558,
+            "min": 21.26478468591813,
+            "max": 24.88217117008753
+          },
+          "api_request_elapsed_s": {
+            "n": 3,
+            "mean": 0,
+            "sample_sd": 0.0,
+            "median": 0,
+            "min": 0,
+            "max": 0
+          },
+          "api_input_tokens": {
+            "n": 3,
+            "mean": 0,
+            "sample_sd": 0.0,
+            "median": 0,
+            "min": 0,
+            "max": 0
+          },
+          "api_output_tokens": {
+            "n": 3,
+            "mean": 0,
+            "sample_sd": 0.0,
+            "median": 0,
+            "min": 0,
+            "max": 0
+          },
+          "api_tokens": {
+            "n": 3,
+            "mean": 0,
+            "sample_sd": 0.0,
+            "median": 0,
+            "min": 0,
+            "max": 0
+          }
+        }
+      },
+      "eligible_pairs": 3,
+      "wins": {
+        "gemini": 2,
+        "random": 1,
+        "tie": 0
+      },
+      "paired_differences": {
+        "best_difference_cases_per_s": {
+          "n": 3,
+          "mean": -0.1904593333333333,
+          "sample_sd": 0.34283758550271776,
+          "median": 0.0027040000000000397,
+          "min": -0.5862959999999999,
+          "max": 0.012213999999999947
+        },
+        "best_relative_difference_pct": {
+          "n": 3,
+          "mean": -13.94591592211547,
+          "sample_sd": 25.884775529622335,
+          "median": 0.3634393947336223,
+          "min": -43.82620395806469,
+          "max": 1.6250167969846574
+        },
+        "gain_difference_percentage_points": {
+          "n": 3,
+          "mean": -71.11155087575914,
+          "sample_sd": 127.57722446532202,
+          "median": -0.7780511494587472,
+          "min": -218.37579096265625,
+          "max": 5.819189484837594
+        },
+        "session_difference_s": {
+          "n": 3,
+          "mean": 24.456333333333333,
+          "sample_sd": 2.0411666598622764,
+          "median": 25.069000000000003,
+          "min": 22.179000000000002,
+          "max": 26.120999999999995
+        },
+        "search_launcher_difference_s": {
+          "n": 3,
+          "mean": 0.492666666666666,
+          "sample_sd": 1.4512981545269508,
+          "median": -0.25,
+          "min": -0.43700000000000117,
+          "max": 2.164999999999999
+        },
+        "search_attempt_difference_s": {
+          "n": 3,
+          "mean": 0.4939561529511896,
+          "sample_sd": 1.4564778107776972,
+          "median": -0.2539072521030903,
+          "min": -0.43666297098388895,
+          "max": 2.172438681940548
+        },
+        "api_request_difference_s": {
+          "n": 3,
+          "mean": 5.897826886425416,
+          "sample_sd": 0.30211830367841064,
+          "median": 5.817567853082437,
+          "min": 5.643942228110973,
+          "max": 6.231970578082837
+        },
+        "session_including_cleanup_difference_s": {
+          "n": 3,
+          "mean": 24.466499772989966,
+          "sample_sd": 2.0120782312881023,
+          "median": 25.01638234598795,
+          "min": 22.23664655094035,
+          "max": 26.146470422041602
+        }
+      }
+    }
+  },
+  "scope": {
+    "job_id": "59936561",
+    "purpose": "Cost-accounting live validation",
+    "earlier_failed_validation_job": "59800416"
+  }
+}
