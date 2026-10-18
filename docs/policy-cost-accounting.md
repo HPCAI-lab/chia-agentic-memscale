@@ -107,9 +107,9 @@ synthetic response, and checks usage recording. It submits no Ray task, calls no
 API, and executes no NWChem workload. The historical analysis uses a new output
 directory so published pilot reports are preserved.
 
-These are instrumentation/control-flow checks, not performance evidence. A live
-integration check and a separately frozen follow-up protocol are still needed
-before treating newly collected sessions as research measurements. Include the
+The offline checks validate instrumentation and control flow. The live
+validation below adds measured timing and usage evidence. A broader policy
+evaluation still needs a separately frozen follow-up protocol. Include the
 fixed E3/B3 control, independent allocation blocks, equal search budgets, an
 explicit policy order, pinned image identity, failure accounting, and repeated
 evaluation of selected configurations in that protocol.
@@ -118,3 +118,57 @@ The shared session module now includes an outer attempt timer. Therefore the old
 confirmation plan correctly rejects this changed source. Reproduce that historical
 protocol in its original checkout, or create a new disclosed plan for new runs;
 do not edit its stored hashes to bypass the check.
+
+## Live validation: job 59936561
+
+Code commit `0b12aff` passed 68 tests and the installed-backend check before
+submission. Slurm job `59936561` completed on `nid006242` with exit code `0:0`
+in 8 minutes 23 seconds. Each of six sessions ran a warmup, a fresh baseline,
+and four search attempts. The audit accepted all six sessions and three matched
+pairs, with 24 successful search attempts and complete cost timing.
+
+The following are descriptive means across three sessions per policy:
+
+| Metric | Gemini | Random |
+| --- | ---: | ---: |
+| Best observed throughput (cases/s) | 0.754008 | 0.944467 |
+| Session time before cleanup (s) | 86.823333 | 62.367000 |
+| Session time including cleanup (s) | 88.814695 | 64.348196 |
+| Search-attempt time (s) | 23.370570 | 22.876614 |
+| API-request time (s) | 5.897827 | 0.000000 |
+| Provider-reported total tokens | 14273.666667 | 0 |
+
+| Pair seed | Gemini best (cases/s) | Random best (cases/s) | Gemini relative to random |
+| --- | ---: | ---: | ---: |
+| 101 | 0.746707 | 0.744003 | +0.36% |
+| 102 | 0.763837 | 0.751623 | +1.63% |
+| 103 | 0.751479 | 1.337775 | -43.83% |
+
+Gemini made 18 successful API requests and used 42,821 provider-reported tokens
+in total. Random made no model requests; it still incurred workload and
+orchestration costs. API duration includes SDK, network, and provider time.
+The full session-time difference cannot be attributed to model requests.
+Request and search-attempt times are already included in session time; do not
+add them to it. Monetary cost remains unpriced.
+
+The earlier validation attempt, job `59800416`, failed on its first Gemini
+request with `APIConnectionError` after 0.157599 seconds. It completed no
+agent-selected experiments. Token usage for that failed request is unknown,
+not zero; its root cause was not established. The
+[failed session](../results/comparison-gemini-59800416-1792047720663158387/)
+and both jobs' logs and accounting records are retained.
+
+The [analysis outputs](../results/policy-cost-analysis-59936561/) explicitly
+scope their six sessions to job `59936561` and identify the earlier failure.
+The full-results `--strict` command above will flag the retained incomplete
+session; that is expected and must not be resolved by deleting its evidence.
+
+This was a live cost-recorder validation with three pairs in one allocation.
+It does not establish a Gemini performance advantage. The comparison launcher
+used a mutable image tag; this was not the earlier pinned-image confirmation
+protocol. There was no separate fixed E3/B3 arm in this run. Instrumentation,
+request settings, and timing boundaries differ from the historical pilot, so
+these reports are kept separate. A future frozen study should include the
+fixed control, multiple independent allocations, and repeated evaluation of
+selected configurations. Memory optimization and adaptation of a running
+application remain unimplemented research goals.
