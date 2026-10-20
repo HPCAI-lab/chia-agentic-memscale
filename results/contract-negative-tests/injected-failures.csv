@@ -1,0 +1,8 @@
+test,passed,injected_fault,detection_boundary,benchmark_calls_after_injection,outcome,evidence_kind
+test_contract_injections.InjectionTests.test_budget_exhausted_before_launch,True,exhausted attempt budget,runtime admission,0,rejected,offline synthetic injection with launcher spy
+test_contract_injections.InjectionTests.test_corrupted_scf_text_is_rejected,True,corrupted SCF output with unchanged JSON,completion validation / offline audit,0,rejected after simulated output exists; no new workload launched by audit,offline synthetic injection with launcher spy
+test_contract_injections.InjectionTests.test_duplicate_before_launch,True,duplicate configuration,runtime admission,0,rejected; no additional attempt,offline synthetic injection with launcher spy
+test_contract_injections.InjectionTests.test_edited_record_is_audit_failure,True,edited result record,offline consistency audit,0,excluded from policy analysis,offline synthetic injection with launcher spy
+test_contract_injections.InjectionTests.test_out_of_space_before_launch,True,out-of-space / wrong-type action,runtime admission,0,rejected; budget unchanged,offline synthetic injection with launcher spy
+test_contract_injections.InjectionTests.test_reordered_receipt_is_audit_failure,True,reordered records / receipts,offline sequence audit,0,excluded from policy analysis,offline synthetic injection with launcher spy
+test_contract_injections.InjectionTests.test_stale_receipt_before_launch,True,stale receipt,runtime admission,0,rejected,offline synthetic injection with launcher spy

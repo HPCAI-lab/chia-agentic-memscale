@@ -1,10 +1,14 @@
-# CHIA Agentic MemScale
+# CHIA: Bounded Agentic Scientific Experimentation
 
-A bounded agent–runtime interface for adaptive execution of scientific HPC workloads, built with Gemini, CHIA MCP tools, Ray, and NWChem.
+A bounded agent–runtime interface for sequential configuration experiments on scientific HPC workloads, built with Gemini, CHIA MCP tools, Ray, and NWChem.
 
 ## Overview and current status
 
-CHIA-Agentic MemScale connects an agent to a controlled experiment runner. Gemini reads experiment history, selects an untested configuration, requests execution through a CHIA tool, receives measured performance and scientific-validation feedback, and selects the next experiment. The runtime validates requests and controls execution; the agent has no unrestricted shell tool.
+CHIA connects an agent to a controlled experiment runner. Gemini reads experiment history, selects an untested configuration, requests execution through a CHIA tool, receives measured performance and scientific-validation feedback, and selects the next experiment. The runtime validates requests and controls execution; the agent has no unrestricted shell tool.
+
+The repository slug and `MemScaleTool` API name are retained for compatibility. That tool exposes bounded experiment history and launch operations; it does not implement a separate memory-management layer. Executors and batch size control case concurrency and waves in the NWChem harness. Memory use, memory policies, and adaptation within a running NWChem calculation are not evaluated, so MemScale has been removed from the displayed project title.
+
+The [October 28 evaluation protocol](docs/oct28-evaluation.md) adds a frozen 45-trial exhaustive sweep, empirical-reference regret analysis, explicit fault-injection evidence, and a paired contract-overhead experiment. New sweep and overhead performance results remain pending Perlmutter execution. Offline reanalysis of the two published comparison jobs finds **three Gemini wins and three random wins**, reported by job block; [confirmation means, spread, and raw points](results/oct28-existing-evidence/confirmation.png) are also available.
 
 **The autonomous loop has been validated on NERSC Perlmutter with NWChem 7.2.0.** Job `58656462` completed on September 20, 2026, with exit code `0:0`. Gemini selected four previously untested configurations, and all four experiments passed scientific validation. This is a small water-SCF orchestration demonstration; memory optimization and larger-workload scaling remain research goals.
 

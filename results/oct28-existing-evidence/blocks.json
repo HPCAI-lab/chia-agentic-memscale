@@ -1,0 +1,188 @@
+{
+  "audit_passed": true,
+  "errors": [],
+  "blocks": [
+    {
+      "job_id": "58835485",
+      "eligible_pairs": 3,
+      "gemini_wins": 1,
+      "random_wins": 2,
+      "ties": 0,
+      "paired_relative_difference_pct": {
+        "n": 3,
+        "mean": -5.132851233627007,
+        "sample_sd": 14.917608965531034,
+        "median": -12.673175439370631,
+        "min": -14.775097206962073,
+        "max": 12.049718945451682
+      },
+      "policies": {
+        "gemini": {
+          "best_cases_per_s": {
+            "n": 3,
+            "mean": 0.6764463333333334,
+            "sample_sd": 0.054509447532820735,
+            "median": 0.70765,
+            "min": 0.613505,
+            "max": 0.708184
+          },
+          "session_elapsed_s": {
+            "n": 3,
+            "mean": 122.418,
+            "sample_sd": 8.21940727790028,
+            "median": 123.298,
+            "min": 113.794,
+            "max": 130.162
+          },
+          "api_request_elapsed_s": {
+            "n": 0,
+            "mean": null,
+            "sample_sd": null,
+            "median": null,
+            "min": null,
+            "max": null
+          },
+          "api_tokens": {
+            "n": 0,
+            "mean": null,
+            "sample_sd": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        "random": {
+          "best_cases_per_s": {
+            "n": 3,
+            "mean": 0.7216826666666667,
+            "sample_sd": 0.10107347476135041,
+            "median": 0.702539,
+            "min": 0.63155,
+            "max": 0.830959
+          },
+          "session_elapsed_s": {
+            "n": 3,
+            "mean": 78.76733333333333,
+            "sample_sd": 6.58500913692102,
+            "median": 81.116,
+            "min": 71.33,
+            "max": 83.856
+          },
+          "api_request_elapsed_s": {
+            "n": 0,
+            "mean": null,
+            "sample_sd": null,
+            "median": null,
+            "min": null,
+            "max": null
+          },
+          "api_tokens": {
+            "n": 0,
+            "mean": null,
+            "sample_sd": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        }
+      }
+    },
+    {
+      "job_id": "59936561",
+      "eligible_pairs": 3,
+      "gemini_wins": 2,
+      "random_wins": 1,
+      "ties": 0,
+      "paired_relative_difference_pct": {
+        "n": 3,
+        "mean": -13.94591592211547,
+        "sample_sd": 25.884775529622335,
+        "median": 0.3634393947336223,
+        "min": -43.82620395806469,
+        "max": 1.6250167969846574
+      },
+      "policies": {
+        "gemini": {
+          "best_cases_per_s": {
+            "n": 3,
+            "mean": 0.7540076666666666,
+            "sample_sd": 0.008840522684396728,
+            "median": 0.751479,
+            "min": 0.746707,
+            "max": 0.763837
+          },
+          "session_elapsed_s": {
+            "n": 3,
+            "mean": 86.82333333333334,
+            "sample_sd": 0.826293127971745,
+            "median": 86.621,
+            "min": 86.117,
+            "max": 87.732
+          },
+          "api_request_elapsed_s": {
+            "n": 3,
+            "mean": 5.897826886425416,
+            "sample_sd": 0.30211830367841064,
+            "median": 5.817567853082437,
+            "min": 5.643942228110973,
+            "max": 6.231970578082837
+          },
+          "api_tokens": {
+            "n": 3,
+            "mean": 14273.666666666666,
+            "sample_sd": 272.434089888423,
+            "median": 14150,
+            "min": 14085,
+            "max": 14586
+          }
+        },
+        "random": {
+          "best_cases_per_s": {
+            "n": 3,
+            "mean": 0.944467,
+            "sample_sd": 0.3406360275249815,
+            "median": 0.751623,
+            "min": 0.744003,
+            "max": 1.337775
+          },
+          "session_elapsed_s": {
+            "n": 3,
+            "mean": 62.367,
+            "sample_sd": 1.7380083429028765,
+            "median": 62.663,
+            "min": 60.5,
+            "max": 63.938
+          },
+          "api_request_elapsed_s": {
+            "n": 3,
+            "mean": 0,
+            "sample_sd": 0.0,
+            "median": 0,
+            "min": 0,
+            "max": 0
+          },
+          "api_tokens": {
+            "n": 3,
+            "mean": 0,
+            "sample_sd": 0.0,
+            "median": 0,
+            "min": 0,
+            "max": 0
+          }
+        }
+      }
+    }
+  ],
+  "descriptive_total": {
+    "eligible_pairs": 6,
+    "gemini_wins": 3,
+    "random_wins": 3,
+    "ties": 0
+  },
+  "notes": [
+    "Job is the block. Raw timings/throughput and API cost observations are not pooled across jobs with changed instrumentation or environment.",
+    "Repeated seeds reuse random configuration sequences across jobs; six matched pairs are not six independent allocation replicates. There are two job blocks in the published pilot.",
+    "Wins compare measured best throughput, including baseline, with exact numeric ties. Small differences are not significance claims.",
+    "The incomplete validation job is retained as a separate failure, not a completed comparison pair."
+  ]
+}
