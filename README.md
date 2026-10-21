@@ -8,7 +8,9 @@ CHIA connects an agent to a controlled experiment runner. Gemini reads experimen
 
 The repository slug and `MemScaleTool` API name are retained for compatibility. That tool exposes bounded experiment history and launch operations; it does not implement a separate memory-management layer. Executors and batch size control case concurrency and waves in the NWChem harness. Memory use, memory policies, and adaptation within a running NWChem calculation are not evaluated, so MemScale has been removed from the displayed project title.
 
-The [October 28 evaluation protocol](docs/oct28-evaluation.md) adds a frozen 45-trial exhaustive sweep, empirical-reference regret analysis, explicit fault-injection evidence, and a paired contract-overhead experiment. New sweep and overhead performance results remain pending Perlmutter execution. Offline reanalysis of the two published comparison jobs finds **three Gemini wins and three random wins**, reported by job block; [confirmation means, spread, and raw points](results/oct28-existing-evidence/confirmation.png) are also available.
+**The exhaustive sweep and contract-overhead study are complete and pass their evidence audits.** Job `60056838` measured all nine configurations five times; E3/B3 had the highest mean throughput, 1.547847 cases/s. Job `60080557` completed ten bare/contract pairs; directly timed contract components averaged 145.698 ms, with a mean share of 3.248% of contract-worker time. The mean paired increase in total call time was 5.356%, with a sample SD of 13.536 percentage points. These measurements do not support an "under 1%" claim. See the [results and limitations](docs/oct28-results.md) and [frozen evaluation protocol](docs/oct28-evaluation.md).
+
+Reanalysis of the two published comparison jobs finds **three Gemini wins and three random wins**, reported by job block. Relative to the new sweep's empirical best configuration, Gemini visited and selected E3/B3 in 0/6 historical sessions and random in 2/6; the two random hits repeat seed 103 across the two jobs. These are retrospective configuration comparisons, not six independent allocation replicates. [Confirmation means, spread, and raw points](results/oct28-existing-evidence/confirmation.png) are also available.
 
 **The autonomous loop has been validated on NERSC Perlmutter with NWChem 7.2.0.** Job `58656462` completed on September 20, 2026, with exit code `0:0`. Gemini selected four previously untested configurations, and all four experiments passed scientific validation. This is a small water-SCF orchestration demonstration; memory optimization and larger-workload scaling remain research goals.
 
@@ -129,7 +131,7 @@ Prepare the NWChem image and wait for `READY`:
 shifterimg -v pull ghcr.io/nwchemgit/nwchem-720.nersc.mpich4.mpi-pr:latest
 ```
 
-The historical image ID is in [provenance/nwchem-image-id.txt](provenance/nwchem-image-id.txt). The launcher currently uses a mutable `latest` tag; compare the resolved image ID with the recorded ID before claiming the identical environment.
+The historical image ID is in [provenance/nwchem-image-id.txt](provenance/nwchem-image-id.txt). The agent-loop launcher above uses a mutable `latest` tag; compare the resolved image ID with the recorded ID before claiming the identical environment. The confirmation, exhaustive-sweep, and contract-overhead protocols instead pin and verify an image ID in their frozen plans.
 
 Review `scripts/run_agent_loop.sbatch` and change its `--account=m5289` directive if needed for your allocation. From the project directory on a login node:
 
@@ -155,11 +157,11 @@ See [docs/agent_loop.md](docs/agent_loop.md) for resource requirements, timeouts
 - `results/`: selected published measurements and agent evidence.
 - `docs/`: detailed run instructions.
 
-## Planned evaluation and expected results
+## Remaining evaluation
 
-Four GCP agent trajectories have now been recorded. Further evaluation will test more repetitions, broader configuration spaces, and larger scientific workloads. The initial random-search comparison and repeated confirmation are reported above. Further evaluation will add independent search sessions across allocations, grid search, and offline tuning under comparable experiment budgets. Additional action controls, including partition count and memory/data-placement policies, require further implementation and validation.
+Four GCP agent trajectories, two Perlmutter policy-comparison blocks, repeated confirmation, the full nine-configuration sweep, and the paired contract-overhead study are recorded. The current evidence supports bounded execution and an empirical fixed-configuration reference; it does not establish a Gemini selection advantage. Further evaluation needs new policy seeds across more allocations, reference sweeps collected alongside those policy sessions, and a larger validated scientific workload. The exhaustive sweep characterizes the current space; budget-matched grid or offline-tuning policies and broader configuration spaces remain future comparisons. Additional action controls, including partition count and memory/data-placement policies, require further implementation and validation.
 
-Evaluation will measure throughput, experiments required to reach a strong configuration, cumulative execution cost, adaptation overhead, rejected actions, and scientific correctness. The expected outcome is a reproducible, auditable framework and evidence about when agent-based selection helps. Improved performance across workloads is a research question, not an established result.
+Published evidence now includes throughput and scientific checks, recorded session and API costs, retrospective reference regret, contract component timing, and offline injected failures. Live rejection rates, memory behavior, adaptation within a running application, and generalization to larger workloads remain unmeasured. Only the water 6-31g input has a validated reference in this repository. Manuscript title and invariant-label edits still require the paper source; see the [remaining scope](docs/oct28-results.md#remaining-scope).
 
 The native GCP backend has been validated on a standalone VM. It uses NWChem 7.0.2 rather than the Perlmutter container's 7.2.0; compare configurations within each environment, not absolute throughput across platforms. The exact constrained-install recipe added after the runs has not yet been revalidated on a second clean VM.
 

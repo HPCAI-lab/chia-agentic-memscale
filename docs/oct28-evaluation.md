@@ -1,8 +1,11 @@
 # Evaluation extension for the October 28 deadline
 
-This extends the existing runner and preserves historical evidence. New landscape
-and overhead measurements must be collected on Perlmutter. Offline tests and the
-historical figure are not new performance results.
+This extends the existing runner and preserves historical evidence. Landscape
+job `60056838` and overhead job `60080557` have completed on Perlmutter; all 45
+landscape trials and 20 overhead trials passed, and their saved evidence passes
+the analysis audits. See [measured results and limitations](oct28-results.md).
+The commands below document the frozen protocols. Offline fault-injection tests
+and the historical confirmation figure remain distinct from these new measurements.
 
 ## Exhaustive empirical reference
 
@@ -20,6 +23,11 @@ call stops the study rather than launching the next trial while earlier work
 might still be running.
 
 With `chia-memscale` activated, from the repository root:
+
+The published plan files already exist. For a new study, choose a new plan path
+and commit it before submission; the planner deliberately refuses to overwrite
+an existing plan. Use the analysis commands in [the results record](oct28-results.md#reproduce-the-audits)
+to recheck the completed studies without launching workloads.
 
 ```bash
 python -m unittest discover -s tests -p 'test_*.py' -v
