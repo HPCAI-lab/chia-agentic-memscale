@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "tests_run": 7,
+  "rows": [
+    {
+      "test": "test_contract_injections.InjectionTests.test_budget_exhausted_before_launch",
+      "passed": true,
+      "injected_fault": "exhausted attempt budget",
+      "detection_boundary": "runtime admission",
+      "benchmark_calls_after_injection": 0,
+      "outcome": "rejected",
+      "evidence_kind": "offline synthetic injection with launcher spy"
+    },
+    {
+      "test": "test_contract_injections.InjectionTests.test_corrupted_scf_text_is_rejected",
+      "passed": true,
+      "injected_fault": "corrupted SCF output with unchanged JSON",
+      "detection_boundary": "completion validation / offline audit",
+      "benchmark_calls_after_injection": 0,
+      "outcome": "rejected after simulated output exists; no new workload launched by audit",
+      "evidence_kind": "offline synthetic injection with launcher spy"
+    },
+    {
+      "test": "test_contract_injections.InjectionTests.test_duplicate_before_launch",
+      "passed": true,
+      "injected_fault": "duplicate configuration",
+      "detection_boundary": "runtime admission",
+      "benchmark_calls_after_injection": 0,
+      "outcome": "rejected; no additional attempt",
+      "evidence_kind": "offline synthetic injection with launcher spy"
+    },
+    {
+      "test": "test_contract_injections.InjectionTests.test_edited_record_is_audit_failure",
+      "passed": true,
+      "injected_fault": "edited result record",
+      "detection_boundary": "offline consistency audit",
+      "benchmark_calls_after_injection": 0,
+      "outcome": "excluded from policy analysis",
+      "evidence_kind": "offline synthetic injection with launcher spy"
+    },
+    {
+      "test": "test_contract_injections.InjectionTests.test_out_of_space_before_launch",
+      "passed": true,
+      "injected_fault": "out-of-space / wrong-type action",
+      "detection_boundary": "runtime admission",
+      "benchmark_calls_after_injection": 0,
+      "outcome": "rejected; budget unchanged",
+      "evidence_kind": "offline synthetic injection with launcher spy"
+    },
+    {
+      "test": "test_contract_injections.InjectionTests.test_reordered_receipt_is_audit_failure",
+      "passed": true,
+      "injected_fault": "reordered records / receipts",
+      "detection_boundary": "offline sequence audit",
+      "benchmark_calls_after_injection": 0,
+      "outcome": "excluded from policy analysis",
+      "evidence_kind": "offline synthetic injection with launcher spy"
+    },
+    {
+      "test": "test_contract_injections.InjectionTests.test_stale_receipt_before_launch",
+      "passed": true,
+      "injected_fault": "stale receipt",
+      "detection_boundary": "runtime admission",
+      "benchmark_calls_after_injection": 0,
+      "outcome": "rejected",
+      "evidence_kind": "offline synthetic injection with launcher spy"
+    }
+  ],
+  "source_sha256": {
+    "scripts/check_contract_negative.py": "5c387418ae2eec7a041e7bc993eeea99ab0a8dfd8e424ea10998b1fd214049fb",
+    "tests/test_contract_injections.py": "ba05a089b99333dc34b2f6bb3fc26bfc9815b81ae4c71a54af0158c68d552117",
+    "tests/test_agent_session.py": "c81b6cf1e4c64780af963ef8e4509f5a103c94ec6c3c7e9b8f971d0c5435a76c",
+    "tests/test_analyze_policy_comparison.py": "775238e2d17c88fad4b39cf25910a3e634f943cdf33a6c835213342487eb4600",
+    "tools/experiment_session.py": "631d835f44f9f80f61b0ce718f3635bbeb9443f92c7afdf88fe484b1028158fe",
+    "scripts/analyze_policy_comparison.py": "c5ac17d598b996f63f6cf5d4dfd31cd4d490a5d8ba15eda6feabab8124857537",
+    "tools/policy_costs.py": "4e914229773f1767145e05e272c6350662b3f3b80cae2d5910876eb39dd79031",
+    "workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c"
+  },
+  "scope": "Offline synthetic fault injection. Zero benchmark calls means zero additional calls after injection at the spied boundary; it does not assert that no Ray actor existed. SCF corruption is necessarily detected after output exists. These are correctness tests, not HPC performance measurements."
+}

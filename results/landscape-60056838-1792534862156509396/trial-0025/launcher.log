@@ -1,0 +1,116 @@
+{
+  "backend": "perlmutter",
+  "workload": "nwchem_water_6-31g_scf",
+  "configuration": {
+    "partitions": 3,
+    "executors": 1,
+    "replication": 1,
+    "batch_size": 2,
+    "placement": "single-node"
+  },
+  "aggregate": {
+    "status": "success",
+    "cases_completed": 3,
+    "cases_total": 3,
+    "experiment_elapsed_s": 6.041,
+    "latency_mean_ms": 1968.419,
+    "throughput_cases_per_s": 0.496616,
+    "memory_peak_mb": null
+  },
+  "scientific_validation": {
+    "reference_energy_hartree": -75.983998,
+    "tolerance_hartree": 1e-05
+  },
+  "cases": [
+    {
+      "command": [
+        "srun",
+        "--exclusive",
+        "--exact",
+        "--nodes=1",
+        "--ntasks",
+        "2",
+        "--cpus-per-task",
+        "2",
+        "--cpu-bind=cores",
+        "--kill-on-bad-exit=1",
+        "shifter",
+        "--image",
+        "id:60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16",
+        "--module=mpich",
+        "nwchem",
+        "water_check.nw"
+      ],
+      "cpu_ids": null,
+      "case_id": "p0-r0",
+      "partition": 0,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 1659.891,
+      "energy_hartree": -75.9839975704,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0025/cases/nwchem-p0-r0-1pmmq17v"
+    },
+    {
+      "command": [
+        "srun",
+        "--exclusive",
+        "--exact",
+        "--nodes=1",
+        "--ntasks",
+        "2",
+        "--cpus-per-task",
+        "2",
+        "--cpu-bind=cores",
+        "--kill-on-bad-exit=1",
+        "shifter",
+        "--image",
+        "id:60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16",
+        "--module=mpich",
+        "nwchem",
+        "water_check.nw"
+      ],
+      "cpu_ids": null,
+      "case_id": "p1-r0",
+      "partition": 1,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 2433.748,
+      "energy_hartree": -75.9839975704,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0025/cases/nwchem-p1-r0-2xcdazf9"
+    },
+    {
+      "command": [
+        "srun",
+        "--exclusive",
+        "--exact",
+        "--nodes=1",
+        "--ntasks",
+        "2",
+        "--cpus-per-task",
+        "2",
+        "--cpu-bind=cores",
+        "--kill-on-bad-exit=1",
+        "shifter",
+        "--image",
+        "id:60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16",
+        "--module=mpich",
+        "nwchem",
+        "water_check.nw"
+      ],
+      "cpu_ids": null,
+      "case_id": "p2-r0",
+      "partition": 2,
+      "replica": 0,
+      "returncode": 0,
+      "latency_ms": 1811.619,
+      "energy_hartree": -75.9839975704,
+      "memory_mb": null,
+      "passed": true,
+      "run_directory": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0025/cases/nwchem-p2-r0-gsoru7k3"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 """Bounded, auditable experiments; no model or CHIA dependency in this module."""
 
 import csv
+import hashlib
 import json
 import math
 import os
@@ -35,8 +36,12 @@ def config_key(config):
                  ("partitions", "executors", "replication", "batch_size"))
 
 
-def run_benchmark(project, directory, image, config, timeout_s=120, backend="perlmutter"):
-    """Run the real harness, keeping raw output and terminating timed-out steps."""
+def launch_benchmark(project, directory, image, config, timeout_s=120, backend="perlmutter"):
+    """Launch the harness. The overhead baseline uses this without the outer contract.
+
+    The harness still performs its own scientific checks. Call validate_benchmark
+    before accepting a result; the agent-facing runtime always does so.
+    """
     directory = Path(directory)
     directory.mkdir()
     output = directory / "measurement.json"
@@ -68,6 +73,20 @@ def run_benchmark(project, directory, image, config, timeout_s=120, backend="per
             raise
     if returncode != 0:
         raise RuntimeError(f"Benchmark exit {returncode}; inspect {directory / 'launcher.log'}")
+    return {"measurement_file": str(output),
+            "launcher_elapsed_s": time.monotonic() - started}
+
+
+def validate_benchmark(directory, config, backend="perlmutter"):
+    """Recheck measurement JSON and original SCF text; hash the accepted artifacts.
+
+    Hashes detect edits relative to a preserved record. They are not signatures
+    and cannot authenticate evidence if all records and hashes are rewritten.
+    """
+    from workload.nwchem_benchmark import ENERGY
+    started = time.perf_counter()
+    directory = Path(directory)
+    output = directory / "measurement.json"
     data = json.loads(output.read_text())
     metrics = data["aggregate"]
     cases = data["cases"]
@@ -77,16 +96,50 @@ def run_benchmark(project, directory, image, config, timeout_s=120, backend="per
         raise RuntimeError("Benchmark did not validate exactly the requested three cases")
     for case in cases:
         energy = case.get("energy_hartree")
-        if (not case["passed"] or case["returncode"] != 0
-                or not isinstance(energy, (int, float)) or not math.isfinite(energy)
+        if (case["passed"] is not True or type(case["returncode"]) is not int or case["returncode"] != 0
+                or type(energy) not in (int, float) or not math.isfinite(energy)
                 or abs(energy - (-75.983998)) >= 1e-5):
             raise RuntimeError("Scientific energy validation failed")
     for name in ("throughput_cases_per_s", "experiment_elapsed_s", "latency_mean_ms"):
         value = metrics[name]
-        if not isinstance(value, (int, float)) or not math.isfinite(value) or value <= 0:
+        if type(value) not in (int, float) or not math.isfinite(value) or value <= 0:
             raise RuntimeError(f"Invalid measured {name}")
+    if data.get("backend") != backend or data.get("workload") != "nwchem_water_6-31g_scf":
+        raise RuntimeError("Unexpected backend or workload")
+    scientific = data.get("scientific_validation", {})
+    if scientific.get("reference_energy_hartree") != -75.983998 or scientific.get("tolerance_hartree") != 1e-5:
+        raise RuntimeError("Unexpected scientific reference or tolerance")
+    rate, elapsed = metrics["throughput_cases_per_s"], metrics["experiment_elapsed_s"]
+    if abs(elapsed - 3 / rate) > .00051 + 1.6e-6 / rate ** 2:
+        raise RuntimeError("Inconsistent throughput and elapsed time")
+    artifacts = {"measurement.json": output.read_bytes()}
+    for case in cases:
+        name = Path(case["run_directory"]).name
+        path = directory / "cases" / name / "output.txt"
+        if not name.startswith("nwchem-" + case["case_id"] + "-") or directory.resolve() not in path.resolve().parents:
+            raise RuntimeError("Invalid case output path")
+        raw = path.read_bytes()
+        energies = ENERGY.findall(raw.decode("utf-8", errors="replace"))
+        energy = float(energies[-1].replace("D", "E").replace("d", "e")) if energies else float("nan")
+        if (not math.isfinite(energy) or abs(energy - (-75.983998)) >= 1e-5
+                or not math.isclose(energy, case["energy_hartree"], rel_tol=0, abs_tol=1e-10)):
+            raise RuntimeError("Raw SCF output disagrees with scientific validation")
+        artifacts[str(path.relative_to(directory))] = raw
+    validation_s = time.perf_counter() - started
+    started = time.perf_counter()
+    hashes = {name: hashlib.sha256(raw).hexdigest() for name, raw in artifacts.items()}
+    hashing_s = time.perf_counter() - started
     return {"aggregate": metrics, "measurement_file": str(output),
-            "launcher_elapsed_s": round(time.monotonic() - started, 3)}
+            "artifact_sha256": hashes,
+            "verification_timings_s": {"validation": validation_s, "hashing": hashing_s}}
+
+
+def run_benchmark(project, directory, image, config, timeout_s=120, backend="perlmutter"):
+    started = time.monotonic()
+    launch_benchmark(project, directory, image, config, timeout_s, backend)
+    result = validate_benchmark(directory, config, backend)
+    result["launcher_elapsed_s"] = round(time.monotonic() - started, 3)
+    return result
 
 
 class ExperimentSession:
@@ -158,6 +211,7 @@ class ExperimentSession:
 
     def experiment(self, executors, batch_size, reason, observed_receipt):
         # The lock serializes launches even if the model requests parallel calls.
+        profile_start = time.perf_counter()
         with self.locked():
             state = self.load()
             def reject(message):
@@ -186,10 +240,13 @@ class ExperimentSession:
                       "observed_receipt": observed_receipt, "receipt": uuid.uuid4().hex,
                       "worker_pid": os.getpid(), "hostname": socket.gethostname(),
                       "status": "running"}
+            profile = {"admission_including_lock": time.perf_counter() - profile_start}
+            phase_start = time.perf_counter()
             state["attempts"].append(record)
             # Reserve the attempt before execution; failures also consume the budget.
             write_json(self.state_path, state)
             self.event("experiment_selected", **record)
+            profile["reservation_writes"] = time.perf_counter() - phase_start
             started = time.monotonic()
             try:
                 measurement = run_benchmark(state["project"], self.directory / f"step-{step}",
@@ -207,9 +264,19 @@ class ExperimentSession:
                 # This outer interval includes failure handling and measurement validation.
                 # Keep launcher_elapsed_s's older successful-process timing meaning intact.
                 record["attempt_elapsed_s"] = time.monotonic() - started
+                phase_start = time.perf_counter()
                 write_json(self.state_path, state)
                 self.event("experiment_finished", **record)
+                profile["completion_writes"] = time.perf_counter() - phase_start
+                phase_start = time.perf_counter()
                 export_trajectory(self.directory, state)
+                profile["trajectory_export"] = time.perf_counter() - phase_start
+                profile.update(record.get("verification_timings_s", {}))
+                # Separate observer record: its own write and lock release are not
+                # counted as contract components, but ARE in timed end-to-end calls.
+                self.event("contract_profile", step=step, status=record["status"],
+                           components_s=profile,
+                           worker_step_before_profile_write_s=time.perf_counter() - profile_start)
             return record
 
 

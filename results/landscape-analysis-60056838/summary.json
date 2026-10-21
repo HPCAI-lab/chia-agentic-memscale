@@ -1,0 +1,200 @@
+{
+  "plan_sha256": "6ee028556344c4da4e975258a21d72241ed05873edcb12574d5e997d03871746",
+  "kind": "landscape",
+  "audit_passed": true,
+  "errors": [],
+  "configurations": [
+    {
+      "configuration": "E3/B3",
+      "rank": 1,
+      "n": 5,
+      "mean": 1.547847,
+      "sample_sd": 0.177390711057541,
+      "median": 1.543819,
+      "min": 1.336451,
+      "max": 1.826394,
+      "empirical_regret_pct": 0.0,
+      "bootstrap_mean_low": 1.4193982,
+      "bootstrap_mean_high": 1.7023506000000002,
+      "bootstrap_top_fraction": 1.0
+    },
+    {
+      "configuration": "E2/B3",
+      "rank": 2,
+      "n": 5,
+      "mean": 0.8332296,
+      "sample_sd": 0.02379260459260397,
+      "median": 0.831798,
+      "min": 0.798409,
+      "max": 0.864931,
+      "empirical_regret_pct": 46.168477892194765,
+      "bootstrap_mean_low": 0.8132474000000001,
+      "bootstrap_mean_high": 0.8516266,
+      "bootstrap_top_fraction": 0.0
+    },
+    {
+      "configuration": "E2/B2",
+      "rank": 3,
+      "n": 5,
+      "mean": 0.7673658,
+      "sample_sd": 0.13657929966579854,
+      "median": 0.810388,
+      "min": 0.543146,
+      "max": 0.87858,
+      "empirical_regret_pct": 50.42366590496347,
+      "bootstrap_mean_low": 0.6496874,
+      "bootstrap_mean_high": 0.859228,
+      "bootstrap_top_fraction": 0.0
+    },
+    {
+      "configuration": "E3/B2",
+      "rank": 4,
+      "n": 5,
+      "mean": 0.733537,
+      "sample_sd": 0.09601062679724573,
+      "median": 0.771739,
+      "min": 0.597044,
+      "max": 0.820528,
+      "empirical_regret_pct": 52.60920491495607,
+      "bootstrap_mean_low": 0.6539012000000001,
+      "bootstrap_mean_high": 0.805291,
+      "bootstrap_top_fraction": 0.0
+    },
+    {
+      "configuration": "E2/B1",
+      "rank": 5,
+      "n": 5,
+      "mean": 0.569329,
+      "sample_sd": 0.038151297192887165,
+      "median": 0.579723,
+      "min": 0.504599,
+      "max": 0.604847,
+      "empirical_regret_pct": 63.21800539717427,
+      "bootstrap_mean_low": 0.5346486,
+      "bootstrap_mean_high": 0.5944034,
+      "bootstrap_top_fraction": 0.0
+    },
+    {
+      "configuration": "E1/B1",
+      "rank": 6,
+      "n": 5,
+      "mean": 0.558422,
+      "sample_sd": 0.052449862893052465,
+      "median": 0.581886,
+      "min": 0.466265,
+      "max": 0.594748,
+      "empirical_regret_pct": 63.92266160673503,
+      "bootstrap_mean_low": 0.5120994,
+      "bootstrap_mean_high": 0.5871792,
+      "bootstrap_top_fraction": 0.0
+    },
+    {
+      "configuration": "E1/B3",
+      "rank": 7,
+      "n": 5,
+      "mean": 0.5299554,
+      "sample_sd": 0.042588057824934904,
+      "median": 0.54291,
+      "min": 0.466993,
+      "max": 0.572139,
+      "empirical_regret_pct": 65.76177102775662,
+      "bootstrap_mean_low": 0.4937428,
+      "bootstrap_mean_high": 0.5612328,
+      "bootstrap_top_fraction": 0.0
+    },
+    {
+      "configuration": "E3/B1",
+      "rank": 8,
+      "n": 5,
+      "mean": 0.5098608,
+      "sample_sd": 0.03598142812201871,
+      "median": 0.518702,
+      "min": 0.452087,
+      "max": 0.541368,
+      "empirical_regret_pct": 67.06000011629057,
+      "bootstrap_mean_low": 0.478733,
+      "bootstrap_mean_high": 0.5347492,
+      "bootstrap_top_fraction": 0.0
+    },
+    {
+      "configuration": "E1/B2",
+      "rank": 9,
+      "n": 5,
+      "mean": 0.5084824,
+      "sample_sd": 0.0340201667441534,
+      "median": 0.496616,
+      "min": 0.475051,
+      "max": 0.564517,
+      "empirical_regret_pct": 67.14905284566238,
+      "bootstrap_mean_low": 0.4862762,
+      "bootstrap_mean_high": 0.5373566000000001,
+      "bootstrap_top_fraction": 0.0
+    }
+  ],
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 20261020,
+  "note": "Empirical ranking in one allocation. Whole repeat blocks are resampled; bootstrap fractions are not probabilities of a globally true optimum. Five repeats give limited uncertainty resolution.",
+  "regret_scope": "Retrospective mapping of historical selected configurations onto this new allocation's empirical reference; not historical ground-truth regret. Baseline retained as a candidate. Historical image/runtime conditions may differ.",
+  "policy_blocks": [
+    {
+      "job": "58835485",
+      "policy": "gemini",
+      "eligible_sessions": 3,
+      "recommended_top_count": 0,
+      "visited_top_count": 0,
+      "reference_regret_pct": {
+        "n": 3,
+        "mean": 49.00526990070723,
+        "sample_sd": 2.4567339446244807,
+        "median": 50.42366590496347,
+        "min": 46.168477892194765,
+        "max": 50.42366590496347
+      }
+    },
+    {
+      "job": "58835485",
+      "policy": "random",
+      "eligible_sessions": 3,
+      "recommended_top_count": 1,
+      "visited_top_count": 1,
+      "reference_regret_pct": {
+        "n": 3,
+        "mean": 34.34429027330651,
+        "sample_sd": 29.763095453495794,
+        "median": 50.42366590496347,
+        "min": 0.0,
+        "max": 52.60920491495607
+      }
+    },
+    {
+      "job": "59936561",
+      "policy": "gemini",
+      "eligible_sessions": 3,
+      "recommended_top_count": 0,
+      "visited_top_count": 0,
+      "reference_regret_pct": {
+        "n": 3,
+        "mean": 50.42366590496347,
+        "sample_sd": 0.0,
+        "median": 50.42366590496347,
+        "min": 50.42366590496347,
+        "max": 50.42366590496347
+      }
+    },
+    {
+      "job": "59936561",
+      "policy": "random",
+      "eligible_sessions": 3,
+      "recommended_top_count": 1,
+      "visited_top_count": 1,
+      "reference_regret_pct": {
+        "n": 3,
+        "mean": 33.615777269975645,
+        "sample_sd": 29.112117083758417,
+        "median": 50.42366590496347,
+        "min": 0.0,
+        "max": 50.42366590496347
+      }
+    }
+  ]
+}

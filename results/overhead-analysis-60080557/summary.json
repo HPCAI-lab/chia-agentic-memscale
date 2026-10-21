@@ -1,0 +1,108 @@
+{
+  "plan_sha256": "f4be8dc811f8c00e04813911bd49c6523bf2931ba0e12db064801ffaf7a62ad7",
+  "kind": "overhead",
+  "audit_passed": true,
+  "errors": [],
+  "paired_metrics": {
+    "bare_roundtrip_s": {
+      "n": 10,
+      "mean": 4.3061103547996025,
+      "sample_sd": 0.4072597356432306,
+      "median": 4.188697058001708,
+      "min": 3.8685245160013437,
+      "max": 5.3184524980024435
+    },
+    "contract_roundtrip_s": {
+      "n": 10,
+      "mean": 4.497267169803672,
+      "sample_sd": 0.3573438135935437,
+      "median": 4.4388793265025015,
+      "min": 4.058680732006906,
+      "max": 5.197375545991235
+    },
+    "roundtrip_difference_s": {
+      "n": 10,
+      "mean": 0.19115681500406936,
+      "sample_sd": 0.6097387087817765,
+      "median": 0.28070006600319175,
+      "min": -0.9642928690009285,
+      "max": 0.9802423739893129
+    },
+    "roundtrip_difference_pct": {
+      "n": 10,
+      "mean": 5.355911792755945,
+      "sample_sd": 13.536397736642494,
+      "median": 6.759102039435538,
+      "min": -18.131079846310694,
+      "max": 23.244283118618725
+    },
+    "instrumented_components_s": {
+      "n": 10,
+      "mean": 0.14569753969699378,
+      "sample_sd": 0.02944191875238882,
+      "median": 0.13546582299022703,
+      "min": 0.11831101297866553,
+      "max": 0.206606557010673
+    },
+    "components_pct_of_contract_worker": {
+      "n": 10,
+      "mean": 3.2481290270982286,
+      "sample_sd": 0.6109774409813009,
+      "median": 3.135208560421842,
+      "min": 2.3048496752700824,
+      "max": 4.138254774807027
+    }
+  },
+  "components": {
+    "admission_including_lock": {
+      "n": 10,
+      "mean": 0.009186900597705971,
+      "sample_sd": 0.004360405674467928,
+      "median": 0.008002613001735881,
+      "min": 0.003922090996638872,
+      "max": 0.018072632999974303
+    },
+    "reservation_writes": {
+      "n": 10,
+      "mean": 0.021790035701997112,
+      "sample_sd": 0.0034417238456278245,
+      "median": 0.021554920502239838,
+      "min": 0.016034415995818563,
+      "max": 0.028205203008837998
+    },
+    "completion_writes": {
+      "n": 10,
+      "mean": 0.026842565601691605,
+      "sample_sd": 0.008777899523915323,
+      "median": 0.02293766900402261,
+      "min": 0.02099688400630839,
+      "max": 0.04961401899345219
+    },
+    "trajectory_export": {
+      "n": 10,
+      "mean": 0.031187481195956934,
+      "sample_sd": 0.007021488151300733,
+      "median": 0.028319939992798027,
+      "min": 0.024100953989545815,
+      "max": 0.04657652800960932
+    },
+    "validation": {
+      "n": 10,
+      "mean": 0.05661965439794585,
+      "sample_sd": 0.023495841605911796,
+      "median": 0.05049501749454066,
+      "min": 0.03664166500675492,
+      "max": 0.11717260599834844
+    },
+    "hashing": {
+      "n": 10,
+      "mean": 7.090220169629902e-05,
+      "sample_sd": 4.7406166544891063e-07,
+      "median": 7.095249748090282e-05,
+      "min": 6.999600736889988e-05,
+      "max": 7.146800635382533e-05
+    }
+  },
+  "startup_source_verification_s": 0.010822229989571497,
+  "note": "One warmed Ray actor, identical E2/B2 workload, alternating paired order. Bare includes harness scientific checking; contract additionally admits, revalidates raw results, hashes artifacts, writes state/receipts and exports trajectory. Session creation/history, startup source verification and common post-timing audit are excluded from per-call timing. Profile-journal write and lock release are included in roundtrip/worker totals, excluded from direct component sum. Pair differences include workload noise; negative values are retained. No overhead threshold assumed."
+}

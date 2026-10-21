@@ -1,0 +1,569 @@
+{
+  "schema_version": 1,
+  "kind": "landscape",
+  "repeats": 5,
+  "seed": 20261020,
+  "image_id": "60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16",
+  "backend": "perlmutter",
+  "trial_timeout_s": 120,
+  "warmup_configuration": {
+    "partitions": 3,
+    "executors": 1,
+    "replication": 1,
+    "batch_size": 1,
+    "placement": "single-node"
+  },
+  "runtime_sha256": {
+    "tools/experiment_session.py": "631d835f44f9f80f61b0ce718f3635bbeb9443f92c7afdf88fe484b1028158fe",
+    "workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c",
+    "workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+    "scripts/run_bounded_evaluation.py": "503a9db1fcb3a2644abb888c5515f0200bb82adf1f55304ff9914e859992cc6d",
+    "scripts/run_bounded_evaluation.sbatch": "b4acf31ec29c0f6baeb34f6e32d06a9b9de1c8d38bb49df58fea5a4aebea4611",
+    "scripts/run_policy_confirmation.py": "ec8693877f2519c354f29c3bdcdf9bf97e047e61d119a3223b19f2665a383956",
+    "scripts/analyze_policy_comparison.py": "c5ac17d598b996f63f6cf5d4dfd31cd4d490a5d8ba15eda6feabab8124857537",
+    "tools/policy_costs.py": "4e914229773f1767145e05e272c6350662b3f3b80cae2d5910876eb39dd79031"
+  },
+  "trials": [
+    {
+      "trial_id": "trial-0001",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0002",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0003",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0004",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0005",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0006",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0007",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0008",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0009",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0010",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0011",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0012",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0013",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0014",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0015",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0016",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0017",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0018",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0019",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0020",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0021",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0022",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0023",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0024",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0025",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0026",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0027",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0028",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0029",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0030",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0031",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0032",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0033",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0034",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0035",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0036",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0037",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0038",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0039",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0040",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0041",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0042",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0043",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0044",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    },
+    {
+      "trial_id": "trial-0045",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated"
+    }
+  ],
+  "plan_sha256": "6ee028556344c4da4e975258a21d72241ed05873edcb12574d5e997d03871746"
+}
