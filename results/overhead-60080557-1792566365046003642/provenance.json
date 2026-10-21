@@ -1,0 +1,33 @@
+{
+  "job_id": "60080557",
+  "hostname": "nid004384",
+  "python": "3.10.19",
+  "ray_version": "2.54.0",
+  "driver_pid": 525232,
+  "resolved_image_id": "60433343d8c7b7d2d308dc7965f479f456670bfc4c8059a3fdde624e862b6d16",
+  "source_sha256": {
+    "tools/experiment_session.py": "631d835f44f9f80f61b0ce718f3635bbeb9443f92c7afdf88fe484b1028158fe",
+    "workload/nwchem_benchmark.py": "27e50a1d80fb5b71ec371d3f89341dd3e16f9ab93da7f995b07591d21195f54c",
+    "workload/inputs/water_check.nw": "6bd5679c125bfd498cb46421dfef2f8dc371492284d4c8085d08fac35ea893d4",
+    "scripts/run_bounded_evaluation.py": "503a9db1fcb3a2644abb888c5515f0200bb82adf1f55304ff9914e859992cc6d",
+    "scripts/run_bounded_evaluation.sbatch": "b4acf31ec29c0f6baeb34f6e32d06a9b9de1c8d38bb49df58fea5a4aebea4611",
+    "scripts/run_policy_confirmation.py": "ec8693877f2519c354f29c3bdcdf9bf97e047e61d119a3223b19f2665a383956",
+    "scripts/analyze_policy_comparison.py": "c5ac17d598b996f63f6cf5d4dfd31cd4d490a5d8ba15eda6feabab8124857537",
+    "tools/policy_costs.py": "4e914229773f1767145e05e272c6350662b3f3b80cae2d5910876eb39dd79031"
+  },
+  "environment": {
+    "SLURM_NTASKS": "8",
+    "SLURM_CPUS_PER_TASK": "2",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "COMEX_MAX_NB_OUTSTANDING": "6",
+    "FI_CXI_RX_MATCH_MODE": "hybrid",
+    "COMEX_EAGER_THRESHOLD": "16384",
+    "FI_CXI_RDZV_THRESHOLD": "16384",
+    "FI_CXI_OFLOW_BUF_COUNT": "6",
+    "MPICH_SMP_SINGLE_COPY_MODE": "CMA"
+  },
+  "project_commit": "362afb0c775f60af6934d648340c09a1909f9caf",
+  "image_verification_s": 0.5322437810100382
+}

@@ -1,0 +1,79 @@
+{
+  "interpretation": "Best observed in this session; one measurement per configuration",
+  "baseline": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "overhead-warmup",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 5.437,
+      "latency_mean_ms": 1767.379,
+      "throughput_cases_per_s": 0.551731,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/overhead-60080557-1792566365046003642/warmup/measurement.json",
+    "artifact_sha256": {
+      "measurement.json": "9715cb2855af4e1d27728de334ab508fb71924265c5486d935cdddb48692ecb0",
+      "cases/nwchem-p0-r0-2hmynhpc/output.txt": "c9ee2370776374c00074c42b06041e24b596fe53c4e5d03a848f6c7fd0375189",
+      "cases/nwchem-p1-r0-wvz9fb_d/output.txt": "418e1d5a45a2a700e321ea7728099798affc37f9667a970dd8d6585e9eff7d1f",
+      "cases/nwchem-p2-r0-1k6tvq12/output.txt": "fd1f3fd10ca04bd8b3a3a67e9d8d353e288d3167a55b3f650760aa17c7e83b6f"
+    },
+    "verification_timings_s": {
+      "validation": 0.02727879300073255,
+      "hashing": 9.18180012376979e-05
+    },
+    "launcher_elapsed_s": 6.57
+  },
+  "best": {
+    "step": 1,
+    "selection_source": "random",
+    "configuration": {
+      "partitions": 3,
+      "executors": 2,
+      "replication": 1,
+      "batch_size": 2,
+      "placement": "single-node"
+    },
+    "reason": "Frozen contract overhead probe",
+    "observed_receipt": "overhead-warmup",
+    "receipt": "11a9a15a0b324777a6bb4797e7095f5a",
+    "worker_pid": 526970,
+    "hostname": "nid004384",
+    "status": "success",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 3.544,
+      "latency_mean_ms": 1746.254,
+      "throughput_cases_per_s": 0.846527,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/overhead-60080557-1792566365046003642/trial-0017-contract/step-1/measurement.json",
+    "artifact_sha256": {
+      "measurement.json": "2bab919216284c2cab090a66f57fb85c120b6ad53d35a077d31715843b49a63a",
+      "cases/nwchem-p0-r0-1xd_wbwq/output.txt": "24d556fab6a5cf052b2882e58be3817d05dcf31900d1829e7d17248750e2588d",
+      "cases/nwchem-p1-r0-027iyzqh/output.txt": "fb4c1cd004d2fbea1b649c64f4871f00e44d539273f8e68429f2c38f5e16a6e4",
+      "cases/nwchem-p2-r0-3rwctpbv/output.txt": "0639910c479cde6dc7633d803f181de63ec403848dd8d2ead90a96fecc7c632e"
+    },
+    "verification_timings_s": {
+      "validation": 0.06972375299665146,
+      "hashing": 6.999600736889988e-05
+    },
+    "launcher_elapsed_s": 4.134,
+    "attempt_elapsed_s": 4.134245358000044
+  },
+  "best_gain_vs_fresh_baseline_pct": 53.43111045056379,
+  "agent_attempts": 1,
+  "agent_successes": 1
+}

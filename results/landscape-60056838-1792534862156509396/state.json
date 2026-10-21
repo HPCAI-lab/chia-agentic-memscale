@@ -1,0 +1,1758 @@
+{
+  "plan_sha256": "6ee028556344c4da4e975258a21d72241ed05873edcb12574d5e997d03871746",
+  "attempts": [
+    {
+      "trial_id": "trial-0001",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.822594104000018,
+      "prepare_s": 0.001407429008395411,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.854,
+        "latency_mean_ms": 1912.359,
+        "throughput_cases_per_s": 0.512428,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0001/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "fd2570c0a5ef787de3cdd37153e547b944882ec09c4c07f778628375cc194154",
+        "cases/nwchem-p0-r0-hba3ygos/output.txt": "39838b0e949ee655f935cbb3990842c1bd59082950ca2fdea159546544f1e148",
+        "cases/nwchem-p1-r0-x0r0odow/output.txt": "93ebf80d13f6c0d25a57f6b99fce0d941b9f330fa21d10ab8914cbe1298a38c9",
+        "cases/nwchem-p2-r0-hy8yvcn1/output.txt": "4b48d59b6194f0cc0d3354ab60ddbbc22c7fdb6a1c45679602b67a751b5af2b9"
+      },
+      "verification_timings_s": {
+        "validation": 0.07678511700942181,
+        "hashing": 6.242800736799836e-05
+      },
+      "launcher_elapsed_s": 6.821,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.821379280008841
+    },
+    {
+      "trial_id": "trial-0002",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.779885998999816,
+      "prepare_s": 0.001602277989150025,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.903,
+        "latency_mean_ms": 1904.659,
+        "throughput_cases_per_s": 0.508247,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0002/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "3c3028ce6ffab126603a38e6fb5835a2e330b75aff63af3aeb2b3a08656092de",
+        "cases/nwchem-p0-r0-cwjqdtpd/output.txt": "95bc5fc0dd6e05096e14536c6a1ce5e3b4ea3be0151aa2f2730c82f7bf89ecc2",
+        "cases/nwchem-p1-r0-mh1a2qca/output.txt": "b02b647d82c34e50af2cee4c5b70934f61d7a48f94dbbfd75c609173d24fd9a1",
+        "cases/nwchem-p2-r0-6sg1d4v0/output.txt": "4360fd9e9a9ac3480b08e8e53cd3614425f73aa6b5a2e5677286c388e3637c9d"
+      },
+      "verification_timings_s": {
+        "validation": 0.100244086002931,
+        "hashing": 6.365100853145123e-05
+      },
+      "launcher_elapsed_s": 6.779,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.778561447994434
+    },
+    {
+      "trial_id": "trial-0003",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 7.013274512006319,
+      "prepare_s": 0.001591467997059226,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.523,
+        "latency_mean_ms": 2519.483,
+        "throughput_cases_per_s": 0.543146,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0003/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "4ac7759c85b40263bf6a134c62cda0695f3e203c948b3da75d613f3acbab09bf",
+        "cases/nwchem-p0-r0-bju6d7ni/output.txt": "fe844b1d060625548db31947d22e92fa1785d979199e87cd01f97c221b093cd1",
+        "cases/nwchem-p1-r0-h4ele4qv/output.txt": "11f158fd21f8f5b5d8248d52de9c9f23cdcaa6934960bb0a325cf254f0537a4a",
+        "cases/nwchem-p2-r0-pcyu3x4i/output.txt": "f41e82023b6af84b73c5aba302750753405221b4f7b722c5dfa9523a787ddb7d"
+      },
+      "verification_timings_s": {
+        "validation": 0.07811827400291804,
+        "hashing": 6.263899558689445e-05
+      },
+      "launcher_elapsed_s": 7.012,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 7.011988783997367
+    },
+    {
+      "trial_id": "trial-0004",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 2.967599765994237,
+      "prepare_s": 0.001397579995682463,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 1.943,
+        "latency_mean_ms": 1789.18,
+        "throughput_cases_per_s": 1.543819,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0004/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "b856fa1872d3d76cc9a5775d7171bde9249d4a6fd90a36bb6ef99dc0f8780d15",
+        "cases/nwchem-p0-r0-v3wgp9rd/output.txt": "9ee88ec956a3b85e77272423c9ae92406302a38686bc48a7fb486f734fff72de",
+        "cases/nwchem-p1-r0-brv28as6/output.txt": "5ffa3fbd69d4fac98bb93022069be4adcfcf7fcf9470c728770555a36c5f472d",
+        "cases/nwchem-p2-r0-g9exwwv_/output.txt": "005319d956d3da19ec836d9b918352c252f186c17e60ecaa873456e968c66583"
+      },
+      "verification_timings_s": {
+        "validation": 0.05375805000949185,
+        "hashing": 6.050399679224938e-05
+      },
+      "launcher_elapsed_s": 2.966,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 2.9664495549950516
+    },
+    {
+      "trial_id": "trial-0005",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.882123202987714,
+      "prepare_s": 0.0011627720086835325,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.988,
+        "latency_mean_ms": 1939.611,
+        "throughput_cases_per_s": 0.500993,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0005/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "b458ffbac61f161095282aecca332f3780e292b7e25b1043372a3398a77422ea",
+        "cases/nwchem-p0-r0-j_0e5uvc/output.txt": "62166af8d272a0173ae8f045619b46978c54de0a08b3650668d9a8a9f545736e",
+        "cases/nwchem-p1-r0-nrhsz0rk/output.txt": "88854023e5938d254b533d38161b8e0bfeb83fdc5c112d973b61d657caf535e8",
+        "cases/nwchem-p2-r0-29owylqa/output.txt": "effe4d018c93e605c5a9bbda3ef903ef6a1e40fd2d54aee490ddc08ccc888469"
+      },
+      "verification_timings_s": {
+        "validation": 0.055318705999525264,
+        "hashing": 6.413200753740966e-05
+      },
+      "launcher_elapsed_s": 6.881,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.880808884001453
+    },
+    {
+      "trial_id": "trial-0006",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.006938792997971,
+      "prepare_s": 0.0013990000006742775,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.044,
+        "latency_mean_ms": 1633.465,
+        "throughput_cases_per_s": 0.594748,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0006/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "938cce1de6e5db87a126f420d53f7fca57fff4222cc25925f340b3e61352fe5f",
+        "cases/nwchem-p0-r0-ne8ybc80/output.txt": "b3cd840218b2d9b53465130ba180246ec28bceff063db1835da9aa3d0761e310",
+        "cases/nwchem-p1-r0-nkxxmait/output.txt": "a88739981ea6761f0c3fe6ababd11d2ecf007c6ebde7828c73cc95df2c2dd2f0",
+        "cases/nwchem-p2-r0-end2kvuo/output.txt": "7f663d15dc850d14c3c5e0e15052adfae9c824e241a8c53e99dfa55e965d79a4"
+      },
+      "verification_timings_s": {
+        "validation": 0.038050261995522305,
+        "hashing": 6.375099474098533e-05
+      },
+      "launcher_elapsed_s": 6.006,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.005590528991888
+    },
+    {
+      "trial_id": "trial-0007",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 5.824181336007314,
+      "prepare_s": 0.001505110994912684,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.025,
+        "latency_mean_ms": 2237.636,
+        "throughput_cases_per_s": 0.597044,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0007/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "88db8359813b2133fcc9f562cac3b3b2e40c813a8107b70937f3e2814b502080",
+        "cases/nwchem-p0-r0-gtzkbbq1/output.txt": "cfea66d3b2f4d1a184ab22742ba4f655ee9a8e52af42d8b3bc033ba9230941b4",
+        "cases/nwchem-p1-r0-mpo56dka/output.txt": "025dbef78f05d0efcc60a3ee56b847fd117f2f3512b140e088aa7f3a6267fe17",
+        "cases/nwchem-p2-r0-7y9jsm0x/output.txt": "fb6817d12d30e9ecfca8136c563c82d46808441d1465b742b664f3967be4a0c3"
+      },
+      "verification_timings_s": {
+        "validation": 0.05736810600501485,
+        "hashing": 7.641500269528478e-05
+      },
+      "launcher_elapsed_s": 5.823,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 5.822831900994061
+    },
+    {
+      "trial_id": "trial-0008",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 5.97857022700191,
+      "prepare_s": 0.001309579994995147,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.243,
+        "latency_mean_ms": 1705.844,
+        "throughput_cases_per_s": 0.5722,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0008/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "bfbf49caddb6254f7b0d5181dcc92696efcdcc40ff1818fb5e7246d88b67770a",
+        "cases/nwchem-p0-r0-xwkwfv6f/output.txt": "a8903b0de411cdbdb4593565c1b877557880a31ad1ce3315e113783a0b4843b4",
+        "cases/nwchem-p1-r0-2cqjl4s0/output.txt": "6fb3858e5c6c799538fa7beda5b8f3e23c154ffca6254782f6e80f6d60be4d7d",
+        "cases/nwchem-p2-r0-j4vvt50c/output.txt": "6bf0a852d9daabfb5e4209a77731b7424bb198347ac123b85d61a7046ad71a3f"
+      },
+      "verification_timings_s": {
+        "validation": 0.06068656100251246,
+        "hashing": 6.200700590852648e-05
+      },
+      "launcher_elapsed_s": 5.977,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 5.977324908002629
+    },
+    {
+      "trial_id": "trial-0009",
+      "repeat": 1,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.504169949010247,
+      "prepare_s": 0.0014278539892984554,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.607,
+        "latency_mean_ms": 1758.874,
+        "throughput_cases_per_s": 0.831798,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0009/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "2c553bb1773db7bd3def7c0c5a70381c2deb88704fe28e785b67b9f7918a7c6a",
+        "cases/nwchem-p0-r0-2a3e4ccn/output.txt": "e5d5202ba45e6639f39ea3d306f04b4ef983784b1b6041a65ba2be1fcf4ae8bb",
+        "cases/nwchem-p1-r0-y7gyc5kt/output.txt": "9ee879476bdde215859a9feae5f05bbd915f14e982d37324969adbf7dc6b02ee",
+        "cases/nwchem-p2-r0-jxc7q4ob/output.txt": "d4e689a76dcb3d6cdfdd97afe90e4946105c324d1bf3c2f30eb99a972a55ca3a"
+      },
+      "verification_timings_s": {
+        "validation": 0.19535448199894745,
+        "hashing": 6.311900506261736e-05
+      },
+      "launcher_elapsed_s": 4.503,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.5030007349996595
+    },
+    {
+      "trial_id": "trial-0010",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 2.9624628410092555,
+      "prepare_s": 0.001258602991583757,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 2.245,
+        "latency_mean_ms": 1840.604,
+        "throughput_cases_per_s": 1.336451,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0010/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "d2256a4f228648a6baa3cf7efd3c22f84aeaa0be675c0b774760a9766f329574",
+        "cases/nwchem-p0-r0-3pfypob2/output.txt": "c8ef1d33cd3701323cae506a2ccb28390f320048e161f3cd9b6565d1ed0ab71f",
+        "cases/nwchem-p1-r0-ykdhrebk/output.txt": "937012cf0d55c9318f2a6d70077e5cdd0e093f78d5ad490f3499878f84cbeefd",
+        "cases/nwchem-p2-r0-f5up3u7w/output.txt": "bfd55b2676f24ee2812e53802c2c4e74443d9ef7249b6bfac6a5379d6bf719f3"
+      },
+      "verification_timings_s": {
+        "validation": 0.0521581599896308,
+        "hashing": 6.337999366223812e-05
+      },
+      "launcher_elapsed_s": 2.961,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 2.96125479399052
+    },
+    {
+      "trial_id": "trial-0011",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.497803350008326,
+      "prepare_s": 0.0012660070060519502,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.702,
+        "latency_mean_ms": 1738.946,
+        "throughput_cases_per_s": 0.810388,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0011/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "15c1d57aa1b2fc04b42b48d303a92860837729ae5f820a2e4d95e189950b6410",
+        "cases/nwchem-p0-r0-pldlg7g7/output.txt": "5eea474481cfd08dbfcfc2364dfd74fdec2ab2eb862a804ffb636860d05cc249",
+        "cases/nwchem-p1-r0-c970urks/output.txt": "f93dc14a5a3d87a337a070caf4e2aec0916449d0b67ba0b07fca90b4c0d4cd01",
+        "cases/nwchem-p2-r0-yob1qz0i/output.txt": "3d8c30b887240406efedad9c06916091fcd48d6bb869005c2d4ffec63a976c7a"
+      },
+      "verification_timings_s": {
+        "validation": 0.07765551899501588,
+        "hashing": 6.235900218598545e-05
+      },
+      "launcher_elapsed_s": 4.496,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.496429619000992
+    },
+    {
+      "trial_id": "trial-0012",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 7.197049862996209,
+      "prepare_s": 0.0013414810091489926,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 6.424,
+        "latency_mean_ms": 2102.473,
+        "throughput_cases_per_s": 0.466993,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0012/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "ee5ba53c47a5ec8dc01c26870f16b909acde57564c7ac7a35cc18bece98d91e3",
+        "cases/nwchem-p0-r0-vksl2n0b/output.txt": "46b8982ab39f92c08f8bfbf9c2e874630095ad155f148f1b38ffff45a795b5a4",
+        "cases/nwchem-p1-r0-dip8neq0/output.txt": "066735c55d614459dd2c34196a5d2be936cccba4dbba9d4f975d59865c4b6a4f",
+        "cases/nwchem-p2-r0-nb4zuule/output.txt": "aa9559996714e871adfabeff67ed5c04c61bbe9ba6f5292be75049996ff9901f"
+      },
+      "verification_timings_s": {
+        "validation": 0.07420354899659287,
+        "hashing": 6.835900421719998e-05
+      },
+      "launcher_elapsed_s": 7.196,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 7.195568686001934
+    },
+    {
+      "trial_id": "trial-0013",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.887612093996722,
+      "prepare_s": 0.001635270004044287,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.784,
+        "latency_mean_ms": 1877.349,
+        "throughput_cases_per_s": 0.518702,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0013/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "34a7891787e0585098bb95a47368cb54042ef207cec8977c88c021f8249f99ca",
+        "cases/nwchem-p0-r0-a1vcnuvo/output.txt": "c2d51d7bda52f2bbe4742704e7accb40cacf843ed334cafa17f010c2c5c22bc2",
+        "cases/nwchem-p1-r0-74bh2ode/output.txt": "50613816ee6176be06fb2204e62095dc55c311261b797d74ecdbc1602036d085",
+        "cases/nwchem-p2-r0-g52unql0/output.txt": "54efa54cf5500c253e5f86d7cce91eebe5dcabb27b0fd362b499d37b416654a8"
+      },
+      "verification_timings_s": {
+        "validation": 0.03981692700472195,
+        "hashing": 6.260900408960879e-05
+      },
+      "launcher_elapsed_s": 6.886,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.885944011009997
+    },
+    {
+      "trial_id": "trial-0014",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.538001166001777,
+      "prepare_s": 0.0014852650056127459,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.656,
+        "latency_mean_ms": 1754.482,
+        "throughput_cases_per_s": 0.820528,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0014/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "d55c0abf939fb368769e398b75208411989a63cfb144bfc167a81324f91f0a91",
+        "cases/nwchem-p0-r0-410d1b4o/output.txt": "408add7b52a61f837aaba7b3424736088aabfc669142009506ebe8769036ea8e",
+        "cases/nwchem-p1-r0-gkh06mga/output.txt": "768b3575e3ef3824a6fb72b33e43300faef85bdc9fe348fd06b1feef3d6f3c11",
+        "cases/nwchem-p2-r0-m9j0ur6f/output.txt": "e61c8cc711aae8b06d74e6697a502c23e8176ea1b82a9b4981d95caf22cacb08"
+      },
+      "verification_timings_s": {
+        "validation": 0.07499189299414866,
+        "hashing": 6.358099926728755e-05
+      },
+      "launcher_elapsed_s": 4.537,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.536648121997132
+    },
+    {
+      "trial_id": "trial-0015",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.117554935000953,
+      "prepare_s": 0.00146581900480669,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.314,
+        "latency_mean_ms": 1721.292,
+        "throughput_cases_per_s": 0.564517,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0015/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "1be0a2ba2dbd5df1de95d2a3d4995c269ae9eb65ba5d064e7031f1b205510b07",
+        "cases/nwchem-p0-r0-9ew1l78e/output.txt": "43a458a6a1a89e0ece81223749c59d8caf2a35c7103244b04a77ff537395388f",
+        "cases/nwchem-p1-r0-qei02br3/output.txt": "ba51612e6a7a3afbe750e74bcc429d4e70ae86bf6bc19d6ade3fb8450f41298d",
+        "cases/nwchem-p2-r0-pcnl8o52/output.txt": "1a747c980fe58f6bd2189cced2c5144224176303ad66ed6119447cb6799655c7"
+      },
+      "verification_timings_s": {
+        "validation": 0.04160163999767974,
+        "hashing": 6.348000897560269e-05
+      },
+      "launcher_elapsed_s": 6.116,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.116168075997848
+    },
+    {
+      "trial_id": "trial-0016",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 5.803206582000712,
+      "prepare_s": 0.0015510299999732524,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.156,
+        "latency_mean_ms": 1684.295,
+        "throughput_cases_per_s": 0.581886,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0016/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "d21b1a8be60eb7d8e64979ea290a847869ed1fe24da98586ea74020139a85c5c",
+        "cases/nwchem-p0-r0-p57usf0t/output.txt": "d9cd47e83b3860f92b73e4c55040b76dbb410e8956568fc84a78d9bb1769b29b",
+        "cases/nwchem-p1-r0-g1m74722/output.txt": "99b02a3ab97fbff353ef56438044ec87d12be25ae827af9e305e2d43d8873807",
+        "cases/nwchem-p2-r0-hvq51b1_/output.txt": "2607137557bf969f9d3b50d3b5cf73a85cbc2c9730b2c628773f7afbbe03f9df"
+      },
+      "verification_timings_s": {
+        "validation": 0.03596179200394545,
+        "hashing": 7.16560025466606e-05
+      },
+      "launcher_elapsed_s": 5.801,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 5.801460954011418
+    },
+    {
+      "trial_id": "trial-0017",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 5.698350377002498,
+      "prepare_s": 0.002374057992710732,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 4.96,
+        "latency_mean_ms": 1613.029,
+        "throughput_cases_per_s": 0.604847,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0017/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "52ae3bc4f846cf91e4302df09fc9aa9d152e340c0285d369840c06b6e52f4ab3",
+        "cases/nwchem-p0-r0-jxpfop67/output.txt": "82a902f29568d222bba044ff6badb30f1abead62d5d33f03baad5ea8f4fbb5fc",
+        "cases/nwchem-p1-r0-rzyu5e4q/output.txt": "256bda09aaee8127341f5d7e9cf212368914d572163fdb96464d6530acc4a1a4",
+        "cases/nwchem-p2-r0-xcdxaxdh/output.txt": "b0143f45553ab799976cf54497b7157310c2ff2f898bc39664feb274c604a074"
+      },
+      "verification_timings_s": {
+        "validation": 0.03964972999528982,
+        "hashing": 6.56850024824962e-05
+      },
+      "launcher_elapsed_s": 5.696,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 5.696342984010698
+    },
+    {
+      "trial_id": "trial-0018",
+      "repeat": 2,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.247534905996872,
+      "prepare_s": 0.0014568199985660613,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.609,
+        "latency_mean_ms": 1757.679,
+        "throughput_cases_per_s": 0.831352,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0018/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "a8d618daf4a78597288a6012c6f452ee90299d7f5a8c0049523367a089059331",
+        "cases/nwchem-p0-r0-6vq2gulo/output.txt": "b00c999922008c3871d9a0440a4599445e9c5c8daff1864f94dedd37eab1bf70",
+        "cases/nwchem-p1-r0-4hnub579/output.txt": "43526ef14744582a866b6cdaa83f5666227c875962667cf9f34bb068bed14021",
+        "cases/nwchem-p2-r0-_0zm2324/output.txt": "ab532c33e4085c85d95350e2c858e9f5912eb8f8c8215b832f8ef21f04b50969"
+      },
+      "verification_timings_s": {
+        "validation": 0.03604108099534642,
+        "hashing": 6.377098907250911e-05
+      },
+      "launcher_elapsed_s": 4.246,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.246284706998267
+    },
+    {
+      "trial_id": "trial-0019",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 5.948899195995182,
+      "prepare_s": 0.0018322820105822757,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.243,
+        "latency_mean_ms": 1703.924,
+        "throughput_cases_per_s": 0.572139,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0019/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "2c48eb91e79c691ec9aa979a0d0bac74c6800aad906f86046306924bdcb10a96",
+        "cases/nwchem-p0-r0-0sl7ca0g/output.txt": "34dd8181820406490f71820ad067bf4f984bbcbf989bfb1c860f019cb5f1ca8b",
+        "cases/nwchem-p1-r0-o8rptbtp/output.txt": "7d51daccdfec300b4caabf18df43ecdf148cb2372823114832d7a757d415aac3",
+        "cases/nwchem-p2-r0-p3keosss/output.txt": "9d3b0517c913bf81a22c5605608bd03e999284e7e7b306221786dc419f0c8d84"
+      },
+      "verification_timings_s": {
+        "validation": 0.030951136999647133,
+        "hashing": 6.379099795594811e-05
+      },
+      "launcher_elapsed_s": 5.948,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 5.947572361998027
+    },
+    {
+      "trial_id": "trial-0020",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.591522464004811,
+      "prepare_s": 0.001537713993457146,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.718,
+        "latency_mean_ms": 1767.137,
+        "throughput_cases_per_s": 0.80683,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0020/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "eccc2e2fd63d8c9bb31a29f67bf119c228ac383632cd1b1e712ef1a51a4550a0",
+        "cases/nwchem-p0-r0-pi22tvpe/output.txt": "d7d8f8e7d6bcf97d00d10c262a1dcdf827309628a36d4ca5f7a3e4799f52abbe",
+        "cases/nwchem-p1-r0-scfd45ya/output.txt": "ddc0f54dcc50622ec55f679d78a32e9f9e8bcc5e1ca1bfae99c2a899506c7b0e",
+        "cases/nwchem-p2-r0-vtlyg565/output.txt": "2e0290dc4f33f63ee9373d7c7f2eb99d13db1fa0f39ce233d74b5712ad9c3025"
+      },
+      "verification_timings_s": {
+        "validation": 0.0301516229956178,
+        "hashing": 6.910100637469441e-05
+      },
+      "launcher_elapsed_s": 4.59,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.590102845002548
+    },
+    {
+      "trial_id": "trial-0021",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.797989154001698,
+      "prepare_s": 0.001508639004896395,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 4.052,
+        "latency_mean_ms": 1975.701,
+        "throughput_cases_per_s": 0.740419,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0021/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "6271375c39c3d297e19805a9c2dc549749eb77e779b1da25c65e7b4ec6ae91ca",
+        "cases/nwchem-p0-r0-9ztftba6/output.txt": "315bc785bfdc4f8abef3adf0b150e7e94d7ac858a8527bb1e888be33bcd23247",
+        "cases/nwchem-p1-r0-l6wsdfl8/output.txt": "fb8909ef55d062d253d973f8059608c487a1659133db594b678a3c0a30be4c8c",
+        "cases/nwchem-p2-r0-y114nlhm/output.txt": "55f779cb7ab1f7757d88501de22e4ba6afcc6a3264d1005f27f5201c9c96822b"
+      },
+      "verification_timings_s": {
+        "validation": 0.03512558699003421,
+        "hashing": 6.381099228747189e-05
+      },
+      "launcher_elapsed_s": 4.797,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.796567541008699
+    },
+    {
+      "trial_id": "trial-0022",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.322230536999996,
+      "prepare_s": 0.0015696740010753274,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.542,
+        "latency_mean_ms": 1807.428,
+        "throughput_cases_per_s": 0.541368,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0022/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "26d854bc9ef56226296f1a839354608b1265d0d58542401333552ba31c5547f7",
+        "cases/nwchem-p0-r0-dybd9vjo/output.txt": "63beaec5fc7c290dab09c851b1bf983739ed0ab6f5bf928564f01ce3a0e92f4d",
+        "cases/nwchem-p1-r0-vo5q1_m8/output.txt": "7273d18c796b79aab4ada0ad2c6c9cccb4cebe5902dbdb043e6dc6b399484f4b",
+        "cases/nwchem-p2-r0-giujcg1z/output.txt": "1eff1d860dfe6b64427e412a3374af76cf6f735773c586e5d3ba07b04c93117a"
+      },
+      "verification_timings_s": {
+        "validation": 0.05256539300899021,
+        "hashing": 6.35799951851368e-05
+      },
+      "launcher_elapsed_s": 6.321,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.32087056900491
+    },
+    {
+      "trial_id": "trial-0023",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.42729127399798,
+      "prepare_s": 0.0014012850006110966,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.757,
+        "latency_mean_ms": 1857.598,
+        "throughput_cases_per_s": 0.798409,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0023/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "b746fa248ea72f8316648dca1624c65b0418d2964ac3e7ddda3da4df0d4607df",
+        "cases/nwchem-p0-r0-h2_sp5tu/output.txt": "5794832fffc6e79144e5e16ca78d61d5f3b59a6beab9a820f6be8e479586daa1",
+        "cases/nwchem-p1-r0-7fq2n578/output.txt": "871659fa0679192d42a9eb10eb0cf891c1ac4c26d827d7525e62d7fbc08e3eb3",
+        "cases/nwchem-p2-r0-fcc4frv0/output.txt": "a640259f34f73fde32e5e48fb18daf2db3806d97abc674e102e44cabb39b4be9"
+      },
+      "verification_timings_s": {
+        "validation": 0.06741239500115626,
+        "hashing": 6.160700286272913e-05
+      },
+      "launcher_elapsed_s": 4.426,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.425928771990584
+    },
+    {
+      "trial_id": "trial-0024",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 7.1816868009918835,
+      "prepare_s": 0.0014143699954729527,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 6.434,
+        "latency_mean_ms": 2103.251,
+        "throughput_cases_per_s": 0.466265,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0024/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "7b24615b018bc9fab5945210400155cf5f9830d82cd676fbee6bad22d0617f91",
+        "cases/nwchem-p0-r0-iu3imzr3/output.txt": "98fffc86ed18bb8c191c7e2094166839ae5ef3edcf488788b22c7c90813d31fc",
+        "cases/nwchem-p1-r0-nnpspu07/output.txt": "64b2dd4b3258e60e9a79a212645e4977ef75fb6bed6e1b0de0feaceaaf809bf7",
+        "cases/nwchem-p2-r0-_y9d76fg/output.txt": "73f943b68f1da49e946a54888cb5ef6f3d9cd220de244ef80515d3609d5245f9"
+      },
+      "verification_timings_s": {
+        "validation": 0.03696533299807925,
+        "hashing": 6.432199734263122e-05
+      },
+      "launcher_elapsed_s": 7.18,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 7.18021036501159
+    },
+    {
+      "trial_id": "trial-0025",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.913824428003863,
+      "prepare_s": 0.0015915050025796518,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 6.041,
+        "latency_mean_ms": 1968.419,
+        "throughput_cases_per_s": 0.496616,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0025/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "417aa00fe10f108f3fc7258a1d418d9ed882e6daf166e6889d1a43e5a0aab742",
+        "cases/nwchem-p0-r0-1pmmq17v/output.txt": "f38f3586ceb32d154f51fd1f7ef84ce9357c40df2fc80f3f8a3a2b80ac3df18a",
+        "cases/nwchem-p1-r0-2xcdazf9/output.txt": "0cfde8ce045d0d36df3f84606d96982cb0a6fc5ba8147fdfdaae0bc8fa3926f1",
+        "cases/nwchem-p2-r0-gsoru7k3/output.txt": "8facbd50af7941991498bd574684f45a29a45d93d33f862e19d212520ad7c38b"
+      },
+      "verification_timings_s": {
+        "validation": 0.057913757002097555,
+        "hashing": 7.092399755492806e-05
+      },
+      "launcher_elapsed_s": 6.912,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.912344814001699
+    },
+    {
+      "trial_id": "trial-0026",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.112324499001261,
+      "prepare_s": 0.0015670389984734356,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.126,
+        "latency_mean_ms": 1666.154,
+        "throughput_cases_per_s": 0.585276,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0026/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "aaa369565d3b3586d7191b49422cfbb54cbb9b0513be6831a902be95fff05e1d",
+        "cases/nwchem-p0-r0-7h5ra2lv/output.txt": "f2b9587c51ad46884accaba3b4298648c390622171b58912733c1384b52960e1",
+        "cases/nwchem-p1-r0-unu_r3pk/output.txt": "39e9bc4ec405ee9cff6bccacde1ff61d0d3a627cbdf7c68a635a3ff7eb1bda93",
+        "cases/nwchem-p2-r0-qadhet9m/output.txt": "033d5b1d6efd398d20fd7ecfe1a36d7aef065fe3ad40a58247742fc1c9035b04"
+      },
+      "verification_timings_s": {
+        "validation": 0.04126444899884518,
+        "hashing": 5.6917997426353395e-05
+      },
+      "launcher_elapsed_s": 6.111,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.110895270991023
+    },
+    {
+      "trial_id": "trial-0027",
+      "repeat": 3,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 2.5875888760056114,
+      "prepare_s": 0.0014803659869357944,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 2.016,
+        "latency_mean_ms": 1821.279,
+        "throughput_cases_per_s": 1.488137,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0027/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "dcddc687290f5e773bc2a8d6f63bde017795c76dfc9cc2552aa64d3dea461e02",
+        "cases/nwchem-p0-r0-bjfixyf5/output.txt": "1f660db0c061d0104ec6c4a7c266e911918db7bf98d789637531ed80cfd0c111",
+        "cases/nwchem-p1-r0-2vep29oo/output.txt": "e2fa2d38d5130c5fb1964318d66142996e398fc92b43ef53953321d3729b4140",
+        "cases/nwchem-p2-r0-q4zlkizv/output.txt": "bdb124ce3189ba195922ea25af45676abb07c6c6d310a737c86a4b97644dec88"
+      },
+      "verification_timings_s": {
+        "validation": 0.03527445899089798,
+        "hashing": 6.117600423749536e-05
+      },
+      "launcher_elapsed_s": 2.586,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 2.5862638960097684
+    },
+    {
+      "trial_id": "trial-0028",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 2.39557205598976,
+      "prepare_s": 0.0015785210125613958,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 1.643,
+        "latency_mean_ms": 1603.54,
+        "throughput_cases_per_s": 1.826394,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0028/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "300a14731c88e0a2e27a9abe99b3cac6dd66e0bc75f06554ec29d019f1d10498",
+        "cases/nwchem-p0-r0-oypyhu8k/output.txt": "6d4eef45d4cae94351d2410a985927974d95c074e4bf6dcd9f5924844c1a974e",
+        "cases/nwchem-p1-r0-cmwk43i_/output.txt": "e21f4815fe63257f87f009f48fae5f2f389288e04492aecba27f504b753f5136",
+        "cases/nwchem-p2-r0-a0nia1zr/output.txt": "e21f4815fe63257f87f009f48fae5f2f389288e04492aecba27f504b753f5136"
+      },
+      "verification_timings_s": {
+        "validation": 0.04926473999512382,
+        "hashing": 6.293899787124246e-05
+      },
+      "launcher_elapsed_s": 2.394,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 2.394101098005194
+    },
+    {
+      "trial_id": "trial-0029",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.10930583399022,
+      "prepare_s": 0.0014581830037059262,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.471,
+        "latency_mean_ms": 1694.484,
+        "throughput_cases_per_s": 0.864296,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0029/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "83e019d0764679c7f0e92682a8e3b665bcfb73555fc3bff98e61f95cb861e6f7",
+        "cases/nwchem-p0-r0-ikplykl4/output.txt": "317ea34631297811fdb6f432ac59ed206805e0a198d917ba228b91a931947574",
+        "cases/nwchem-p1-r0-buxfn2rd/output.txt": "db184709605d110029c04d716504d5c4132737e5ec4f4d3d0daeb268f88c6af6",
+        "cases/nwchem-p2-r0-2b5nr20d/output.txt": "02820f30e58f65d259e7fc150744a052ba38a586485423d937743c8315fe1ebe"
+      },
+      "verification_timings_s": {
+        "validation": 0.05010557299829088,
+        "hashing": 6.004299211781472e-05
+      },
+      "launcher_elapsed_s": 4.108,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.107906231991365
+    },
+    {
+      "trial_id": "trial-0030",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.047135811008047,
+      "prepare_s": 0.0020300759933888912,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.468,
+        "latency_mean_ms": 1703.927,
+        "throughput_cases_per_s": 0.864931,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0030/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "0ec0632470c76a6dd5014c07fed1a19782884c50f99f67384ca4e3148bedee4b",
+        "cases/nwchem-p0-r0-29vnv0vo/output.txt": "7d64e5cf0ac5f715587a8e6dc53254eab2936ccd6c9969097ce8314f5c3659ad",
+        "cases/nwchem-p1-r0-gvk5nfrg/output.txt": "81d44ea95df506dd7c93059bc575328619786d8467f44cf8ba98668a28ca22de",
+        "cases/nwchem-p2-r0-w3a4xofc/output.txt": "15dc2a4d4bbbc1fdb122a48319c1822adc4a6275c6e477e141b9c00c2eedd3f7"
+      },
+      "verification_timings_s": {
+        "validation": 0.042107126995688304,
+        "hashing": 7.079400529619306e-05
+      },
+      "launcher_elapsed_s": 4.046,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.045638052004506
+    },
+    {
+      "trial_id": "trial-0031",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.026162562004174,
+      "prepare_s": 0.0015083280013641343,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.291,
+        "latency_mean_ms": 1718.816,
+        "throughput_cases_per_s": 0.566954,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0031/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "c24dee1e6af33ace416b11c7037d1ffcd22bcf2465f39732a464d95359b4db61",
+        "cases/nwchem-p0-r0-wqvz6b8v/output.txt": "681d16e6e74ced912eadeeaf8e8b1c4ca010c4d19e213d32a138980a48735505",
+        "cases/nwchem-p1-r0-ho2jfkvh/output.txt": "435e222b81f16b0f7f8de12438423842d11267afb785fb255062031ee3d3a3f0",
+        "cases/nwchem-p2-r0-ra94h4wr/output.txt": "b5259f81362909185b1399d7d081357a4f73f6eeabff854ead6ffb20fbd91ae5"
+      },
+      "verification_timings_s": {
+        "validation": 0.044635137004661374,
+        "hashing": 6.6716005676426e-05
+      },
+      "launcher_elapsed_s": 6.025,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.024720308996621
+    },
+    {
+      "trial_id": "trial-0032",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 5.794050513999537,
+      "prepare_s": 0.0016874569992069155,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.175,
+        "latency_mean_ms": 1681.335,
+        "throughput_cases_per_s": 0.579723,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0032/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "0c34b3e66914c17ae874bd6d31ec3c20229fc46c8836a59d7aeb7927cd2311d7",
+        "cases/nwchem-p0-r0-tshw4wo3/output.txt": "6fdaec2af97cf975f8b31a704ec543f2accb1a361d74f453058f0b34608b0cc3",
+        "cases/nwchem-p1-r0-sxgcxose/output.txt": "3d4e83bfdd2f10c83443cf7f41d44046d348bbae48c5783a251e2a4a540768e2",
+        "cases/nwchem-p2-r0-8pw8t4oz/output.txt": "dc0d53503007b251d4f262337bd41041f7a3c98ac4df17c7e450243d7a3f80a3"
+      },
+      "verification_timings_s": {
+        "validation": 0.07260952399519738,
+        "hashing": 6.6305001382716e-05
+      },
+      "launcher_elapsed_s": 5.793,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 5.792640772997402
+    },
+    {
+      "trial_id": "trial-0033",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.963516784002422,
+      "prepare_s": 0.00162859600095544,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 6.315,
+        "latency_mean_ms": 2061.382,
+        "throughput_cases_per_s": 0.475051,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0033/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "f8c46b95d5f2f30350d6f4074c72a65189f01fb4c25448438a37079251998b99",
+        "cases/nwchem-p0-r0-7u2h5m1r/output.txt": "02dee388723ca1815da1d5f1932deaf7fd144e9fcf9020b81d05d0179a7d9fd1",
+        "cases/nwchem-p1-r0-68e0ms54/output.txt": "364fa638f7ae010029a56fc457cec12d65a699a0ebbcbc9ba7574e78ef3809c0",
+        "cases/nwchem-p2-r0-b5911ici/output.txt": "b77e7ebdd79b00188742e87bf97d1124657d461de9dc43a146ac02fbe9106733"
+      },
+      "verification_timings_s": {
+        "validation": 0.03672995801025536,
+        "hashing": 6.621499778702855e-05
+      },
+      "launcher_elapsed_s": 6.962,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.962010940987966
+    },
+    {
+      "trial_id": "trial-0034",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.062142064998625,
+      "prepare_s": 0.0013888620014768094,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.362,
+        "latency_mean_ms": 1744.198,
+        "throughput_cases_per_s": 0.559488,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0034/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "286392e58600046d62d5dc084089fa602f414da3e22c496aeeba582cd63b0bde",
+        "cases/nwchem-p0-r0-ewwoh748/output.txt": "c6adbcda64f07e1fc6e640983d0ea0c67ac21977e9e8e708161a22ee7b3f11f4",
+        "cases/nwchem-p1-r0-3upt5r7_/output.txt": "da2d2ef8edd66e365b262a4f0504e2e45dbab6c2538b3819f84252e7b822b6a6",
+        "cases/nwchem-p2-r0-2kp88nle/output.txt": "f839b08272d2f1ace1ad2da9eb7ae19cf1e3829fc18f206442959d3ba5b9d58d"
+      },
+      "verification_timings_s": {
+        "validation": 0.04516182601219043,
+        "hashing": 6.604500231333077e-05
+      },
+      "launcher_elapsed_s": 6.061,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.06079027299711
+    },
+    {
+      "trial_id": "trial-0035",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 7.519355508004082,
+      "prepare_s": 0.0014152410003589466,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 6.636,
+        "latency_mean_ms": 2161.486,
+        "throughput_cases_per_s": 0.452087,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0035/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "431c52b70492d1655c6fb2594b70ee7515ee4e2acb3bf8e9582f37fbcaff4958",
+        "cases/nwchem-p0-r0-yv08nm7c/output.txt": "913317bd99eb939cff0160d5262db1bc803daf9e3b384dc50fc4749747af53f5",
+        "cases/nwchem-p1-r0-gerhyoj6/output.txt": "b93418e439a79b374aed3fc50a42eb3151634b7a1de313a22507ba6d41418fb0",
+        "cases/nwchem-p2-r0-76_21r21/output.txt": "b7d3ec4a1c405c26520e033575eba497c326f31f1b53b1a6c1178f4e1ab3df99"
+      },
+      "verification_timings_s": {
+        "validation": 0.044736820011166856,
+        "hashing": 7.052400906104594e-05
+      },
+      "launcher_elapsed_s": 7.518,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 7.518074791005347
+    },
+    {
+      "trial_id": "trial-0036",
+      "repeat": 4,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 5.148393085008138,
+      "prepare_s": 0.0018552349938545376,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 4.467,
+        "latency_mean_ms": 2013.907,
+        "throughput_cases_per_s": 0.671544,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0036/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "754171ab2204df4d60dda3e85f9e90eb7bf4c222ae4240626de667f4c48424ac",
+        "cases/nwchem-p0-r0-t66oyxq0/output.txt": "fc312e782dcbbf4de0923f0a43ffb65f754373cdfde5788b2264f82a526669b9",
+        "cases/nwchem-p1-r0-53m1c4l0/output.txt": "ce8c1bd089111b2b02fbe84667d3926e491c89985d5af6554a4bdbab1bf6ce25",
+        "cases/nwchem-p2-r0-1l3114c0/output.txt": "9fa6d20cc7ecaf4306895c63eacf921faa75bdd1eafc6fa90e2945d33d41eab9"
+      },
+      "verification_timings_s": {
+        "validation": 0.0849013359984383,
+        "hashing": 6.371100607793778e-05
+      },
+      "launcher_elapsed_s": 5.147,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 5.147112509002909
+    },
+    {
+      "trial_id": "trial-0037",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.726343472008011,
+      "prepare_s": 0.0015771589969517663,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.887,
+        "latency_mean_ms": 1820.329,
+        "throughput_cases_per_s": 0.771739,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0037/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "10932253561a61463caa1a843e8bc6fe7305300ff68a88b4c702eef0d5e84785",
+        "cases/nwchem-p0-r0-cirz601g/output.txt": "df7acd93ef62bd2d752285b3d352daa04909f95f18d284b5ec4d8fbf687e3f63",
+        "cases/nwchem-p1-r0-egqfmp_h/output.txt": "83e1557e247648d3bdd76676cb80b9b1d0d4feda04c30524b340f811b62ee3d4",
+        "cases/nwchem-p2-r0-rojb4ul8/output.txt": "5fa66fa7b1f93885ebf83e55ac530b483d44a1e5df1ba18642aa066544e8bb76"
+      },
+      "verification_timings_s": {
+        "validation": 0.056749662006041035,
+        "hashing": 6.864000170025975e-05
+      },
+      "launcher_elapsed_s": 4.725,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.72478185199725
+    },
+    {
+      "trial_id": "trial-0038",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.349578409004607,
+      "prepare_s": 0.0016561079974053428,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.526,
+        "latency_mean_ms": 1798.952,
+        "throughput_cases_per_s": 0.54291,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0038/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "841086afba0b4c2e2fb04c31554bdec442b958202ad56de2865f4f03702aec46",
+        "cases/nwchem-p0-r0-gto028mx/output.txt": "a0230f2bab4d62bc181cea925927bf94e5cc0aa814de5a307163f899bd4c6153",
+        "cases/nwchem-p1-r0-b3b1xjl5/output.txt": "b3f4995adc132af2f1b065c84e2cedb2e4512ec2883bb8205cdcf9101ee5e588",
+        "cases/nwchem-p2-r0-r4lz_dql/output.txt": "e464f388fd4c36f2a7bc74ce7c4c393ae48fab188d57320d5417d3d3270b4d18"
+      },
+      "verification_timings_s": {
+        "validation": 0.07053917199664284,
+        "hashing": 8.592300582677126e-05
+      },
+      "launcher_elapsed_s": 6.348,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.34800730200368
+    },
+    {
+      "trial_id": "trial-0039",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.433883806006634,
+      "prepare_s": 0.001734496996505186,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.595,
+        "latency_mean_ms": 1818.716,
+        "throughput_cases_per_s": 0.536154,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0039/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "fe765b0f04b5229d9fefd4975a3e072a8aef10021bde7ecca7fa57b3a9638ad2",
+        "cases/nwchem-p0-r0-300a_f9u/output.txt": "203cf623034be45ec130d8413515dd8e42c543a566677794f48983986282fc5d",
+        "cases/nwchem-p1-r0-hj5rsb9h/output.txt": "b70e56297d5d6a70d739b999fe4267ec1d78788ec2f98bce0454716e0b14a946",
+        "cases/nwchem-p2-r0-fbhhxgqm/output.txt": "3aab766e8c194d1f4726c336411accb9d65b735c3fc6b6dad45cbb67d02033ab"
+      },
+      "verification_timings_s": {
+        "validation": 0.05974320099630859,
+        "hashing": 6.420099816750735e-05
+      },
+      "launcher_elapsed_s": 6.432,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.432489693994285
+    },
+    {
+      "trial_id": "trial-0040",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.3077122929971665,
+      "prepare_s": 0.00169875800202135,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.573,
+        "latency_mean_ms": 1715.144,
+        "throughput_cases_per_s": 0.839658,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0040/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "c4a187d4e8d452d651f3c42389a268584f589f569243a877b3f4770c08f27055",
+        "cases/nwchem-p0-r0-7z9oa4y7/output.txt": "0204215f54ebf7603e41b25365e1be0e05e949ed06a4d0fb2803179ecbbb6fe8",
+        "cases/nwchem-p1-r0-enbkjck1/output.txt": "cc152bc9ddd2329f10243e1a42084285aa25b0d6f8b3253923130ac5f10ba64c",
+        "cases/nwchem-p2-r0-saqw9eim/output.txt": "35caa2685755ca84923e07aa9781f9ecd72d74b2b5bd37cd05e4762c2853543f"
+      },
+      "verification_timings_s": {
+        "validation": 0.045058356001391076,
+        "hashing": 6.959200254641473e-05
+      },
+      "launcher_elapsed_s": 4.306,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.305832311001723
+    },
+    {
+      "trial_id": "trial-0041",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.777939526000409,
+      "prepare_s": 0.0017487940058344975,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.945,
+        "latency_mean_ms": 1935.035,
+        "throughput_cases_per_s": 0.504599,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0041/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "6ee83ef85dd7402b6626f40109970320042a3c37accd8fa3d29c335cd5c3b583",
+        "cases/nwchem-p0-r0-oh0gpqlc/output.txt": "caf553e1c6bb3de141cb868b18d5a43c0efc6193d68273b14dce2caa302c329c",
+        "cases/nwchem-p1-r0-_1k6hzk5/output.txt": "f05e1059e54685fb7b862a7edd3b4399fbf0f3f6f72df8504cfb1046751b6113",
+        "cases/nwchem-p2-r0-g7y54lzo/output.txt": "db718df355fd8789ea6dbb4dc590668eaed1ae9aca426e353bbb969954394dc0"
+      },
+      "verification_timings_s": {
+        "validation": 0.04095705501094926,
+        "hashing": 6.593498983420432e-05
+      },
+      "launcher_elapsed_s": 6.776,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.776505008005188
+    },
+    {
+      "trial_id": "trial-0042",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 3,
+        "replication": 1,
+        "batch_size": 3,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 2.912811824993696,
+      "prepare_s": 0.0015046109911054373,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 1.942,
+        "latency_mean_ms": 1792.819,
+        "throughput_cases_per_s": 1.544434,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0042/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "0810013d481e3c0bb7a22164e7f12620beda75b408d9775417895614df8bb773",
+        "cases/nwchem-p0-r0-ynybx2cx/output.txt": "a7627a0d9a1fe7b96f9abc30a409c02733a5220de7f54f0817c30e661bc2fc74",
+        "cases/nwchem-p1-r0-yg51b63k/output.txt": "3874fefc6956b0884b2033292073398e7f5f21d86cf83645a916dd3659fe602d",
+        "cases/nwchem-p2-r0-mjp3jraa/output.txt": "50eabdf95d30160d8db5ea92a6c551d88032d4c466b7785413f739ff01192054"
+      },
+      "verification_timings_s": {
+        "validation": 0.10078821200295351,
+        "hashing": 5.959300324320793e-05
+      },
+      "launcher_elapsed_s": 2.911,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 2.911421409997274
+    },
+    {
+      "trial_id": "trial-0043",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 2,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 4.252129536005668,
+      "prepare_s": 0.001397087995428592,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 3.415,
+        "latency_mean_ms": 1677.833,
+        "throughput_cases_per_s": 0.87858,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0043/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "a9c90b781aa94d8c5a1625c6fe5bd065890955371fe669b119de1034b0092406",
+        "cases/nwchem-p0-r0-c_f8yg_x/output.txt": "d5a47314cc6cc038fc8dcfab9e5b78762a3db0845a83070577a68a0aecce9626",
+        "cases/nwchem-p1-r0-9wg8p92g/output.txt": "ef318e33524193aa34e0fa233e6a25b310cc0200c2a76e219f83d276cd6ede48",
+        "cases/nwchem-p2-r0-0_ir53q9/output.txt": "0d548e29e7636137225685403175cf5190ce316ccd56953c73cbf8354725a886"
+      },
+      "verification_timings_s": {
+        "validation": 0.04417928999464493,
+        "hashing": 6.50830043014139e-05
+      },
+      "launcher_elapsed_s": 4.251,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 4.250785748998169
+    },
+    {
+      "trial_id": "trial-0044",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 1,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 5.88975989400933,
+      "prepare_s": 0.001515561991254799,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 5.152,
+        "latency_mean_ms": 1665.665,
+        "throughput_cases_per_s": 0.582257,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0044/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "9f1648c59fdf26485c4e2339f5d2114deb9288dbf00f77f97851950acf62c5f3",
+        "cases/nwchem-p0-r0-kdoglq1y/output.txt": "6973ba997d32a6ddc58a96e3493e65fa9056151eb7ba3bd5b40d067607f8b384",
+        "cases/nwchem-p1-r0-ney592pq/output.txt": "2f5ea44c991d9b0cb43049cb1a813af5ae22247b28d438bcc2aa309fbf7c77da",
+        "cases/nwchem-p2-r0-hjm1rs_6/output.txt": "2e5ff5612089f956ef9af32f57344334a44b39c18658df59a72af844d7d547ea"
+      },
+      "verification_timings_s": {
+        "validation": 0.06378356600180268,
+        "hashing": 6.3109997427091e-05
+      },
+      "launcher_elapsed_s": 5.888,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 5.888428491001832
+    },
+    {
+      "trial_id": "trial-0045",
+      "repeat": 5,
+      "configuration": {
+        "partitions": 3,
+        "executors": 1,
+        "replication": 1,
+        "batch_size": 2,
+        "placement": "single-node"
+      },
+      "arm": "validated",
+      "status": "success",
+      "ray_roundtrip_s": 6.878743136010598,
+      "prepare_s": 0.001494049996836111,
+      "aggregate": {
+        "status": "success",
+        "cases_completed": 3,
+        "cases_total": 3,
+        "experiment_elapsed_s": 6.075,
+        "latency_mean_ms": 1975.947,
+        "throughput_cases_per_s": 0.4938,
+        "memory_peak_mb": null
+      },
+      "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/trial-0045/measurement.json",
+      "artifact_sha256": {
+        "measurement.json": "42e72866f266912066ca38a58015ccbe07023c0cb92e52c6e4445c5b3f68f9dc",
+        "cases/nwchem-p0-r0-ti53rpr0/output.txt": "f6310e00194d8aa80e86ac1e1dba640466bbe4e255f9b07ac746e8674e4ccef9",
+        "cases/nwchem-p1-r0-v412e6fg/output.txt": "91e899fb317c5ca4fa83fb06984fb85c7c369b0abdc7cb5a30b29ec03b87640b",
+        "cases/nwchem-p2-r0-todsan30/output.txt": "32b4a8efd5100c61c20b0c95d03578a9d8409e12825355a824bfa72d9ee7d566"
+      },
+      "verification_timings_s": {
+        "validation": 0.05592699100088794,
+        "hashing": 6.286900315899402e-05
+      },
+      "launcher_elapsed_s": 6.877,
+      "worker_pid": 453765,
+      "worker_elapsed_s": 6.877097828997648
+    }
+  ],
+  "warmup": {
+    "step": 0,
+    "selection_source": "scripted_baseline",
+    "status": "success",
+    "configuration": {
+      "partitions": 3,
+      "executors": 1,
+      "replication": 1,
+      "batch_size": 1,
+      "placement": "single-node"
+    },
+    "receipt": "overhead-warmup",
+    "aggregate": {
+      "status": "success",
+      "cases_completed": 3,
+      "cases_total": 3,
+      "experiment_elapsed_s": 6.902,
+      "latency_mean_ms": 2231.143,
+      "throughput_cases_per_s": 0.43465,
+      "memory_peak_mb": null
+    },
+    "measurement_file": "/global/u1/m/makhatri/chia-agentic-memscale/results/landscape-60056838-1792534862156509396/warmup/measurement.json",
+    "artifact_sha256": {
+      "measurement.json": "20549371639c67c71322b2053138f585a2780a47780883b9cd75be98848cdd73",
+      "cases/nwchem-p0-r0-oxkl922e/output.txt": "0b3982612823569b95022c0c58e1b8e01ca4b5bffa942bad061e1bd03a7a6594",
+      "cases/nwchem-p1-r0-zkzn7q54/output.txt": "592dd4132c7ec0c8bc5a9b96ae3458db35182038819f17845cad728e2ae47641",
+      "cases/nwchem-p2-r0-pyr5rm8g/output.txt": "86787fcd2dccc95b72d830b431b64e77fe220eed48f4f2de6cf62066f4f1e6e9"
+    },
+    "verification_timings_s": {
+      "validation": 0.1702528049936518,
+      "hashing": 8.481999975629151e-05
+    },
+    "launcher_elapsed_s": 7.972
+  },
+  "startup_source_verification_s": 0.014548031002050266,
+  "startup_and_warmup_s": 49.512401644999045,
+  "validation": {
+    "passed": true,
+    "planned_trials": 45,
+    "attempted_trials": 45,
+    "successful_trials": 45,
+    "session_including_cleanup_s": 302.1702329060063
+  }
+}
